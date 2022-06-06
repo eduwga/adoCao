@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49D71286284E827200C42519 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71285284E827200C42519 /* LoginViewController.swift */; };
+		49D71288284E828700C42519 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71287284E828700C42519 /* RegisterViewController.swift */; };
 		C02B5044284BB87400888A1C /* ListarAmigosCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B503E284BB87400888A1C /* ListarAmigosCustomCell.swift */; };
 		C02B5045284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B503F284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift */; };
 		C02B5046284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B5040284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49D71285284E827200C42519 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		49D71287284E828700C42519 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C02B503E284BB87400888A1C /* ListarAmigosCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosCustomCell.swift; sourceTree = "<group>"; };
 		C02B503F284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosCustomCellViewModel.swift; sourceTree = "<group>"; };
 		C02B5040284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosParaAdocaoViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				C0DB9918283FE3EB000ABDA3 /* Assets.xcassets */,
 				C0DB991A283FE3EB000ABDA3 /* LaunchScreen.storyboard */,
 				C0DB991D283FE3EB000ABDA3 /* Info.plist */,
+				49D71285284E827200C42519 /* LoginViewController.swift */,
+				49D71287284E828700C42519 /* RegisterViewController.swift */,
 				C02B5043284BB87400888A1C /* ListarAmigosClient.swift */,
 				C02B503E284BB87400888A1C /* ListarAmigosCustomCell.swift */,
 				C02B503F284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift */,
@@ -157,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0DB9914283FE3EA000ABDA3 /* ViewController.swift in Sources */,
+				49D71288284E828700C42519 /* RegisterViewController.swift in Sources */,
 				C02B5044284BB87400888A1C /* ListarAmigosCustomCell.swift in Sources */,
 				C0DB9910283FE3EA000ABDA3 /* AppDelegate.swift in Sources */,
 				C02B5045284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift in Sources */,
@@ -164,6 +171,7 @@
 				C02B5048284BB87400888A1C /* ListarAmigosService.swift in Sources */,
 				C02B5046284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift in Sources */,
 				C02B5047284BB87400888A1C /* ListarAmigosViewModel.swift in Sources */,
+				49D71286284E827200C42519 /* LoginViewController.swift in Sources */,
 				C0DB9912283FE3EA000ABDA3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
