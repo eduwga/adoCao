@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W1T-Vk-Ffc">
-                                <rect key="frame" x="132" y="170" width="150" height="150"/>
+                                <rect key="frame" x="132" y="162" width="150" height="158"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição da Raça" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4E-aK-e7m">
@@ -84,19 +84,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbf-eK-ssq">
-                                <rect key="frame" x="0.0" y="148" width="414" height="665"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAdoCao" translatesAutoresizingMaskIntoConstraints="NO" id="yZR-mr-r0a">
-                                        <rect key="frame" x="87" y="264.5" width="240" height="136"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="136" id="RyB-Xo-rEz"/>
-                                            <constraint firstAttribute="width" constant="240" id="kPC-B9-LbP"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration" identifier="ViewBackground"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w6h-fi-fWh">
+                                <rect key="frame" x="132" y="162" width="150" height="148"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFORMAÇÕES DO USUÁRIO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agF-hx-VwU">
+                                <rect key="frame" x="0.0" y="338" width="414" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yZR-mr-r0a">
+                                <rect key="frame" x="87" y="548" width="240" height="136"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="RyB-Xo-rEz"/>
+                                    <constraint firstAttribute="width" constant="240" id="kPC-B9-LbP"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27q-lK-4mI">
+                                <rect key="frame" x="87" y="692" width="240" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Quero um novo amigo"/>
+                                <connections>
+                                    <action selector="listarAmigosParaAdocaoButtonAction:" destination="a30-mU-aW2" eventType="touchUpInside" id="CJW-Vo-rxY"/>
+                                    <segue destination="t9l-WG-CRK" kind="show" id="bqe-Oj-S4L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnA-WI-QZl">
+                                <rect key="frame" x="87" y="763" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstItem="yZR-mr-r0a" firstAttribute="centerY" secondItem="Nbf-eK-ssq" secondAttribute="centerY" id="5TA-Ua-arC"/>
                                     <constraint firstItem="yZR-mr-r0a" firstAttribute="centerX" secondItem="Nbf-eK-ssq" secondAttribute="centerX" id="9yd-hi-USn"/>
@@ -232,7 +249,7 @@
         <!--Cadastrar Amigo-->
         <scene sceneID="pDt-gb-ZXL">
             <objects>
-                <viewController id="Rcf-1V-qF6" sceneMemberID="viewController">
+                <viewController id="Rcf-1V-qF6" customClass="CadastrarAmigoViewController" customModule="AdoCao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="78Z-M8-som">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,6 +304,9 @@
                                 <rect key="frame" x="32" y="622" width="350" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Cadastrar"/>
+                                <connections>
+                                    <action selector="cadastrarButton:" destination="Rcf-1V-qF6" eventType="touchUpInside" id="G7S-kM-gzO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lh9-ul-9jE"/>
@@ -318,6 +338,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cadastrar Amigo" id="Mf0-fF-aci"/>
+                    <connections>
+                        <outlet property="idadeTextField" destination="NhG-rn-6ID" id="pJI-6K-zg4"/>
+                        <outlet property="nomeTextField" destination="i3q-OU-sbZ" id="bHM-jI-H1h"/>
+                        <outlet property="perfilImageView" destination="sbN-OC-2sp" id="eLv-7E-Ykg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gr0-Ky-Ukj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
