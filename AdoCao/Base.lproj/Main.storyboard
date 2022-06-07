@@ -79,7 +79,7 @@
         <!--Usuário-->
         <scene sceneID="w7o-MW-cH8">
             <objects>
-                <viewController id="a30-mU-aW2" sceneMemberID="viewController">
+                <viewController id="a30-mU-aW2" customClass="DetalhesUsuarioViewController" customModule="AdoCao" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0HT-5E-UfK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,14 +88,10 @@
                                 <rect key="frame" x="132" y="162" width="150" height="148"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do Usuário" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agF-hx-VwU">
-                                <rect key="frame" x="53" y="338" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="GDe-AW-tJo"/>
-                                    <constraint firstAttribute="height" constant="200" id="ry2-1y-Yg3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFORMAÇÕES DO USUÁRIO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agF-hx-VwU">
+                                <rect key="frame" x="0.0" y="338" width="414" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yZR-mr-r0a">
@@ -111,6 +107,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Quero um novo amigo"/>
+                                <connections>
+                                    <action selector="listarAmigosParaAdocaoButtonAction:" destination="a30-mU-aW2" eventType="touchUpInside" id="CJW-Vo-rxY"/>
+                                    <segue destination="t9l-WG-CRK" kind="show" id="bqe-Oj-S4L"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnA-WI-QZl">
                                 <rect key="frame" x="87" y="763" width="240" height="50"/>
@@ -120,7 +120,45 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cadastrar um amigo"/>
+                                <connections>
+                                    <action selector="cadastrarAmigoParaAdocaoButtonAction:" destination="a30-mU-aW2" eventType="touchUpInside" id="BbF-HP-rcY"/>
+                                </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8by-wA-PH9">
+                                <rect key="frame" x="8" y="378" width="398" height="102.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLM-QE-jpO">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB1-ZX-mKp">
+                                        <rect key="frame" x="0.0" y="20.5" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade:" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYG-ds-vf5">
+                                        <rect key="frame" x="0.0" y="41" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UF: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKi-cY-P8n">
+                                        <rect key="frame" x="0.0" y="61.5" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contato: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9m-uX-8bO">
+                                        <rect key="frame" x="0.0" y="82" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I5A-Sr-ZIA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -128,18 +166,34 @@
                             <constraint firstItem="I5A-Sr-ZIA" firstAttribute="bottom" secondItem="w6h-fi-fWh" secondAttribute="bottom" constant="503" id="5Fx-8Y-nuh"/>
                             <constraint firstItem="I5A-Sr-ZIA" firstAttribute="bottom" secondItem="yZR-mr-r0a" secondAttribute="bottom" constant="129" id="6sd-ck-z8R"/>
                             <constraint firstItem="I5A-Sr-ZIA" firstAttribute="trailing" secondItem="w6h-fi-fWh" secondAttribute="trailing" constant="132" id="IFc-US-V1N"/>
-                            <constraint firstItem="agF-hx-VwU" firstAttribute="leading" secondItem="I5A-Sr-ZIA" secondAttribute="leading" constant="53" id="KYp-jB-F4c"/>
+                            <constraint firstItem="agF-hx-VwU" firstAttribute="leading" secondItem="I5A-Sr-ZIA" secondAttribute="leading" id="KYp-jB-F4c"/>
                             <constraint firstItem="agF-hx-VwU" firstAttribute="top" secondItem="w6h-fi-fWh" secondAttribute="bottom" constant="28" id="O2Z-Fv-u2c"/>
                             <constraint firstItem="yZR-mr-r0a" firstAttribute="leading" secondItem="I5A-Sr-ZIA" secondAttribute="leading" constant="87" id="Ozh-l7-AmT"/>
                             <constraint firstItem="w6h-fi-fWh" firstAttribute="top" secondItem="I5A-Sr-ZIA" secondAttribute="top" constant="22" id="Tkb-lv-Cze"/>
+                            <constraint firstItem="I5A-Sr-ZIA" firstAttribute="trailing" secondItem="8by-wA-PH9" secondAttribute="trailing" constant="8" id="U3c-f4-HFH"/>
+                            <constraint firstItem="I5A-Sr-ZIA" firstAttribute="trailing" secondItem="agF-hx-VwU" secondAttribute="trailing" id="VhI-79-PTE"/>
+                            <constraint firstItem="8by-wA-PH9" firstAttribute="top" secondItem="agF-hx-VwU" secondAttribute="bottom" constant="16" id="Yky-BP-pg2"/>
                             <constraint firstItem="w6h-fi-fWh" firstAttribute="leading" secondItem="I5A-Sr-ZIA" secondAttribute="leading" constant="132" id="Yva-hM-ASF"/>
                             <constraint firstItem="pnA-WI-QZl" firstAttribute="leading" secondItem="I5A-Sr-ZIA" secondAttribute="leading" constant="87" id="bqW-uk-Rww"/>
                             <constraint firstItem="I5A-Sr-ZIA" firstAttribute="trailing" secondItem="yZR-mr-r0a" secondAttribute="trailing" constant="87" id="h1i-z6-yYx"/>
                             <constraint firstItem="pnA-WI-QZl" firstAttribute="bottom" secondItem="I5A-Sr-ZIA" secondAttribute="bottom" id="hhx-f3-Rv5"/>
+                            <constraint firstItem="8by-wA-PH9" firstAttribute="leading" secondItem="I5A-Sr-ZIA" secondAttribute="leading" constant="8" id="kyy-7B-K4p"/>
+                            <constraint firstItem="agF-hx-VwU" firstAttribute="leading" secondItem="I5A-Sr-ZIA" secondAttribute="leading" id="rQC-Od-XQW"/>
                             <constraint firstItem="I5A-Sr-ZIA" firstAttribute="trailing" secondItem="pnA-WI-QZl" secondAttribute="trailing" constant="87" id="tGq-px-n8z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Usuário" id="lHM-ht-Iwj"/>
+                    <navigationItem key="navigationItem" title="Usuário" largeTitleDisplayMode="always" id="lHM-ht-Iwj">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="Exu-Sm-PMT"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cidadeLabel" destination="EYG-ds-vf5" id="NPe-5S-WpH"/>
+                        <outlet property="contatoLabel" destination="V9m-uX-8bO" id="eJC-Ou-GtR"/>
+                        <outlet property="emailLabel" destination="PB1-ZX-mKp" id="XPV-X5-v9A"/>
+                        <outlet property="fotoImageView" destination="w6h-fi-fWh" id="3k0-lj-Ush"/>
+                        <outlet property="logoBackgroundImageView" destination="yZR-mr-r0a" id="uDV-We-w1H"/>
+                        <outlet property="nomeLabel" destination="NLM-QE-jpO" id="Urd-A6-9BR"/>
+                        <outlet property="ufLabel" destination="eKi-cY-P8n" id="IQy-Nb-usd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqX-2m-j7R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -694,7 +748,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="evt-v8-AGD">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="665"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="caoCell" rowHeight="143" id="WT6-AL-uCD" customClass="ListarAmigosCustomCell" customModule="AdoCao" customModuleProvider="target">
@@ -794,6 +848,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="HQB-h0-PsZ"/>
+        <segue reference="bqe-Oj-S4L"/>
         <segue reference="XKR-tw-wfn"/>
     </inferredMetricsTieBreakers>
     <resources>
