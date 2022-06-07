@@ -12,8 +12,6 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
     
     let viewModel = ListarAmigosViewModel()
     
-    var dogs: [ListarAmigosClient] = []
-    
     var service = ListarAmigosService()
 
     @IBOutlet weak var listarAmigosTableView: UITableView!
