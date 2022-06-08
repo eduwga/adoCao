@@ -32,6 +32,7 @@
 		C0DB9919283FE3EB000ABDA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0DB9918283FE3EB000ABDA3 /* Assets.xcassets */; };
 		C0DB991C283FE3EB000ABDA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0DB991A283FE3EB000ABDA3 /* LaunchScreen.storyboard */; };
 		ED28F059284EDB940012E298 /* CadastrarAmigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED28F058284EDB940012E298 /* CadastrarAmigoViewController.swift */; };
+		EDD14A4E2850FEE00014FDCA /* DetalhesRacaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD14A4D2850FEE00014FDCA /* DetalhesRacaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		C0DB991B283FE3EB000ABDA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0DB991D283FE3EB000ABDA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED28F058284EDB940012E298 /* CadastrarAmigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarAmigoViewController.swift; sourceTree = "<group>"; };
+		EDD14A4D2850FEE00014FDCA /* DetalhesRacaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesRacaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				C02B5041284BB87400888A1C /* ListarAmigosViewModel.swift */,
 				6D662949284D7F9500D4195F /* Database.swift */,
 				ED28F058284EDB940012E298 /* CadastrarAmigoViewController.swift */,
+				EDD14A4D2850FEE00014FDCA /* DetalhesRacaViewController.swift */,
 			);
 			path = AdoCao;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0DB9914283FE3EA000ABDA3 /* ViewController.swift in Sources */,
+				EDD14A4E2850FEE00014FDCA /* DetalhesRacaViewController.swift in Sources */,
 				49D71288284E828700C42519 /* RegisterViewController.swift in Sources */,
 				C02B5044284BB87400888A1C /* ListarAmigosCustomCell.swift in Sources */,
 				6D66298E285015AD00D4195F /* AndreDetalhesRacaViewModel.swift in Sources */,

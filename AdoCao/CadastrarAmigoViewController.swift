@@ -16,7 +16,8 @@ class CadastrarAmigoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        perfilImageView.layer.masksToBounds = true
+        perfilImageView.layer.cornerRadius = perfilImageView.bounds.width
     }
     
 
