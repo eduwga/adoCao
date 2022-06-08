@@ -23,7 +23,7 @@ class RacaViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let telaDetalhes = segue.destination as? DetalhesRacaViewController else { return }
+        guard let telaDetalhes = segue.destination as? AndreDetalhesRacaViewController else { return }
         telaDetalhes.viewModel = viewModel.selecionouCelula(posicao: sender)
     }
 

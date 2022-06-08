@@ -7,9 +7,9 @@
 
 import UIKit
 
-class DetalhesRacaViewController: UIViewController {
+class AndreDetalhesRacaViewController: UIViewController {
 
-    var viewModel: DetalhesRacaViewModel?
+    var viewModel: AndreDetalhesRacaViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

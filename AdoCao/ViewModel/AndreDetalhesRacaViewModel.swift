@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DetalhesRacaViewModel {
+class AndreDetalhesRacaViewModel {
     
     var raca: Raca
     
