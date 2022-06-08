@@ -31,8 +31,8 @@
 		C0DB9917283FE3EA000ABDA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0DB9915283FE3EA000ABDA3 /* Main.storyboard */; };
 		C0DB9919283FE3EB000ABDA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0DB9918283FE3EB000ABDA3 /* Assets.xcassets */; };
 		C0DB991C283FE3EB000ABDA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0DB991A283FE3EB000ABDA3 /* LaunchScreen.storyboard */; };
-		ED28F059284EDB940012E298 /* CadastrarAmigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED28F058284EDB940012E298 /* CadastrarAmigoViewController.swift */; };
-		EDD14A4E2850FEE00014FDCA /* DetalhesRacaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD14A4D2850FEE00014FDCA /* DetalhesRacaViewController.swift */; };
+		EDD14A50285150AA0014FDCA /* CadastrarAmigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD14A4F285150AA0014FDCA /* CadastrarAmigoViewController.swift */; };
+		EDD14A52285155130014FDCA /* DetalhesRacaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD14A51285155130014FDCA /* DetalhesRacaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +62,8 @@
 		C0DB9918283FE3EB000ABDA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0DB991B283FE3EB000ABDA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0DB991D283FE3EB000ABDA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED28F058284EDB940012E298 /* CadastrarAmigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarAmigoViewController.swift; sourceTree = "<group>"; };
-		EDD14A4D2850FEE00014FDCA /* DetalhesRacaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesRacaViewController.swift; sourceTree = "<group>"; };
+		EDD14A4F285150AA0014FDCA /* CadastrarAmigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarAmigoViewController.swift; sourceTree = "<group>"; };
+		EDD14A51285155130014FDCA /* DetalhesRacaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesRacaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +145,8 @@
 				C02B5042284BB87400888A1C /* ListarAmigosService.swift */,
 				C02B5041284BB87400888A1C /* ListarAmigosViewModel.swift */,
 				6D662949284D7F9500D4195F /* Database.swift */,
-				ED28F058284EDB940012E298 /* CadastrarAmigoViewController.swift */,
-				EDD14A4D2850FEE00014FDCA /* DetalhesRacaViewController.swift */,
+				EDD14A4F285150AA0014FDCA /* CadastrarAmigoViewController.swift */,
+				EDD14A51285155130014FDCA /* DetalhesRacaViewController.swift */,
 			);
 			path = AdoCao;
 			sourceTree = "<group>";
@@ -235,10 +235,12 @@
 				C02B5048284BB87400888A1C /* ListarAmigosService.swift in Sources */,
 				6D662945284D73D600D4195F /* Raca.swift in Sources */,
 				6D66293F284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift in Sources */,
+				EDD14A50285150AA0014FDCA /* CadastrarAmigoViewController.swift in Sources */,
 				C02B5046284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift in Sources */,
 				6D662941284D719600D4195F /* Usuario.swift in Sources */,
 				ED28F059284EDB940012E298 /* CadastrarAmigoViewController.swift in Sources */,
 				6D66293D284D6B8100D4195F /* DetalhesUsuarioViewController.swift in Sources */,
+				EDD14A52285155130014FDCA /* DetalhesRacaViewController.swift in Sources */,
 				6D6629902850177C00D4195F /* AndreDetalhesRacaViewController.swift in Sources */,
 				C02B5047284BB87400888A1C /* ListarAmigosViewModel.swift in Sources */,
 				49D71286284E827200C42519 /* LoginViewController.swift in Sources */,

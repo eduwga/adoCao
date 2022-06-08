@@ -2,26 +2,24 @@
 //  CadastrarAmigoViewController.swift
 //  AdoCao
 //
-//  Created by Marcos Vinicius on 06/06/22.
+
+//  Created by Marcos Vinicius on 08/06/22.
 //
 
 import UIKit
 
 class CadastrarAmigoViewController: UIViewController {
 
-    @IBOutlet weak var perfilImageView: UIImageView!
-    @IBOutlet weak var nomeTextField: UITextField!
-    @IBOutlet weak var idadeTextField: UITextField!
+    @IBOutlet weak var amigoImageView: UIImageView!
+    @IBOutlet weak var amigoNomeTextField: UITextField!
+    @IBOutlet weak var amigoIdadeTextField: UITextField!
+    @IBOutlet weak var amigoCaracteristicasTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        perfilImageView.layer.masksToBounds = true
-        perfilImageView.layer.cornerRadius = perfilImageView.bounds.width
     }
     
-
-    @IBAction func cadastrarButton(_ sender: Any) {
+    @IBAction func botaoCadastrar(_ sender: Any) {
     }
     
     /*

@@ -10,17 +10,14 @@ import UIKit
 class DetalhesRacaViewController: UIViewController {
 
     @IBOutlet weak var racaImageView: UIImageView!
-    @IBOutlet weak var caracteristicasLable: UILabel!
-    @IBOutlet weak var naturalDeLabel: UILabel!
+    @IBOutlet weak var carcteristicasLabel: UILabel!
+    @IBOutlet weak var naturalidadeLabel: UILabel!
     @IBOutlet weak var pesoLabel: UILabel!
     @IBOutlet weak var alturaLabel: UILabel!
     @IBOutlet weak var estimativaDeVidaLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        racaImageView.layer.masksToBounds = true
-        racaImageView.layer.cornerRadius = racaImageView.bounds.width / 2
     }
     
 
