@@ -18,7 +18,8 @@ class RacaViewController: UIViewController {
         racasTableView.dataSource = self
         racasTableView.delegate = self
         pesquisarRacaSearchBar.delegate = self
-        viewModel.delegate = self        
+        viewModel.delegate = self
+        pesquisarRacaSearchBar.becomeFirstResponder()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,8 +50,10 @@ extension RacaViewController: UITableViewDelegate {
 
 extension RacaViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.pesquisarRacaPorNome(nome: searchText)
+        viewModel.pesquisarRacaPorNome(nomePesquisado: searchText)
     }
+    
+    
 }
 
 extension RacaViewController: RacasViewModelDelegate {

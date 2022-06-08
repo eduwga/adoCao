@@ -18,7 +18,7 @@ class RacasViewModel {
     var racasPesquisa: [Raca] = []
     
     init() {
-        racasPesquisa = dataBase.racas
+        iniciaListaDeRacas()
     }
     
     func obterTotalDeRacas() -> Int {
@@ -29,12 +29,17 @@ class RacasViewModel {
         return racasPesquisa[posicao]
     }
     
-    func pesquisarRacaPorNome(nome: String) {
-        let racasSelecionadas = dataBase.racas.filter({ raca in
-            raca.nome.contains(nome)
-        })
-        racasPesquisa = racasSelecionadas
-        
+    func pesquisarRacaPorNome(nomePesquisado: String) {
+        if nomePesquisado == "" {
+            iniciaListaDeRacas()
+        }
+        else {
+            let racasSelecionadas = dataBase.racas.filter({ raca in
+                raca.nome.lowercased().contains(nomePesquisado.lowercased())
+            })
+            racasPesquisa = racasSelecionadas
+        }
+        delegate?.listaDeRacasFoiModificada()
     }
     
     func selecionouCelula(posicao: Any?) -> DetalhesRacaViewModel? {
@@ -42,5 +47,8 @@ class RacasViewModel {
         let racaSelecionada = racasPesquisa[posicao]
         let detalhesRacaVM = DetalhesRacaViewModel(raca: racaSelecionada)
         return detalhesRacaVM
+    }
+    private func iniciaListaDeRacas() {
+        racasPesquisa = dataBase.racas
     }
 }

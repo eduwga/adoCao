@@ -21,8 +21,9 @@ class DetalhesUsuarioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = DetalhesUsuarioViewModel(usuario: DataBase.shared.usuarios[1])
         viewModel?.delegate = self
-
+        viewModel?.teste()
     }
     
     @IBAction func listarAmigosParaAdocaoButtonAction(_ sender: Any) {
@@ -37,7 +38,7 @@ class DetalhesUsuarioViewController: UIViewController {
     
     private func configuraFotoDoUsuario(nomeFoto: String?) {
         fotoImageView.image = UIImage(named: nomeFoto ?? "")
-        fotoImageView.layer.cornerRadius = fotoImageView.image?.size.height ?? 0
+        fotoImageView.layer.cornerRadius = 70
         fotoImageView.layer.borderWidth = 1
         fotoImageView.layer.borderColor = UIColor.black.cgColor
     }

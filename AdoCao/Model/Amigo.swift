@@ -16,12 +16,13 @@ enum Porte: Int {
 }
 
 class Amigo {
-    internal init(nome: String, idade: Int, raca: String, tutor: Usuario, porte: Porte) {
+    internal init(nome: String, idade: Int, raca: String, tutor: Usuario, porte: Porte, foto: String) {
         self.nome = nome
         self.idade = idade
         self.raca = raca
         self.tutor = tutor
         self.porte = porte
+        self.foto = foto
     }
     
     let nome: String
@@ -29,4 +30,5 @@ class Amigo {
     var raca: String
     var tutor: Usuario
     var porte: Porte
+    var foto: String
 }

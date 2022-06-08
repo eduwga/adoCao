@@ -18,6 +18,17 @@ class Usuario {
         self.contato = contato
      }
     
+    internal init(nome: String, email: String, cep: String, cidade: String, uf: String, contato: String, foto: String) {
+        self.id = UUID.init()
+        self.nome = nome
+        self.email = email
+        self.cep = cep
+        self.cidade = cidade
+        self.uf = uf
+        self.contato = contato
+        self.foto = foto
+     }
+    
     let id: UUID
     let nome: String
     let email: String
