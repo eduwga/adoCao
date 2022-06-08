@@ -56,16 +56,47 @@ class LoginViewController: UIViewController {
         let senhaDoUsuario = senhaTextField.text
         
         let armazenaEmailUsuario = UserDefaults.standard.string(forKey: "emailDoUsuario")
-        
         let armazenaSenhaUsuario = UserDefaults.standard.string(forKey: "senhaDoUsuario")
+        
+        if emailDoUsuario == "" ||
+            senhaDoUsuario == "" {
+            
+            // alerta campos obrigatorios
+            alertaLogin(mensagemNaTela: "Todos os campos são obrigatórios!")
+            
+            return
+        }
         
         if armazenaEmailUsuario == emailDoUsuario {
             if armazenaSenhaUsuario == senhaDoUsuario {
-                // sucesso no login
-                UserDefaults.standard.setValue(true, forKey: "Login efetuado com sucesso!")
-                UserDefaults.standard.synchronize()
-                self.dismiss(animated: true, completion: nil)
+                
+                // alerta de confirmacao de login
+                let alertaConfirmacaoLogin = UIAlertController(title: "Muito bem!", message: "Seu Login foi realizado com sucesso. Seja bem vindo(a)!", preferredStyle: UIAlertController.Style.alert)
+                
+                let botaoLogar = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { action in
+                    self.dismiss(animated: true, completion: nil)
+                }
+                    
+                    alertaConfirmacaoLogin.addAction(botaoLogar)
+                    self.present(alertaConfirmacaoLogin, animated: true, completion: nil)
+                
+            } else {
+                
+                // usuario ou senha invalidos
+                alertaLogin(mensagemNaTela: "Usuario ou senha invalidos.")
+            
             }
         }
+    }
+
+
+    func alertaLogin(mensagemNaTela: String) {
+        let alertaErroLogin = UIAlertController(title: "Ops!", message: mensagemNaTela, preferredStyle: UIAlertController.Style.alert)
+    
+        let botaoLogin = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+    
+        alertaErroLogin.addAction(botaoLogin)
+        self.present(alertaErroLogin, animated: true, completion: nil)
+        
     }
 }
