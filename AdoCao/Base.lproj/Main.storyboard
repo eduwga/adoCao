@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ocr-Ic-l4f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nY1-D0-YeU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -225,7 +225,7 @@
                     <tabBarItem key="tabBarItem" title="Amigos" id="EZO-zU-6Y0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="8vl-UA-s9v">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -244,7 +244,7 @@
                     <tabBarItem key="tabBarItem" title="Perfil" id="Hsp-td-g5b"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="juf-hF-Zbx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -281,7 +281,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição tela Boas Vindas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-Qs-h2t">
-                                <rect key="frame" x="20" y="154" width="350" height="120"/>
+                                <rect key="frame" x="20" y="162" width="350" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="7WQ-Hn-l0k"/>
                                     <constraint firstAttribute="height" constant="120" id="ESj-qv-r41"/>
@@ -292,7 +292,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS4-gO-hga">
-                                <rect key="frame" x="87" y="781" width="240" height="50"/>
+                                <rect key="frame" x="87" y="789" width="240" height="42"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Vamos Lá" cornerStyle="capsule"/>
                                 <connections>
@@ -300,7 +300,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9vC-y9-hkx">
-                                <rect key="frame" x="87" y="340" width="240" height="388"/>
+                                <rect key="frame" x="87" y="348" width="240" height="388"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="388" id="faU-rw-Vge"/>
@@ -720,6 +720,45 @@
             </objects>
             <point key="canvasLocation" x="215.94202898550725" y="2021.6517857142856"/>
         </scene>
+        <!--Raças-->
+        <scene sceneID="z3m-8a-1ZK">
+            <objects>
+                <viewController id="CHo-kY-NuU" customClass="RacaViewController" customModule="AdoCao" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RCG-1o-411">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-Sp-H1I">
+                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="u1j-1V-GHN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pJe-mF-4zi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="u1j-1V-GHN" firstAttribute="trailing" secondItem="pJe-mF-4zi" secondAttribute="trailing" id="0Ix-b6-EtU"/>
+                            <constraint firstItem="3ha-Sp-H1I" firstAttribute="bottom" secondItem="pJe-mF-4zi" secondAttribute="bottom" id="DSU-i7-edV"/>
+                            <constraint firstItem="u1j-1V-GHN" firstAttribute="top" secondItem="pJe-mF-4zi" secondAttribute="top" id="Jnw-e1-HvB"/>
+                            <constraint firstItem="3ha-Sp-H1I" firstAttribute="trailing" secondItem="pJe-mF-4zi" secondAttribute="trailing" id="QnU-eg-xaN"/>
+                            <constraint firstItem="u1j-1V-GHN" firstAttribute="leading" secondItem="pJe-mF-4zi" secondAttribute="leading" id="YO0-go-CyA"/>
+                            <constraint firstItem="3ha-Sp-H1I" firstAttribute="top" secondItem="u1j-1V-GHN" secondAttribute="bottom" id="klW-De-Imm"/>
+                            <constraint firstItem="3ha-Sp-H1I" firstAttribute="leading" secondItem="pJe-mF-4zi" secondAttribute="leading" id="oWu-kw-ZXZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Raças" id="gcH-Ir-uto"/>
+                    <connections>
+                        <outlet property="pesquisarRacaSearchBar" destination="u1j-1V-GHN" id="Dvj-O8-RtC"/>
+                        <outlet property="racasTableView" destination="3ha-Sp-H1I" id="dLW-Eq-V62"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mth-9U-pPt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2376.811594202899" y="1971.4285714285713"/>
+        </scene>
         <!--Adoção-->
         <scene sceneID="2rv-bW-Qkn">
             <objects>
@@ -727,7 +766,7 @@
                     <tabBarItem key="tabBarItem" title="Adoção" id="6fe-D2-jOq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="PpL-jw-3Q9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -845,9 +884,25 @@
             </objects>
             <point key="canvasLocation" x="262" y="1304"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uhv-sb-gV3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="nY1-D0-YeU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="F4e-9G-EWY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CHo-kY-NuU" kind="relationship" relationship="rootViewController" id="Hty-PX-bx9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NW8-Ab-xb8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466.6666666666667" y="1971.4285714285713"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-<!--        <segue reference="HQB-h0-PsZ"/>-->
         <segue reference="bqe-Oj-S4L"/>
         <segue reference="XAQ-nH-gEB"/>
     </inferredMetricsTieBreakers>

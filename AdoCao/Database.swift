@@ -36,7 +36,7 @@ public class DataBase {
         )
         usuarios.append(
             Usuario(
-                nome: "André Nepomunceno",
+                nome: "André Nepomuceno",
                 email: "andre@projetoadocao.com.br",
                 cep: "01001-000",
                 cidade: "São Paulo",
@@ -91,7 +91,7 @@ public class DataBase {
             Amigo(
                 nome: "Bilu",
                 idade: 2,
-                raca: .init(nome: "Daschund"),
+                raca: "Daschund",
                 tutor: .init(nome: "Teste1", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .medio
             )
@@ -100,7 +100,7 @@ public class DataBase {
             Amigo(
                 nome: "Torresmo",
                 idade: 1,
-                raca: .init(nome: "Sharpei"),
+                raca: "Sharpei",
                 tutor: .init(nome: "Teste2", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .medio
             )
@@ -109,7 +109,7 @@ public class DataBase {
             Amigo(
                 nome: "Nina",
                 idade: 2,
-                raca: .init(nome: "Lhasa Apso"),
+                raca: "Lhasa Apso",
                 tutor: .init(nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .grande
             )
@@ -118,7 +118,7 @@ public class DataBase {
             Amigo(
                 nome: "Bolinha",
                 idade: 1,
-                raca: .init(nome: "Bull Terrier"),
+                raca: "Bull Terrier",
                 tutor: .init(nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .grande
             )
@@ -127,7 +127,7 @@ public class DataBase {
             Amigo(
                 nome: "Titi",
                 idade: 4,
-                raca: .init(nome: "SRD"),
+                raca: "SRD",
                 tutor: .init(nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .grande
             )
@@ -135,21 +135,21 @@ public class DataBase {
     }
     
     private func preencheRacas() {
-        racas.append(Raca(nome: "SRD"))
-        racas.append(Raca(nome: "Bull Terrier"))
-        racas.append(Raca(nome: "Cocker"))
-        racas.append(Raca(nome: "Daschund"))
-        racas.append(Raca(nome: "Husky Siberiano"))
-        racas.append(Raca(nome: "Border Collie"))
-        racas.append(Raca(nome: "American Staffordshire Terrier"))
-        racas.append(Raca(nome: "Lhasa Apso"))
-        racas.append(Raca(nome: "Cane Corso"))
-        racas.append(Raca(nome: "Dálmata"))
-        racas.append(Raca(nome: "Sharpei"))
-        racas.append(Raca(nome: "Bulldogue Inglês"))
-        racas.append(Raca(nome: "Boxer"))
-        racas.append(Raca(nome: "Pastor de Shetland"))
-        racas.append(Raca(nome: "Poodle"))
-        racas.append(Raca(nome: "Bernese da Montanha"))
+        racas.append(Raca(nome: "SRD", foto: "srd"))
+        racas.append(Raca(nome: "Bull Terrier", foto: "bullTerrier"))
+        racas.append(Raca(nome: "Cocker", foto: "cockerSpaniel"))
+        racas.append(Raca(nome: "Daschund", foto: "dachshund"))
+        racas.append(Raca(nome: "Husky Siberiano", foto: "huskySiberiano"))
+        racas.append(Raca(nome: "Border Collie", foto: "borderCollie"))
+        racas.append(Raca(nome: "American Staffordshire Terrier", foto: "americanStaffordShire"))
+        racas.append(Raca(nome: "Lhasa Apso", foto: "lhasaApso"))
+        racas.append(Raca(nome: "Cane Corso", foto: "caneCorso"))
+        racas.append(Raca(nome: "Dálmata", foto: "dalmata"))
+        racas.append(Raca(nome: "Sharpei", foto: "sharpei"))
+        racas.append(Raca(nome: "Bulldogue Inglês", foto: "bulldogueIngles"))
+        racas.append(Raca(nome: "Boxer", foto: "boxer"))
+        racas.append(Raca(nome: "Pastor de Shetland", foto: ""))
+        racas.append(Raca(nome: "Poodle", foto: "poodle"))
+        racas.append(Raca(nome: "Bernese da Montanha", foto: "bernesseDaMontanha"))
     }
 }

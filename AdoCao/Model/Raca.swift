@@ -8,10 +8,12 @@
 import Foundation
 
 class Raca {
-    internal init(nome: String) {
+    internal init(nome: String, foto: String) {
         self.nome = nome
+        self.foto = foto
     }
     
     var nome: String
+    var foto: String
     ///Mais caracteristicas
 }
