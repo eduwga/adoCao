@@ -27,5 +27,14 @@ class ListarAmigosClient {
         self.localizacao = localizacao
         self.foto = foto
     }
+    func obterNome() -> String {
+        return "Nome: \(nome)"
+    }
+    func obterLocalizaCao() -> String {
+        return "Localização: \(localizacao)"
+    }
+    func obterDescriCao() -> String {
+        return "Descrição: \(descricao)"
+    }
     
 }

@@ -19,6 +19,7 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
         super.viewDidLoad()
         listarAmigosTableView.dataSource = self
         listarAmigosTableView.delegate = self
+        viewModel.delegate = self
     }
 }
 
@@ -43,4 +44,27 @@ extension ListarAmigosParaAdocaoViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let seleCao = service.listaDeCaesQueOServidorConhece()[indexPath.row]
+        performSegue(withIdentifier: "detalheAmigoSegue", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detalheAmigoSegue" {
+            if let destination = segue.destination as? DetalheAmigoViewController {
+                let vm = viewModel.obterViewModelParaDetalhes(posicao: sender)
+                destination.viewModel = vm
+            }
+            
+        }
+    
+    }
 }
+
+extension ListarAmigosParaAdocaoViewController: ListarAmigosViewModelDelegate {
+    
+}
+
+
+

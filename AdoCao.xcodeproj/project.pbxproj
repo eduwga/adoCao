@@ -27,6 +27,8 @@
 		C02B5047284BB87400888A1C /* ListarAmigosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B5041284BB87400888A1C /* ListarAmigosViewModel.swift */; };
 		C02B5048284BB87400888A1C /* ListarAmigosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B5042284BB87400888A1C /* ListarAmigosService.swift */; };
 		C02B5049284BB87400888A1C /* ListarAmigosClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B5043284BB87400888A1C /* ListarAmigosClient.swift */; };
+		C0975F9C28511D0900029B19 /* DetalheAmigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0975F9B28511D0900029B19 /* DetalheAmigoViewController.swift */; };
+		C0975F9E2851302800029B19 /* DetalheAmigoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0975F9D2851302800029B19 /* DetalheAmigoViewModel.swift */; };
 		C0DB9910283FE3EA000ABDA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DB990F283FE3EA000ABDA3 /* AppDelegate.swift */; };
 		C0DB9912283FE3EA000ABDA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DB9911283FE3EA000ABDA3 /* SceneDelegate.swift */; };
 		C0DB9914283FE3EA000ABDA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DB9913283FE3EA000ABDA3 /* ViewController.swift */; };
@@ -58,6 +60,8 @@
 		C02B5041284BB87400888A1C /* ListarAmigosViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosViewModel.swift; sourceTree = "<group>"; };
 		C02B5042284BB87400888A1C /* ListarAmigosService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosService.swift; sourceTree = "<group>"; };
 		C02B5043284BB87400888A1C /* ListarAmigosClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosClient.swift; sourceTree = "<group>"; };
+		C0975F9B28511D0900029B19 /* DetalheAmigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheAmigoViewController.swift; sourceTree = "<group>"; };
+		C0975F9D2851302800029B19 /* DetalheAmigoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheAmigoViewModel.swift; sourceTree = "<group>"; };
 		C0DB990C283FE3EA000ABDA3 /* AdoCao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdoCao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DB990F283FE3EA000ABDA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0DB9911283FE3EA000ABDA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				C02B5040284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift */,
 				C02B5042284BB87400888A1C /* ListarAmigosService.swift */,
 				C02B5041284BB87400888A1C /* ListarAmigosViewModel.swift */,
+				C0975F9B28511D0900029B19 /* DetalheAmigoViewController.swift */,
+				C0975F9D2851302800029B19 /* DetalheAmigoViewModel.swift */,
 				6D662949284D7F9500D4195F /* Database.swift */,
 				EDD14A4F285150AA0014FDCA /* CadastrarAmigoViewController.swift */,
 				EDD14A51285155130014FDCA /* DetalhesRacaViewController.swift */,
@@ -234,6 +240,7 @@
 				C02B5044284BB87400888A1C /* ListarAmigosCustomCell.swift in Sources */,
 				6D66298E285015AD00D4195F /* AndreDetalhesRacaViewModel.swift in Sources */,
 				C0DB9910283FE3EA000ABDA3 /* AppDelegate.swift in Sources */,
+				C0975F9C28511D0900029B19 /* DetalheAmigoViewController.swift in Sources */,
 				6D66294A284D7F9500D4195F /* Database.swift in Sources */,
 				C02B5045284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift in Sources */,
 				C02B5049284BB87400888A1C /* ListarAmigosClient.swift in Sources */,
@@ -243,6 +250,7 @@
 				6D662945284D73D600D4195F /* Raca.swift in Sources */,
 				6D66293F284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift in Sources */,
 				EDD14A50285150AA0014FDCA /* CadastrarAmigoViewController.swift in Sources */,
+				C0975F9E2851302800029B19 /* DetalheAmigoViewModel.swift in Sources */,
 				C02B5046284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift in Sources */,
 				6D662941284D719600D4195F /* Usuario.swift in Sources */,
 				ED28F059284EDB940012E298 /* CadastrarAmigoViewController.swift in Sources */,
