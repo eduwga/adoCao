@@ -354,7 +354,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46B-Ts-XD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4920" y="1305"/>
+            <point key="canvasLocation" x="5057" y="1712"/>
+        </scene>
         <!--Editar Usuario View Controller-->
         <scene sceneID="dbM-Qg-acH">
             <objects>
@@ -541,7 +542,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ce-88-wIY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5182.608695652174" y="1315.8482142857142"/>
+            <point key="canvasLocation" x="5057" y="1063"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="l9i-Z8-9r2">
@@ -588,7 +589,7 @@
                     <tabBarItem key="tabBarItem" title="Perfil" id="Hsp-td-g5b"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="juf-hF-Zbx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.4214588386770669" green="0.15173096665705099" blue="0.60650449810606055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
