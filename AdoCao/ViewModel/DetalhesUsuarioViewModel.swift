@@ -15,18 +15,28 @@ protocol DetalhesUsuarioViewModelDelegate {
 // MARK: - Definição da Classe
 class DetalhesUsuarioViewModel {
     
-    
-    
     var delegate: DetalhesUsuarioViewModelDelegate?
     
-    let usuario: Usuario
+    private let usuario: Usuario
     
     init(usuario: Usuario) {
         self.usuario = usuario
         delegate?.configuraPropriedadesView(usuario: usuario)
     }
     
-    func teste() {
+    func forcarInicioTela() {
         delegate?.configuraPropriedadesView(usuario: usuario)
+    }
+    
+    func obterVMTelaEditarUsuario(_ sender: Any?) -> EditarUsuarioViewModel? {
+        if let usr = sender as? Usuario {
+            let vmEditarUsuario = EditarUsuarioViewModel(usuario: usr)
+            return vmEditarUsuario
+        }
+        return nil
+    }
+    
+    func getUsuario() -> Usuario {
+        return usuario
     }
 }

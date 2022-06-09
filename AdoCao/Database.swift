@@ -42,8 +42,7 @@ public class DataBase {
                 cep: "01001-000",
                 cidade: "São Paulo",
                 uf: "SP",
-                contato: "(11) 91234-1234",
-                foto: "Usuario"
+                contato: "(11) 91234-1234"
             )
         )
         usuarios.append(

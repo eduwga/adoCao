@@ -23,7 +23,7 @@ class DetalhesUsuarioViewController: UIViewController {
         super.viewDidLoad()
         viewModel = DetalhesUsuarioViewModel(usuario: DataBase.shared.usuarios[1])
         viewModel?.delegate = self
-        viewModel?.teste()
+        viewModel?.forcarInicioTela()
     }
     
     @IBAction func listarAmigosParaAdocaoButtonAction(_ sender: Any) {
@@ -34,13 +34,33 @@ class DetalhesUsuarioViewController: UIViewController {
         
     }
     
-
+    @IBAction func editarUsuarioButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "editarUsuarioSegue", sender: viewModel?.getUsuario()) ///Sim, precisa refatorar!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let telaEditarUsuario = segue.destination as? EditarUsuarioViewController else { return }
+        if let vm = viewModel?.obterVMTelaEditarUsuario(sender) {
+            telaEditarUsuario.viewModel = vm
+            telaEditarUsuario.recarregaTela()
+        }
+    }
     
     private func configuraFotoDoUsuario(nomeFoto: String?) {
-        fotoImageView.image = UIImage(named: nomeFoto ?? "")
+        
+        fotoImageView.image = UIImage(named: validarFoto(nomeFoto: nomeFoto))
         fotoImageView.layer.cornerRadius = 70
         fotoImageView.layer.borderWidth = 1
         fotoImageView.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    private func validarFoto(nomeFoto: String?) -> String {
+        if let nomeFoto = nomeFoto {
+            if nomeFoto != ""{
+                return nomeFoto
+            }
+        }
+        return "customPerson"
     }
 }
 extension DetalhesUsuarioViewController: DetalhesUsuarioViewModelDelegate {
