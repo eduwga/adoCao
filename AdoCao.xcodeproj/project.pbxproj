@@ -19,8 +19,7 @@
 		6D66294A284D7F9500D4195F /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D662949284D7F9500D4195F /* Database.swift */; };
 		6D66298A28500C8C00D4195F /* RacaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66298928500C8A00D4195F /* RacaViewController.swift */; };
 		6D66298C28500FE900D4195F /* RacasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66298B28500FE900D4195F /* RacasViewModel.swift */; };
-		6D66298E285015AD00D4195F /* AndreDetalhesRacaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66298D285015AD00D4195F /* AndreDetalhesRacaViewModel.swift */; };
-		6D6629902850177C00D4195F /* AndreDetalhesRacaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66298F2850177C00D4195F /* AndreDetalhesRacaViewController.swift */; };
+		6D66298E285015AD00D4195F /* DetalhesRacaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66298D285015AD00D4195F /* DetalhesRacaViewModel.swift */; };
 		6D6629922851074600D4195F /* EditarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6629912851074600D4195F /* EditarUsuarioViewController.swift */; };
 		6D6629942851082500D4195F /* EditarUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6629932851082500D4195F /* EditarUsuarioViewModel.swift */; };
 		C02B5044284BB87400888A1C /* ListarAmigosCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B503E284BB87400888A1C /* ListarAmigosCustomCell.swift */; };
@@ -54,8 +53,7 @@
 		6D662949284D7F9500D4195F /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		6D66298928500C8A00D4195F /* RacaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaViewController.swift; sourceTree = "<group>"; };
 		6D66298B28500FE900D4195F /* RacasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacasViewModel.swift; sourceTree = "<group>"; };
-		6D66298D285015AD00D4195F /* AndreDetalhesRacaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndreDetalhesRacaViewModel.swift; sourceTree = "<group>"; };
-		6D66298F2850177C00D4195F /* AndreDetalhesRacaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndreDetalhesRacaViewController.swift; sourceTree = "<group>"; };
+		6D66298D285015AD00D4195F /* DetalhesRacaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesRacaViewModel.swift; sourceTree = "<group>"; };
 		6D6629912851074600D4195F /* EditarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarUsuarioViewController.swift; sourceTree = "<group>"; };
 		6D6629932851082500D4195F /* EditarUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarUsuarioViewModel.swift; sourceTree = "<group>"; };
 		C02B503E284BB87400888A1C /* ListarAmigosCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosCustomCell.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				6D66298928500C8A00D4195F /* RacaViewController.swift */,
 				26F148362852A46000128396 /* EditarAmigoViewController.swift */,
 				2601156A285280CA00BB2C48 /* SuporteViewController.swift */,
-				6D66298F2850177C00D4195F /* AndreDetalhesRacaViewController.swift */,
 				6D6629912851074600D4195F /* EditarUsuarioViewController.swift */,
 			);
 			path = View;
@@ -117,7 +114,7 @@
 			children = (
 				6D66293E284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift */,
 				6D66298B28500FE900D4195F /* RacasViewModel.swift */,
-				6D66298D285015AD00D4195F /* AndreDetalhesRacaViewModel.swift */,
+				6D66298D285015AD00D4195F /* DetalhesRacaViewModel.swift */,
 				6D6629932851082500D4195F /* EditarUsuarioViewModel.swift */,
 			);
 			path = ViewModel;
@@ -243,7 +240,7 @@
 				C0DB9914283FE3EA000ABDA3 /* ViewController.swift in Sources */,
 				49D71288284E828700C42519 /* RegisterViewController.swift in Sources */,
 				C02B5044284BB87400888A1C /* ListarAmigosCustomCell.swift in Sources */,
-				6D66298E285015AD00D4195F /* AndreDetalhesRacaViewModel.swift in Sources */,
+				6D66298E285015AD00D4195F /* DetalhesRacaViewModel.swift in Sources */,
 				C0DB9910283FE3EA000ABDA3 /* AppDelegate.swift in Sources */,
 				C0975F9C28511D0900029B19 /* DetalheAmigoViewController.swift in Sources */,
 				6D66294A284D7F9500D4195F /* Database.swift in Sources */,
@@ -262,7 +259,6 @@
 				6D6629942851082500D4195F /* EditarUsuarioViewModel.swift in Sources */,
 				6D66293D284D6B8100D4195F /* DetalhesUsuarioViewController.swift in Sources */,
 				EDD14A52285155130014FDCA /* DetalhesRacaViewController.swift in Sources */,
-				6D6629902850177C00D4195F /* AndreDetalhesRacaViewController.swift in Sources */,
 				26F148372852A46000128396 /* EditarAmigoViewController.swift in Sources */,
 				C02B5047284BB87400888A1C /* ListarAmigosViewModel.swift in Sources */,
 				49D71286284E827200C42519 /* LoginViewController.swift in Sources */,

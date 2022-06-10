@@ -42,12 +42,13 @@ class RacasViewModel {
         delegate?.listaDeRacasFoiModificada()
     }
     
-    func selecionouCelula(posicao: Any?) -> AndreDetalhesRacaViewModel? {
+    func selecionouCelula(posicao: Any?) -> DetalhesRacaViewModel? {
         guard let posicao = posicao as? Int else { return nil }
         let racaSelecionada = racasPesquisa[posicao]
-        let detalhesRacaVM = AndreDetalhesRacaViewModel(raca: racaSelecionada)
+        let detalhesRacaVM = DetalhesRacaViewModel(raca: racaSelecionada)
         return detalhesRacaVM
     }
+    
     private func iniciaListaDeRacas() {
         racasPesquisa = dataBase.racas
     }

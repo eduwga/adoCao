@@ -23,8 +23,9 @@ class RacaViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let telaDetalhes = segue.destination as? AndreDetalhesRacaViewController else { return }
-        telaDetalhes.viewModel = viewModel.selecionouCelula(posicao: sender)
+        guard let telaDetalhes = segue.destination as? DetalhesRacaViewController else { return }
+        var detalhesRacaViewModel = viewModel.selecionouCelula(posicao: sender)
+        telaDetalhes.configInicial(vm: detalhesRacaViewModel)
     }
 
 }
@@ -44,7 +45,7 @@ extension RacaViewController: UITableViewDataSource {
 
 extension RacaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "", sender: indexPath.row)
+        performSegue(withIdentifier: "detalhesRacaSegue", sender: indexPath.row)
     }
 }
 

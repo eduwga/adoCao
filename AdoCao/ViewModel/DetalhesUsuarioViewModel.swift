@@ -16,7 +16,7 @@ protocol DetalhesUsuarioViewModelDelegate {
 class DetalhesUsuarioViewModel {
     
     var delegate: DetalhesUsuarioViewModelDelegate?
-    
+    private let fotoPadrao = "customPerson"
     private let usuario: Usuario
     
     init(usuario: Usuario) {
@@ -38,5 +38,14 @@ class DetalhesUsuarioViewModel {
     
     func getUsuario() -> Usuario {
         return usuario
+    }
+    
+    func validarFoto(nomeFoto: String?) -> String {
+        if let nomeFoto = nomeFoto {
+            if nomeFoto != ""{
+                return nomeFoto
+            }
+        }
+        return fotoPadrao
     }
 }

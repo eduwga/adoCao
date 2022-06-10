@@ -37,12 +37,24 @@ public class DataBase {
         )
         usuarios.append(
             Usuario(
+                nome: "Juliana Ferreira",
+                email: "juliana@projetoadocao.com.br",
+                cep: "01001-000",
+                cidade: "São Paulo",
+                uf: "SP",
+                contato: "(11) 91234-1234",
+                foto: "usrJuliana"
+            )
+        )
+        usuarios.append(
+            Usuario(
                 nome: "André Nepomuceno",
                 email: "andre@projetoadocao.com.br",
                 cep: "01001-000",
                 cidade: "São Paulo",
                 uf: "SP",
-                contato: "(11) 91234-1234"
+                contato: "(11) 91234-1234",
+                foto: "usrAndre"
             )
         )
         usuarios.append(
@@ -90,7 +102,7 @@ public class DataBase {
             )
         )
     }
-    
+
     private func preencheAmigos() {
         amigos.append(
             Amigo(
@@ -99,7 +111,9 @@ public class DataBase {
                 raca: "Daschund",
                 tutor: .init(nome: "Teste1", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .medio,
-                foto: "Bilu"
+                foto: "Bilu",
+                localizacao: "Sumaré - SP",
+                descricao: "Vira-lata da ONG Adote um Cão"
             )
         )
         amigos.append(
@@ -109,7 +123,9 @@ public class DataBase {
                 raca: "Sharpei",
                 tutor: .init(nome: "Teste2", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .medio,
-                foto: "Torresmo"
+                foto: "Torresmo",
+                localizacao: "Goiania - GO",
+                descricao: "Filhote de Sharpei, lindo fofo e teimoso"
             )
         )
         amigos.append(
@@ -119,17 +135,21 @@ public class DataBase {
                 raca: "Lhasa Apso",
                 tutor: .init(nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .grande,
-                foto: ""
+                foto: "",
+                localizacao: "Piracicaba - SP",
+                descricao: "Baixinha, esquentada mais de belos pelos"
             )
         )
         amigos.append(
             Amigo(
-                nome: "Bolinha",
+                nome: "Jimmy",
                 idade: 1,
                 raca: "Bull Terrier",
                 tutor: .init(nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .grande,
-                foto: ""
+                foto: "jimmy",
+                localizacao: "São Paulo",
+                descricao: "Web Celebridade"
             )
         )
         amigos.append(
@@ -139,7 +159,9 @@ public class DataBase {
                 raca: "Fox Paulistinha",
                 tutor: .init(nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .medio,
-                foto: "Sapecao"
+                foto: "Sapecao",
+                localizacao: "São José dos Campos",
+                descricao: "Fox paulistinha, brincalhão e ligado no 220v"
             )
         )
     }

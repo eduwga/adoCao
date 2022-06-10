@@ -8,12 +8,35 @@
 import Foundation
 
 class Raca {
-    internal init(nome: String, foto: String) {
+    
+    init(nome: String, outrosNomes: String, foto: String, caracteristicas: String, naturalidade: String, peso: String, altura: String, estimativaDeVida: String) {
         self.nome = nome
+        self.outrosNomes = outrosNomes
         self.foto = foto
+        self.caracteristicas = caracteristicas
+        self.naturalidade = naturalidade
+        self.peso = peso
+        self.altura = altura
+        self.estimativaDeVida = estimativaDeVida
     }
     
-    var nome: String
-    var foto: String
-    ///Mais caracteristicas
+    init(nome: String, foto: String) {
+        self.nome = nome
+        self.foto = foto
+        self.caracteristicas = ""
+        self.naturalidade = ""
+        self.peso = ""
+        self.altura = ""
+        self.estimativaDeVida = ""
+        self.outrosNomes = ""
+    }
+
+    let nome: String
+    let outrosNomes: String
+    let foto: String
+    let caracteristicas: String
+    let naturalidade: String
+    let peso: String
+    let altura: String
+    let estimativaDeVida: String
 }

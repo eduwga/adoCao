@@ -9,6 +9,7 @@ import UIKit
 
 class EditarUsuarioViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var contatoTextField: UITextField!
     @IBOutlet weak var ufTextField: UITextField!
@@ -18,15 +19,18 @@ class EditarUsuarioViewController: UIViewController {
     @IBOutlet weak var confirmarSenhaTextField: UITextField!
     
     var viewModel: EditarUsuarioViewModel?
+    let fotoPadrao: String = "customPerson"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fotoImageView.image = UIImage(named: "customPerson")
-        viewModel?.delegate = self
+        iniciaActivityIndicator()
+        configuraFotoDoUsuario(nomeFoto: fotoPadrao)
     }
     
-    func recarregaTela() {
-        viewModel?.forcarInicioTela()
+    func configuraTela(vm: EditarUsuarioViewModel) {
+        self.viewModel = vm
+        self.viewModel?.delegate = self
+        self.viewModel?.configurarTela()
     }
     
     @IBAction func alterarUsuarioButtonAction(_ sender: Any) {
@@ -40,8 +44,31 @@ class EditarUsuarioViewController: UIViewController {
     @IBAction func buscarNaGaleriaButtonAction(_ sender: Any) {
         abrirImagePickerViewController(modo: .photoLibrary)
     }
+    
+    private func iniciaActivityIndicator() {
+        activityIndicatorView.isHidden = false
+        activityIndicatorView.color = UIColor.purple
+        activityIndicatorView.style = .large
+        activityIndicatorView.startAnimating()
+    }
+    
+    private func finalizaActivityIndicator() {
+        activityIndicatorView.isHidden = true
+        activityIndicatorView.stopAnimating()
+    }
+    
+    private func configuraFotoDoUsuario(nomeFoto: String?) {
+        if let nomeFoto = viewModel?.validarFoto(nomeFoto: nomeFoto) {
+            fotoImageView.image = UIImage(named: nomeFoto)
+        }
+        let valorRadius = fotoImageView.frame.size.height / 2.0
+        fotoImageView.layer.cornerRadius = valorRadius
+        fotoImageView.layer.borderWidth = 1
+        fotoImageView.layer.borderColor = UIColor.purple.cgColor
+    }
 
     private func abrirImagePickerViewController(modo: UIImagePickerController.SourceType) {
+        iniciaActivityIndicator()
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = modo
         imagePicker.delegate = self
@@ -49,10 +76,15 @@ class EditarUsuarioViewController: UIViewController {
     }
     
     private func exibirAlertConfirmacao() {
+        iniciaActivityIndicator()
         let alerta = UIAlertController(title: "Alterando Usuario",message: "Deseja realmente alterar os dados de usuário?",preferredStyle: .alert)
         
-        let actionConfirma = UIAlertAction(title: "Sim", style: .default)
-        let actionCancela = UIAlertAction(title: "Cancelar", style: .destructive)
+        let actionConfirma = UIAlertAction(title: "Sim", style: .default) { alert in
+            self.finalizaActivityIndicator()
+        }
+        let actionCancela = UIAlertAction(title: "Cancelar", style: .destructive) { alert in
+            self.finalizaActivityIndicator()
+        }
         
         alerta.addAction(actionConfirma)
         alerta.addAction(actionCancela)
@@ -67,14 +99,16 @@ extension EditarUsuarioViewController: EditarUsuarioViewModelDelegate {
         self.cidadetextField.text = usuario.getCidade()
         self.ufTextField.text = usuario.getUF()
         self.contatoTextField.text = usuario.getContato()
-        
-        self.fotoImageView.image = UIImage(named: usuario.getCaminhoDaFoto())
+
+        configuraFotoDoUsuario(nomeFoto: usuario.getCaminhoDaFoto())
+        finalizaActivityIndicator()
     }
 }
 
 extension EditarUsuarioViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        finalizaActivityIndicator()
         dismiss(animated: true)
     }
     
@@ -82,6 +116,7 @@ extension EditarUsuarioViewController:  UIImagePickerControllerDelegate, UINavig
         if let image = info[.originalImage] as? UIImage {
             fotoImageView.image = image
         }
+        finalizaActivityIndicator()
         dismiss(animated: true)
     }
 }

@@ -47,23 +47,23 @@ class Usuario {
     
     // MARK: - Getters de Usuario
         func getNome() -> String {
-            return "Nome: \(self.nome)"
+            return self.nome
         }
         
         func getEmail() -> String {
-            return "E-mail: \(self.email)"
+            return self.email
         }
         
         func getCidade() -> String {
-            return "Cidade: \(self.cidade)"
+            return self.cidade
         }
         
         func getUF() -> String {
-            return "UF: \(self.uf)"
+            return self.uf
         }
         
         func getContato() -> String {
-            return "Contato: \(self.contato)"
+            return self.contato
         }
         
         func getCaminhoDaFoto() -> String {

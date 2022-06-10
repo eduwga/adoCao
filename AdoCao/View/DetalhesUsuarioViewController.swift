@@ -14,53 +14,52 @@ class DetalhesUsuarioViewController: UIViewController {
     @IBOutlet weak var cidadeLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var nomeLabel: UILabel!
-    @IBOutlet weak var logoBackgroundImageView: UIImageView!
     @IBOutlet weak var fotoImageView: UIImageView!
     
     var viewModel: DetalhesUsuarioViewModel?
     
+    @IBAction func editarButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "editarUsuarioSegue", sender: viewModel?.getUsuario())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = DetalhesUsuarioViewModel(usuario: DataBase.shared.usuarios[1])
+        viewModel = DetalhesUsuarioViewModel(usuario: DataBase.shared.usuarios[2])
         viewModel?.delegate = self
         viewModel?.forcarInicioTela()
     }
     
-    @IBAction func listarAmigosParaAdocaoButtonAction(_ sender: Any) {
-        
-    }
-    
-    @IBAction func cadastrarAmigoParaAdocaoButtonAction(_ sender: Any) {
-        
-    }
-    
-    @IBAction func editarUsuarioButtonAction(_ sender: Any) {
-        performSegue(withIdentifier: "editarUsuarioSegue", sender: viewModel?.getUsuario()) ///Sim, precisa refatorar!
+    override func viewWillAppear(_ animated: Bool) {
+        setGradientBackground()
+        super.viewWillAppear(animated)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let telaEditarUsuario = segue.destination as? EditarUsuarioViewController else { return }
         if let vm = viewModel?.obterVMTelaEditarUsuario(sender) {
             telaEditarUsuario.viewModel = vm
-            telaEditarUsuario.recarregaTela()
+            telaEditarUsuario.configuraTela(vm: vm)
         }
+    }
+    
+    private func setGradientBackground() {
+        let colorTop =  UIColor(red: 250.0/255.0, green: 214.0/255.0, blue: 255/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 0.0).cgColor
+                    
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 0.35]
+        gradientLayer.frame = self.view.bounds
+                
+        self.view.layer.insertSublayer(gradientLayer, at:0)
     }
     
     private func configuraFotoDoUsuario(nomeFoto: String?) {
-        
-        fotoImageView.image = UIImage(named: validarFoto(nomeFoto: nomeFoto))
-        fotoImageView.layer.cornerRadius = 70
+        fotoImageView.image = UIImage(named: viewModel!.validarFoto(nomeFoto: nomeFoto))
+        let valorRadius = fotoImageView.frame.size.height / 2.0
+        fotoImageView.layer.cornerRadius = valorRadius
         fotoImageView.layer.borderWidth = 1
-        fotoImageView.layer.borderColor = UIColor.black.cgColor
-    }
-    
-    private func validarFoto(nomeFoto: String?) -> String {
-        if let nomeFoto = nomeFoto {
-            if nomeFoto != ""{
-                return nomeFoto
-            }
-        }
-        return "customPerson"
+        fotoImageView.layer.borderColor = UIColor.purple.cgColor
     }
 }
 extension DetalhesUsuarioViewController: DetalhesUsuarioViewModelDelegate {
