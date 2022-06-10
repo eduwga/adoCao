@@ -39,6 +39,16 @@ class DetalheAmigoViewController: UIViewController {
         
         
     }
+    
+    private func configuraFotoDoUsuario(nomeFoto: String?) {
+        if let nomeFoto = viewModel?.validarFoto(nomeFoto: nomeFoto) {
+            fotoCaoImageView.image = UIImage(named: nomeFoto)
+        }
+        let valorRadius = fotoCaoImageView.frame.size.height / 2.0
+        fotoCaoImageView.layer.cornerRadius = valorRadius
+        fotoCaoImageView.layer.borderWidth = 1
+        fotoCaoImageView.layer.borderColor = UIColor.purple.cgColor
+    }
 }
 
 extension DetalheAmigoViewController: DetalheAmigoViewModelDelegate {
@@ -46,7 +56,7 @@ extension DetalheAmigoViewController: DetalheAmigoViewModelDelegate {
         nomeCaoLabel.text = tela.obterNome()
         localizaCaoLabel.text = tela.obterLocalizaCao()
         descriCaoLabel.text = tela.obterDescriCao()
-        fotoCaoImageView.image = tela.foto
+        configuraFotoDoUsuario(nomeFoto: tela.foto)
         
     }
     

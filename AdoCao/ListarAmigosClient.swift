@@ -13,13 +13,13 @@ class ListarAmigosClient {
     var nome: String
     var descricao: String
     var localizacao: String
-    var foto: UIImage?
+    var foto: String
     
     init(
         nome: String,
          descricao: String,
          localizacao: String,
-         foto: UIImage?
+         foto: String
     )
     {
         self.nome = nome
@@ -28,13 +28,13 @@ class ListarAmigosClient {
         self.foto = foto
     }
     func obterNome() -> String {
-        return "Nome: \(nome)"
+        return nome
     }
     func obterLocalizaCao() -> String {
-        return "Localização: \(localizacao)"
+        return localizacao
     }
     func obterDescriCao() -> String {
-        return "Descrição: \(descricao)"
+        return descricao
     }
     
 }

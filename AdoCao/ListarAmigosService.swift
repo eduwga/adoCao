@@ -23,19 +23,19 @@ class ListarAmigosService {
                 nome: "Sapecao",
                 descricao: "Fox paulistinha, brincalhão e ligado no 220v",
                 localizacao: "São José dos Campos",
-                foto: UIImage(named: "Sapecao") ?? UIImage()))
+                foto: "Sapecao"))
          listaDeCaes.append(ListarAmigosClient(
                 nome: "Torresmo",
                 descricao: "Filhote de Sharpei, lindo fofo e teimoso",
                 localizacao: "Goiania - GO",
-                foto: UIImage(named: "Torresmo") ?? UIImage()))
+                foto: "Torresmo"))
          listaDeCaes.append(ListarAmigosClient(
                 nome: "Bilu",
                 descricao: "Vira-lata da ONG Adote um Cão",
                 localizacao: "Sumaré - SP",
-                foto: UIImage(named: "Bilu") ?? UIImage())
+                foto: "Bilu"))
 
-         )
+         
          return listaDeCaes
      }
     

@@ -28,7 +28,7 @@ class ListarAmigosCustomCell: UITableViewCell {
     
     public func configura(cao: ListarAmigosClient) {
         self.cao = cao
-        imagemCaoImageView.image = cao.foto
+        imagemCaoImageView.image = UIImage(named: cao.foto)
         nomeCaoLabel.text = cao.nome
         descriCaoLabel.text = cao.descricao
         localizaCaoLabel.text = cao.localizacao

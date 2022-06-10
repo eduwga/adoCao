@@ -19,6 +19,7 @@ class DetalheAmigoViewModel {
     
     var delegate: DetalheAmigoViewModelDelegate?
     
+    let fotoPadrao = "iconDog"
     
     var amigo: ListarAmigosClient
     
@@ -32,4 +33,12 @@ class DetalheAmigoViewModel {
 
     }
     
+    func validarFoto(nomeFoto: String?) -> String {
+        if let nomeFoto = nomeFoto {
+            if nomeFoto != ""{
+                return nomeFoto
+            }
+        }
+        return fotoPadrao
+    }
 }
