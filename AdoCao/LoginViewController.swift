@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickImage(tapGestureRecognizer:)))
         imagemIcone.isUserInteractionEnabled = true
         imagemIcone.addGestureRecognizer(tapGestureRecognizer)
+        
+        emailTextField.becomeFirstResponder()
     }
     
     @objc func clickImage(tapGestureRecognizer: UITapGestureRecognizer) {
