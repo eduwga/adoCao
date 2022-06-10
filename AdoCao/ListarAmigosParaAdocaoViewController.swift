@@ -17,6 +17,7 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
     @IBOutlet weak var listarAmigosTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         listarAmigosTableView.dataSource = self
         listarAmigosTableView.delegate = self
         viewModel.delegate = self

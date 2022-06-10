@@ -52,6 +52,8 @@ class LoginViewController: UIViewController {
 
     @IBAction func entrarButton(_ sender: Any) {
         
+    
+        
         let emailDoUsuario = emailTextField.text
         let senhaDoUsuario = senhaTextField.text
         
@@ -67,6 +69,24 @@ class LoginViewController: UIViewController {
             return
         }
         
+        
+        if let navigationController = navigationController {
+
+            var viewControllers = navigationController.viewControllers
+
+            for (index, viewController) in viewControllers.enumerated() where viewController is LoginViewController {
+                viewControllers.remove(at: index)
+            }
+
+            let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let initialViewController = storyBoard.instantiateViewController(withIdentifier: "amigoParaAdocao")
+
+            viewControllers.append(initialViewController)
+
+            navigationController.setViewControllers(viewControllers, animated: true)
+        }
+        
+        
         if armazenaEmailUsuario == emailDoUsuario {
             if armazenaSenhaUsuario == senhaDoUsuario {
                 
@@ -79,6 +99,8 @@ class LoginViewController: UIViewController {
                     
                     alertaConfirmacaoLogin.addAction(botaoLogar)
                     self.present(alertaConfirmacaoLogin, animated: true, completion: nil)
+                
+                
                 
             } else {
                 

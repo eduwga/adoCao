@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2601156B285280CA00BB2C48 /* SuporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2601156A285280CA00BB2C48 /* SuporteViewController.swift */; };
+		26F148372852A46000128396 /* EditarAmigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F148362852A46000128396 /* EditarAmigoViewController.swift */; };
 		49D71286284E827200C42519 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71285284E827200C42519 /* LoginViewController.swift */; };
 		49D71288284E828700C42519 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71287284E828700C42519 /* RegisterViewController.swift */; };
 		6D66293D284D6B8100D4195F /* DetalhesUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2601156A285280CA00BB2C48 /* SuporteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuporteViewController.swift; sourceTree = "<group>"; };
+		26F148362852A46000128396 /* EditarAmigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAmigoViewController.swift; sourceTree = "<group>"; };
 		49D71285284E827200C42519 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		49D71287284E828700C42519 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesUsuarioViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			children = (
 				6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */,
 				6D66298928500C8A00D4195F /* RacaViewController.swift */,
+				26F148362852A46000128396 /* EditarAmigoViewController.swift */,
+				2601156A285280CA00BB2C48 /* SuporteViewController.swift */,
 				6D66298F2850177C00D4195F /* AndreDetalhesRacaViewController.swift */,
 				6D6629912851074600D4195F /* EditarUsuarioViewController.swift */,
 			);
@@ -235,7 +241,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0DB9914283FE3EA000ABDA3 /* ViewController.swift in Sources */,
-				EDD14A4E2850FEE00014FDCA /* DetalhesRacaViewController.swift in Sources */,
 				49D71288284E828700C42519 /* RegisterViewController.swift in Sources */,
 				C02B5044284BB87400888A1C /* ListarAmigosCustomCell.swift in Sources */,
 				6D66298E285015AD00D4195F /* AndreDetalhesRacaViewModel.swift in Sources */,
@@ -250,14 +255,15 @@
 				6D662945284D73D600D4195F /* Raca.swift in Sources */,
 				6D66293F284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift in Sources */,
 				EDD14A50285150AA0014FDCA /* CadastrarAmigoViewController.swift in Sources */,
+				2601156B285280CA00BB2C48 /* SuporteViewController.swift in Sources */,
 				C0975F9E2851302800029B19 /* DetalheAmigoViewModel.swift in Sources */,
 				C02B5046284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift in Sources */,
 				6D662941284D719600D4195F /* Usuario.swift in Sources */,
-				ED28F059284EDB940012E298 /* CadastrarAmigoViewController.swift in Sources */,
 				6D6629942851082500D4195F /* EditarUsuarioViewModel.swift in Sources */,
 				6D66293D284D6B8100D4195F /* DetalhesUsuarioViewController.swift in Sources */,
 				EDD14A52285155130014FDCA /* DetalhesRacaViewController.swift in Sources */,
 				6D6629902850177C00D4195F /* AndreDetalhesRacaViewController.swift in Sources */,
+				26F148372852A46000128396 /* EditarAmigoViewController.swift in Sources */,
 				C02B5047284BB87400888A1C /* ListarAmigosViewModel.swift in Sources */,
 				49D71286284E827200C42519 /* LoginViewController.swift in Sources */,
 				6D66298A28500C8C00D4195F /* RacaViewController.swift in Sources */,
