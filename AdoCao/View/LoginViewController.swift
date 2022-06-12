@@ -11,6 +11,7 @@ class LoginViewController: UIViewController {
     
     var iconeClick = false
     let imagemIcone = UIImageView()
+    let service = Service()
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
@@ -48,30 +49,37 @@ class LoginViewController: UIViewController {
             iconeClick = true
             clickImage.image = UIImage(named: "eyePassword")
             senhaTextField.isSecureTextEntry = true
+            senhaTextField.becomeFirstResponder()
         }
     }
 
 
     @IBAction func entrarButton(_ sender: Any) {
-        
-    
-        
-        let emailDoUsuario = emailTextField.text
-        let senhaDoUsuario = senhaTextField.text
+        guard let emailDoUsuario = emailTextField.text else {
+            alertaLoginInvalido(mensagem: "O campo e-mail é obrigatório!")
+            return
+        }
+        guard let senhaDoUsuario = senhaTextField.text else {
+            alertaLoginInvalido(mensagem: "O campo senha é obrigatório!")
+            return
+        }
+
+        if emailDoUsuario == "" || senhaDoUsuario == "" {
+            // alerta campos obrigatorios
+            alertaLogin(mensagemNaTela: "Todos os campos são obrigatórios!")
+            return
+        }
+
+        if !service.login(email: emailDoUsuario, password: senhaDoUsuario) {
+            alertaLoginInvalido(mensagem: "As informações de login são inválidas")
+            return
+        }
+        UserDefaults.standard.set(emailDoUsuario, forKey: "emailDoUsuario")
+        UserDefaults.standard.set(senhaDoUsuario, forKey: "senhaDoUsuario")
         
         let armazenaEmailUsuario = UserDefaults.standard.string(forKey: "emailDoUsuario")
         let armazenaSenhaUsuario = UserDefaults.standard.string(forKey: "senhaDoUsuario")
-        
-        if emailDoUsuario == "" ||
-            senhaDoUsuario == "" {
-            
-            // alerta campos obrigatorios
-            alertaLogin(mensagemNaTela: "Todos os campos são obrigatórios!")
-            
-            return
-        }
-        
-        
+
         if let navigationController = navigationController {
 
             var viewControllers = navigationController.viewControllers
@@ -89,29 +97,24 @@ class LoginViewController: UIViewController {
         }
         
         
-        if armazenaEmailUsuario == emailDoUsuario {
-            if armazenaSenhaUsuario == senhaDoUsuario {
-                
-                // alerta de confirmacao de login
-                let alertaConfirmacaoLogin = UIAlertController(title: "Muito bem!", message: "Seu Login foi realizado com sucesso. Seja bem vindo(a)!", preferredStyle: UIAlertController.Style.alert)
-                
-                let botaoLogar = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { action in
-                    self.dismiss(animated: true, completion: nil)
-                }
-                    
-                    alertaConfirmacaoLogin.addAction(botaoLogar)
-                    self.present(alertaConfirmacaoLogin, animated: true, completion: nil)
-                
-                
-                
-            } else {
-                
-                // usuario ou senha invalidos
-                alertaLogin(mensagemNaTela: "Usuario ou senha invalidos.")
+        if armazenaEmailUsuario == emailDoUsuario && armazenaSenhaUsuario == senhaDoUsuario {
             
+            // alerta de confirmacao de login
+            let alertaConfirmacaoLogin = UIAlertController(title: "Muito bem!", message: "Seu Login foi realizado com sucesso. Seja bem vindo(a)!", preferredStyle: UIAlertController.Style.alert)
+            
+            let botaoLogar = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { action in
+                self.dismiss(animated: true, completion: nil)
             }
+            
+            alertaConfirmacaoLogin.addAction(botaoLogar)
+            self.present(alertaConfirmacaoLogin, animated: true, completion: nil)
+
+        } else {
+            // usuario ou senha invalidos
+            alertaLogin(mensagemNaTela: "Usuario ou senha invalidos.")
         }
     }
+
 
 
     func alertaLogin(mensagemNaTela: String) {
@@ -122,5 +125,10 @@ class LoginViewController: UIViewController {
         alertaErroLogin.addAction(botaoLogin)
         self.present(alertaErroLogin, animated: true, completion: nil)
         
+    }
+    
+    private func alertaLoginInvalido(mensagem: String) {
+        alertaLogin(mensagemNaTela: mensagem)
+        return
     }
 }

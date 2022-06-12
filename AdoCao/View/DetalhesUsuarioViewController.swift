@@ -24,7 +24,8 @@ class DetalhesUsuarioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = DetalhesUsuarioViewModel(usuario: DataBase.shared.usuarios[2])
+        let emailUsuario = UserDefaults.standard.string(forKey: "emailDoUsuario")
+        viewModel = DetalhesUsuarioViewModel(emailUsuario: emailUsuario!)
         viewModel?.delegate = self
         viewModel?.forcarInicioTela()
     }

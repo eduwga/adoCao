@@ -9,28 +9,23 @@ import Foundation
 
 
 protocol DetalheAmigoViewModelDelegate {
-    
-    func configura(tela: ListarAmigosClient)
-    
+    func configura(amigo: Amigo)
 }
 
 
 class DetalheAmigoViewModel {
     
-    var delegate: DetalheAmigoViewModelDelegate?
-    
     let fotoPadrao = "iconDog"
+    var delegate: DetalheAmigoViewModelDelegate?
+    var amigo: Amigo
     
-    var amigo: ListarAmigosClient
-    
-    init(amigo: ListarAmigosClient) {
+    init(amigo: Amigo) {
         self.amigo = amigo
-        delegate?.configura(tela: amigo)
+        delegate?.configura(amigo: amigo)
     }
     
     func telaInicial() {
-        delegate?.configura(tela: amigo)
-
+        delegate?.configura(amigo: amigo)
     }
     
     func validarFoto(nomeFoto: String?) -> String {

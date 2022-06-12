@@ -10,6 +10,7 @@ import Foundation
 class Raca {
     
     init(nome: String, outrosNomes: String, foto: String, caracteristicas: String, naturalidade: String, peso: String, altura: String, estimativaDeVida: String) {
+        self.id = UUID.init()
         self.nome = nome
         self.outrosNomes = outrosNomes
         self.foto = foto
@@ -21,6 +22,7 @@ class Raca {
     }
     
     init(nome: String, foto: String) {
+        self.id = UUID.init()
         self.nome = nome
         self.foto = foto
         self.caracteristicas = ""
@@ -30,7 +32,8 @@ class Raca {
         self.estimativaDeVida = ""
         self.outrosNomes = ""
     }
-
+    
+    let id: UUID
     let nome: String
     let outrosNomes: String
     let foto: String

@@ -18,89 +18,133 @@ public class DataBase {
     }()
     
     private init() {
-        preencheUsuarios()
         preencheAmigos()
+        preencheUsuarios()
         preencheRacas()
     }
     
     private func preencheUsuarios() {
-        usuarios.append(
-            Usuario(
-                nome: "Marcia Araújo",
-                email: "marcia@projetoadocao.com.br",
-                cep: "01001-000",
-                cidade: "São Paulo",
-                uf: "SP",
-                contato: "(11) 91234-1234",
-                foto: "Usuaria"
-            )
+        let marcia = Usuario(
+            nome: "Marcia Araújo",
+            email: "marcia@projetoadocao.com.br",
+            cep: "01001-000",
+            cidade: "São Paulo",
+            uf: "SP",
+            contato: "(11) 91234-1234",
+            foto: "Usuaria"
         )
-        usuarios.append(
-            Usuario(
-                nome: "Juliana Ferreira",
-                email: "juliana@projetoadocao.com.br",
-                cep: "01001-000",
-                cidade: "São Paulo",
-                uf: "SP",
-                contato: "(11) 91234-1234",
-                foto: "usrJuliana"
-            )
+        
+        let juliana = Usuario(
+            nome: "Juliana Ferreira",
+            email: "juliana@projetoadocao.com.br",
+            cep: "01001-000",
+            cidade: "São Paulo",
+            uf: "SP",
+            contato: "(11) 91234-1234",
+            foto: "usrJuliana"
         )
-        usuarios.append(
-            Usuario(
-                nome: "André Nepomuceno",
-                email: "andre@projetoadocao.com.br",
-                cep: "01001-000",
-                cidade: "São Paulo",
-                uf: "SP",
-                contato: "(11) 91234-1234",
-                foto: "usrAndre"
-            )
+        
+        let andre = Usuario(
+            nome: "André Nepomuceno",
+            email: "andre@projetoadocao.com.br",
+            cep: "01001-000",
+            cidade: "São Paulo",
+            uf: "SP",
+            contato: "(11) 91234-1234",
+            foto: "usrAndre"
         )
-        usuarios.append(
-            Usuario(
-                nome: "Marcos Vinícius",
-                email: "marcos@projetoadocao.com.br",
-                cep: "01001-000",
-                cidade: "São Paulo",
-                uf: "SP",
-                contato: "(11) 91234-1234",
-                foto: "Usuario"
-            )
+        
+        
+        let marcos = Usuario(
+            nome: "Marcos Vinícius",
+            email: "marcos@projetoadocao.com.br",
+            cep: "01001-000",
+            cidade: "São Paulo",
+            uf: "SP",
+            contato: "(11) 91234-1234",
+            foto: "Usuario"
         )
-        usuarios.append(
-            Usuario(
-                nome: "Thales Bernardes",
-                email: "thales@projetoadocao.com.br",
-                cep: "01001-000",
-                cidade: "Bauru",
-                uf: "SP",
-                contato: "(11) 91234-1234",
-                foto: "Usuario"
-            )
+        
+        let thales = Usuario(
+            nome: "Thales Bernardes",
+            email: "thales@projetoadocao.com.br",
+            cep: "01001-000",
+            cidade: "Bauru",
+            uf: "SP",
+            contato: "(11) 91234-1234",
+            foto: "Usuario"
         )
-        usuarios.append(
-            Usuario(
-                nome: "Eduardo Waked",
-                email: "eduardo@projetoadocao.com.br",
-                cep: "01001-000",
-                cidade: "Ibiúna",
-                uf: "SP",
-                contato: "(11) 91234-1234",
-                foto: "Usuario"
-            )
+        
+        let eduardo = Usuario(
+            nome: "Eduardo Waked",
+            email: "eduardo@projetoadocao.com.br",
+            cep: "01001-000",
+            cidade: "Ibiúna",
+            uf: "SP",
+            contato: "(11) 91234-1234",
+            foto: "Usuario"
         )
-        usuarios.append(
-            Usuario(
-                nome: "Murilo Oliveira",
-                email: "murilo@projetoadocao.com.br",
-                cep: "01001-000",
-                cidade: "Jundiaí",
-                uf: "SP",
-                contato: "",
-                foto: "Usuario"
-            )
+        
+        let murilo = Usuario(
+            nome: "Murilo Oliveira",
+            email: "murilo@projetoadocao.com.br",
+            cep: "01001-000",
+            cidade: "Jundiaí",
+            uf: "SP",
+            contato: "",
+            foto: "Usuario"
         )
+        
+        andre.senha = "123"
+        let amigoAndre = amigos.first { amigo in
+            amigo.nome == "Jimmy"
+        }
+        if let amigoAndre = amigoAndre {
+            andre.amigosFavoritos.append(amigoAndre)
+        }
+        usuarios.append(andre)
+        
+        marcia.senha = "123"
+        let amigoMarcia = amigos.first { amigo in
+            amigo.nome == "Nina"
+        }
+        if let amigoMarcia = amigoMarcia {
+            marcia.amigosFavoritos.append(amigoMarcia)
+        }
+        usuarios.append(marcia)
+        
+        juliana.senha = "123"
+        usuarios.append(juliana)
+        
+        marcos.senha = "123"
+        let amigoMarcos = amigos.first { amigo in
+            amigo.nome == "Sapecao"
+        }
+        if let amigoMarcos = amigoMarcos {
+            marcos.amigosFavoritos.append(amigoMarcos)
+        }
+        usuarios.append(marcos)
+        
+        thales.senha = "123"
+        usuarios.append(thales)
+        
+        murilo.senha = "123"
+        let amigoMurilo = amigos.first { amigo in
+            amigo.nome == "Bilu"
+        }
+        if let amigoMurilo = amigoMurilo {
+            murilo.amigosFavoritos.append(amigoMurilo)
+        }
+        usuarios.append(murilo)
+        
+        eduardo.senha = "123"
+        let amigoEduardo = amigos.first { amigo in
+            amigo.nome == "Torresmo"
+        }
+        if let amigoEduardo = amigoEduardo {
+            eduardo.amigosFavoritos.append(amigoEduardo)
+        }
+        usuarios.append(eduardo)
     }
 
     private func preencheAmigos() {

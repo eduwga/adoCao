@@ -16,12 +16,19 @@ protocol DetalhesUsuarioViewModelDelegate {
 class DetalhesUsuarioViewModel {
     
     var delegate: DetalhesUsuarioViewModelDelegate?
+    private let service = Service()
     private let fotoPadrao = "customPerson"
     private let usuario: Usuario
     
     init(usuario: Usuario) {
         self.usuario = usuario
         delegate?.configuraPropriedadesView(usuario: usuario)
+    }
+    
+    init(emailUsuario: String) {
+        let usuario = service.getLoggedUser()
+        self.usuario = usuario!
+        delegate?.configuraPropriedadesView(usuario: usuario!)
     }
     
     func forcarInicioTela() {

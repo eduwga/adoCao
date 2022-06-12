@@ -9,7 +9,7 @@ import UIKit
 
 class ListarAmigosCustomCell: UITableViewCell {
 
-    var cao: ListarAmigosClient?
+    var cao: Amigo?
     
     @IBOutlet weak var imagemCaoImageView: UIImageView!
     @IBOutlet weak var nomeCaoLabel: UILabel!
@@ -26,7 +26,7 @@ class ListarAmigosCustomCell: UITableViewCell {
 
     }
     
-    public func configura(cao: ListarAmigosClient) {
+    public func configura(cao: Amigo) {
         self.cao = cao
         imagemCaoImageView.image = UIImage(named: cao.foto)
         nomeCaoLabel.text = cao.nome

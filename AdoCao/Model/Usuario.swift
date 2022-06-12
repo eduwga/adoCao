@@ -37,6 +37,7 @@ class Usuario {
     var uf: String
     var contato: String
     var foto: String?
+    var senha: String?
     
     var amigosFavoritos: [Amigo] = []
     var amigosCadastrados: [Amigo] = []

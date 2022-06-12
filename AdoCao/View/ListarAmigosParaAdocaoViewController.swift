@@ -8,16 +8,15 @@
 import UIKit
 
 class ListarAmigosParaAdocaoViewController: UIViewController {
-    
-    
-    let viewModel = ListarAmigosViewModel()
-    
-    var service = ListarAmigosService()
 
     @IBOutlet weak var listarAmigosTableView: UITableView!
+
+    let viewModel = ListarAmigosViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+
         listarAmigosTableView.dataSource = self
         listarAmigosTableView.delegate = self
         viewModel.delegate = self
@@ -26,14 +25,13 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
 
 extension ListarAmigosParaAdocaoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return service.listaDeCaes.count
+        return viewModel.obterQuantidadeDeAmigosParaAdocao()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "caoCell") as? ListarAmigosCustomCell else { return UITableViewCell()}
-        
-        cell.configura(cao: service.listaDeCaesQueOServidorConhece()[indexPath.row])
-                return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "caoCell") as? ListarAmigosCustomCell else { return UITableViewCell() }
+        cell.configura(cao: viewModel.obterAmigoPela(posicao: indexPath.row))
+        return cell
     }
 }
 

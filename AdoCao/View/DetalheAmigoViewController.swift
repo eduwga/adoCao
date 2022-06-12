@@ -21,15 +21,12 @@ class DetalheAmigoViewController: UIViewController {
     @IBOutlet weak var saibaMaisRacaLabel: UILabel!
     @IBOutlet weak var racaLabel: UILabel!
     
-    var dog: ListarAmigosClient?
-    
+    var dog: Amigo?
     var viewModel: DetalheAmigoViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let service = ListarAmigosService()
-//        viewModel = DetalheAmigoViewModel(amigo: service.listaDeCaesQueOServidorConhece()[0])
         viewModel?.delegate = self
         viewModel?.telaInicial()
     }
@@ -52,11 +49,11 @@ class DetalheAmigoViewController: UIViewController {
 }
 
 extension DetalheAmigoViewController: DetalheAmigoViewModelDelegate {
-    func configura(tela: ListarAmigosClient) {
-        nomeCaoLabel.text = tela.obterNome()
-        localizaCaoLabel.text = tela.obterLocalizaCao()
-        descriCaoLabel.text = tela.obterDescriCao()
-        configuraFotoDoUsuario(nomeFoto: tela.foto)
+    func configura(amigo: Amigo) {
+        nomeCaoLabel.text = amigo.nome
+        localizaCaoLabel.text = amigo.localizacao
+        descriCaoLabel.text = amigo.descricao
+        configuraFotoDoUsuario(nomeFoto: amigo.foto)
         
     }
     

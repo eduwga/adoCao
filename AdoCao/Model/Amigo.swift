@@ -17,6 +17,7 @@ enum Porte: Int {
 
 class Amigo {
     internal init(nome: String, idade: Int, raca: String, tutor: Usuario, porte: Porte, foto: String, localizacao: String, descricao: String) {
+        self.id = UUID.init()
         self.nome = nome
         self.idade = idade
         self.raca = raca
@@ -27,6 +28,7 @@ class Amigo {
         self.descricao = descricao
     }
     
+    let id: UUID
     let nome: String
     var idade: Int
     var raca: String
