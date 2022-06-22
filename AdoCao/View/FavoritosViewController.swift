@@ -17,6 +17,7 @@ class FavoritosViewController: UIViewController {
         viewModel.delegate = self
         favoritosCollectionView.dataSource = self
         favoritosCollectionView.delegate = self
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,6 +39,7 @@ extension FavoritosViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        recarregarTela()
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoritoCell", for: indexPath) as? FavoritoCollectionViewCell {
             let vmCell = viewModel.obterViewModelParaCell(posicao: indexPath.item)
             vmCell?.delegate = cell

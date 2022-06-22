@@ -36,6 +36,15 @@ class ListarAmigosViewModel {
         return vm
     }
     
+    func obterViewModelParaCell(posicao: Any?, segmento: Int) -> ListarAmigosCustomCellViewModel? {
+        guard let posicao = posicao as? Int else {
+            return nil
+        }
+        let amigo = obterAmigoPela(posicao: posicao, segmento: segmento)
+        let vm = ListarAmigosCustomCellViewModel(cao: amigo)
+        return vm
+    }
+    
     func obterQuantidadeDeAmigos(segmento: Int) -> Int {
         switch segmento {
         case 0:
@@ -56,14 +65,6 @@ class ListarAmigosViewModel {
         default:
             return nil
     }
-    
-//    func obterQuantidadeMinhaListaDeAmigos() -> Int {
-//        return minhaLista.count
-//    }
-//
-//    func obterMinhaListaPela(posicao: Int) -> Amigo {
-//        return minhaLista[posicao]
-//    }
     
 }
 }

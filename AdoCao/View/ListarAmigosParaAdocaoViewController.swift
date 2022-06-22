@@ -23,12 +23,7 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
         listarAmigosTableView.dataSource = self
         listarAmigosTableView.delegate = self
         viewModel.delegate = self
-//        customCell?.favoritarImageView.image = UIImage(named: "heart")
-        
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(customCell.clickFavorito(customCell?.clickImage(tapGestureRecognizer:))))
-        
 
-        
     }
     
     @IBAction func segmentedButtonAction(_ sender: Any) {
@@ -63,7 +58,8 @@ extension ListarAmigosParaAdocaoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "caoCell") as? ListarAmigosCustomCell else { return UITableViewCell() }
-        cell.configura(cao: viewModel.obterAmigoPela(posicao: indexPath.row, segmento: listarAmigosSegmentedControl.selectedSegmentIndex)!)
+        guard let vmCell = viewModel.obterViewModelParaCell(posicao: indexPath.row, segmento: listarAmigosSegmentedControl.selectedSegmentIndex) else { return UITableViewCell() }
+        cell.configura(vm: vmCell)
         return cell
     }
 }
@@ -78,16 +74,16 @@ extension ListarAmigosParaAdocaoViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let seleCao = service.listaDeCaesQueOServidorConhece()[indexPath.row]
+
         let cell = tableView.cellForRow(at: indexPath) as! ListarAmigosCustomCell
-//        cell.favoritarImageView.image = UIImage(systemName: "heart.fill")
+
         viewModel.favoritos[indexPath.row] = true
         performSegue(withIdentifier: "detalheAmigoSegue", sender: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ListarAmigosCustomCell
-//        cell.favoritarImageView.image = UIImage(systemName: "heart")
+
         viewModel.favoritos[indexPath.count] = false
     }
     

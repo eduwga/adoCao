@@ -14,13 +14,54 @@ protocol ListarAmigosCustomCellViewModelDelegate {
 
 
 class ListarAmigosCustomCellViewModel {
+        
+    let service = Service()
+   
+    var usuarioAtual: Usuario
+    
+    let cao: Amigo?
+    
+    
     
     var delegate: ListarAmigosCustomCellViewModelDelegate?
-    
-    func preparaCaoCell() {
-        
+
+    init(cao: Amigo?) {
+        self.usuarioAtual = service.getLoggedUser()!
+        self.cao = cao
+
     }
     
+    func getNome() -> String {
+        return self.cao?.nome ?? ""
+    }
+    
+    func getFoto() -> String {
+        return self.cao?.foto ?? ""
+    }
+    
+    func getDescricao() -> String {
+        return self.cao?.descricao ?? ""
+    }
+    
+    func getLocalizacao() -> String {
+        return self.cao?.localizacao ?? ""
+    }
+        
+    
+    func verificaSeAmigoEFavorito() -> Bool {
+
+            return usuarioAtual.amigosFavoritos.contains(where: { amigo in
+                amigo.nome == self.cao?.nome
+            })
+        }
+    func removeFavoritos() {
+        usuarioAtual.amigosFavoritos.removeAll { amigo in
+            amigo.nome == cao?.nome
+        }
+    }
+    func adicionaFavoritos() {
+        usuarioAtual.amigosFavoritos.append(cao!)
+    }
     
 }
 
