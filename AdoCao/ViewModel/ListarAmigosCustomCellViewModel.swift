@@ -30,7 +30,6 @@ class ListarAmigosCustomCellViewModel {
         self.cao = cao
 
     }
-    let service = Service()
     
     func getNome() -> String {
         return self.cao?.nome ?? ""
