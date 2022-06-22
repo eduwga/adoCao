@@ -307,13 +307,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Envie sua dúvida ou solicite suporte" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynv-0T-9bj">
-                                <rect key="frame" x="10" y="180" width="394" height="20.5"/>
+                                <rect key="frame" x="10" y="188" width="394" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versão do App: 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCr-O0-Kde">
-                                <rect key="frame" x="10" y="240.5" width="394" height="20.5"/>
+                                <rect key="frame" x="10" y="248.5" width="394" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -338,7 +338,7 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lrU-jX-5yd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="104"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.41960784309999999" green="0.1529411765" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
@@ -624,8 +624,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="v6f-2a-ZcS" kind="relationship" relationship="viewControllers" id="uXz-n1-YEt"/>
-                        <segue destination="nY1-D0-YeU" kind="relationship" relationship="viewControllers" id="FNj-b1-3Zk"/>
                         <segue destination="rGh-2f-Lnc" kind="relationship" relationship="viewControllers" id="qt0-co-cyt"/>
+                        <segue destination="nY1-D0-YeU" kind="relationship" relationship="viewControllers" id="FNj-b1-3Zk"/>
                         <segue destination="a24-qr-5Wp" kind="relationship" relationship="viewControllers" id="PK4-xm-YRZ"/>
                     </connections>
                 </tabBarController>
@@ -759,7 +759,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS4-gO-hga">
-                                <rect key="frame" x="70" y="662" width="274" height="45"/>
+                                <rect key="frame" x="70" y="662" width="235" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="oOb-iA-FfD"/>
                                     <constraint firstAttribute="width" constant="235" id="tmQ-2r-hbf"/>
@@ -776,7 +776,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DogWithFlower" translatesAutoresizingMaskIntoConstraints="NO" id="9vC-y9-hkx">
-                                <rect key="frame" x="15" y="262" width="384" height="360"/>
+                                <rect key="frame" x="15" y="262" width="345" height="360"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="345" id="eWg-EL-z4b"/>
@@ -789,13 +789,13 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boas Vindas!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIP-eE-zN6">
-                                <rect key="frame" x="20" y="79" width="374" height="37"/>
+                                <rect key="frame" x="20" y="79" width="335" height="37"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="31"/>
                                 <color key="textColor" red="0.41960784309999999" green="0.1529411765" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nós queremos te ajudar a encontrar um novo amigo ou encontrar um novo lar para um que esteja para adoção 🐶" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-Qs-h2t">
-                                <rect key="frame" x="35" y="156" width="344" height="61"/>
+                                <rect key="frame" x="35" y="156" width="305" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1480,7 +1480,7 @@
                     <tabBarItem key="tabBarItem" title="Adoção" image="heart.text.square" catalog="system" selectedImage="heart.text.square.fill" id="6fe-D2-jOq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="PpL-jw-3Q9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.41960784309999999" green="0.1529411765" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1503,8 +1503,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="evt-v8-AGD">
-                                <rect key="frame" x="0.0" y="148" width="414" height="665"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="hNI-KM-cYa">
+                                <rect key="frame" x="0.0" y="155" width="414" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Amigos Para Adoção"/>
+                                    <segment title="Amigos Para Doação"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedButtonAction:" destination="t9l-WG-CRK" eventType="valueChanged" id="e86-fW-duq"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="evt-v8-AGD">
+                                <rect key="frame" x="0.0" y="194" width="414" height="619"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="caoCell" rowHeight="143" id="WT6-AL-uCD" customClass="ListarAmigosCustomCell" customModule="AdoCao" customModuleProvider="target">
@@ -1550,13 +1561,28 @@
                                                             <color key="textColor" red="0.41960784309999999" green="0.1529411765" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRJ-Df-xd6">
+                                                            <rect key="frame" x="133" y="8" width="25" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="Krf-6x-LNw"/>
+                                                                <constraint firstAttribute="height" constant="25" id="yNQ-Ly-NBT"/>
+                                                            </constraints>
+                                                            <color key="tintColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="favoritarButtonAction:" destination="WT6-AL-uCD" eventType="touchUpInside" id="cVP-bA-bWT"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="1eH-OS-eje" firstAttribute="leading" secondItem="Zhh-ji-Ia7" secondAttribute="trailing" constant="60" id="8Uo-bX-Bbj"/>
+                                                        <constraint firstItem="LRJ-Df-xd6" firstAttribute="top" secondItem="FmR-Gm-3Jd" secondAttribute="top" constant="8" id="DE2-HR-nWv"/>
                                                         <constraint firstAttribute="trailing" secondItem="ose-Oh-4cs" secondAttribute="trailing" constant="8" id="JC8-y0-37I"/>
                                                         <constraint firstItem="1eH-OS-eje" firstAttribute="top" secondItem="FmR-Gm-3Jd" secondAttribute="top" constant="8" id="OCw-Io-gjl"/>
                                                         <constraint firstAttribute="trailing" secondItem="m9R-B1-mfi" secondAttribute="trailing" constant="8" id="QAg-1k-dOd"/>
                                                         <constraint firstAttribute="trailing" secondItem="1eH-OS-eje" secondAttribute="trailing" constant="60" id="URa-VZ-NYU"/>
+                                                        <constraint firstItem="1eH-OS-eje" firstAttribute="leading" secondItem="LRJ-Df-xd6" secondAttribute="trailing" constant="60" id="Uuz-Rh-OYe"/>
                                                         <constraint firstItem="Zhh-ji-Ia7" firstAttribute="centerY" secondItem="FmR-Gm-3Jd" secondAttribute="centerY" id="VKs-Xt-Z3o"/>
                                                         <constraint firstItem="Zhh-ji-Ia7" firstAttribute="leading" secondItem="FmR-Gm-3Jd" secondAttribute="leading" constant="8" id="YYJ-aA-mCd"/>
                                                         <constraint firstItem="Zhh-ji-Ia7" firstAttribute="top" secondItem="FmR-Gm-3Jd" secondAttribute="top" constant="8" id="spT-9f-Moo"/>
@@ -1574,6 +1600,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descriCaoLabel" destination="ose-Oh-4cs" id="s0F-Af-k8V"/>
+                                            <outlet property="favoritarImagemButton" destination="LRJ-Df-xd6" id="QIe-OP-P1p"/>
                                             <outlet property="imagemCaoImageView" destination="Zhh-ji-Ia7" id="2Ej-9z-4qa"/>
                                             <outlet property="localizaCaoLabel" destination="m9R-B1-mfi" id="YEE-a7-LEp"/>
                                             <outlet property="nomeCaoLabel" destination="1eH-OS-eje" id="VYi-0c-hBy"/>
@@ -1581,25 +1608,39 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="mea-PJ-lpA">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cTe-Ti-sgD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="evt-v8-AGD" firstAttribute="top" secondItem="cTe-Ti-sgD" secondAttribute="top" id="9Wa-5m-9az"/>
+                            <constraint firstItem="evt-v8-AGD" firstAttribute="top" secondItem="cTe-Ti-sgD" secondAttribute="top" constant="46" id="9Wa-5m-9az"/>
                             <constraint firstItem="evt-v8-AGD" firstAttribute="leading" secondItem="cTe-Ti-sgD" secondAttribute="leading" id="S97-Yy-CUx"/>
                             <constraint firstItem="cTe-Ti-sgD" firstAttribute="bottom" secondItem="evt-v8-AGD" secondAttribute="bottom" id="aFe-kW-2Yg"/>
+                            <constraint firstItem="mea-PJ-lpA" firstAttribute="centerY" secondItem="IdR-QS-GTk" secondAttribute="centerY" id="aJs-JU-nIC"/>
+                            <constraint firstItem="evt-v8-AGD" firstAttribute="top" secondItem="hNI-KM-cYa" secondAttribute="bottom" constant="8" id="orl-BQ-s4x"/>
                             <constraint firstItem="cTe-Ti-sgD" firstAttribute="trailing" secondItem="evt-v8-AGD" secondAttribute="trailing" id="wJF-fS-yjV"/>
+                            <constraint firstItem="mea-PJ-lpA" firstAttribute="centerX" secondItem="IdR-QS-GTk" secondAttribute="centerX" id="xkC-CU-RuL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Amigos para adoção" id="b1H-Uv-E0B"/>
+                    <navigationItem key="navigationItem" title="Amigos para adoção" id="b1H-Uv-E0B">
+                        <barButtonItem key="rightBarButtonItem" title="Favoritos" id="GQZ-Ua-L1e">
+                            <connections>
+                                <segue destination="rGh-2f-Lnc" kind="show" identifier="favoritosSegue" id="mpc-Df-jht"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="listarAmigosActivityIndicator" destination="mea-PJ-lpA" id="l0D-NM-0TB"/>
+                        <outlet property="listarAmigosSegmentedControl" destination="hNI-KM-cYa" id="Sye-zW-se7"/>
                         <outlet property="listarAmigosTableView" destination="evt-v8-AGD" id="BAQ-ko-PAk"/>
                         <segue destination="oIP-jN-NBE" kind="presentation" identifier="detalheAmigoSegue" id="rhc-9a-V6f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NrV-Yu-el4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="2069"/>
+            <point key="canvasLocation" x="-84.057971014492765" y="2068.5267857142858"/>
         </scene>
         <!--Raças-->
         <scene sceneID="uhv-sb-gV3">
@@ -1731,6 +1772,7 @@
                         <color key="badgeColor" red="1" green="0.52120530610000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Gph-qe-LXx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SlU-6h-02i">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1749,9 +1791,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="mpc-Df-jht"/>
         <segue reference="FNj-b1-3Zk"/>
         <segue reference="bqe-Oj-S4L"/>
-        <segue reference="c55-GA-miH"/>
+        <segue reference="rhc-9a-V6f"/>
         <segue reference="XAQ-nH-gEB"/>
     </inferredMetricsTieBreakers>
     <resources>

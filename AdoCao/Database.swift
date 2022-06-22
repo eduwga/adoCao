@@ -11,6 +11,7 @@ public class DataBase {
     var usuarios: [Usuario] = []
     var amigos: [Amigo] = []
     var racas: [Raca] = []
+    var minhaLista: [Amigo] = []
     
     static var shared: DataBase = {
         let instance = DataBase()
@@ -24,6 +25,15 @@ public class DataBase {
     }
     
     private func preencheUsuarios() {
+        
+        let admin = Usuario(
+            nome: "Admin",
+            email: "admin",
+            cep: "---",
+            cidade: "---",
+            uf: "---",
+            contato: "---")
+        
         let marcia = Usuario(
             nome: "Marcia Araújo",
             email: "marcia@projetoadocao.com.br",
@@ -94,6 +104,10 @@ public class DataBase {
             contato: "",
             foto: "Usuario"
         )
+        
+        admin.senha = "admin"
+        
+        usuarios.append(admin)
         
         andre.senha = "123"
         let amigoAndre = amigos.first { amigo in

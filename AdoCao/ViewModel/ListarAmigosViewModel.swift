@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ListarAmigosViewModelDelegate {
     
@@ -13,9 +14,13 @@ protocol ListarAmigosViewModelDelegate {
 
 class ListarAmigosViewModel {
     
-    //var amigos = ListarAmigosService().listaDeCaesQueOServidorConhece()
+
     let service = Service()
     var amigos: [Amigo] = []
+    var favoritos = [Int: Bool]()
+    var minhaLista: [Amigo] = []
+
+
     var delegate: ListarAmigosViewModelDelegate?
     
     init() {
@@ -31,13 +36,37 @@ class ListarAmigosViewModel {
         return vm
     }
     
-    func obterQuantidadeDeAmigosParaAdocao() -> Int {
-        return amigos.count
+    func obterQuantidadeDeAmigos(segmento: Int) -> Int {
+        switch segmento {
+        case 0:
+            return amigos.count
+        case 1:
+            return minhaLista.count
+        default:
+            return 0
+    }
     }
     
-    func obterAmigoPela(posicao: Int) -> Amigo {
-        return amigos[posicao]
+    func obterAmigoPela(posicao: Int, segmento: Int) -> Amigo? {
+        switch segmento {
+        case 0:
+            return amigos[posicao]
+        case 1:
+            return minhaLista[posicao]
+        default:
+            return nil
     }
+    
+//    func obterQuantidadeMinhaListaDeAmigos() -> Int {
+//        return minhaLista.count
+//    }
+//
+//    func obterMinhaListaPela(posicao: Int) -> Amigo {
+//        return minhaLista[posicao]
+//    }
+    
 }
+}
+
 
 

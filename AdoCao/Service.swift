@@ -10,7 +10,8 @@ import Foundation
 class Service {
     let db = DataBase.shared
     var loggedUser: Usuario?
-    
+    var minhaLista = DataBase.shared.minhaLista
+
     init() {
         if let currentUserEmail = UserDefaults.standard.string(forKey: "emailDoUsuario") {
             if let currentUser = getUserBy(email: currentUserEmail) {
