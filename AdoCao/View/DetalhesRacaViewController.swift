@@ -72,11 +72,11 @@ class DetalhesRacaViewController: UIViewController {
 }
 extension DetalhesRacaViewController: DetalhesRacaViewModelDelegate {
     func exibeDadosIniciais(raca: Raca) {
-        self.configuraFotoDoUsuario(nomeFoto: raca.foto)
+        self.configuraFotoDoUsuario(nomeFoto: raca.imagemURL)
         carcteristicasLabel.text = raca.caracteristicas
-        naturalidadeLabel.text = raca.naturalidade
-        pesoLabel.text = raca.peso
-        alturaLabel.text = raca.altura
+        naturalidadeLabel.text = raca.origem
+        pesoLabel.text = raca.pesoMedio
+        alturaLabel.text = raca.alturaMedia
         estimativaDeVidaLabel.text = raca.estimativaDeVida
         finalizaActivityIndicator()
     }

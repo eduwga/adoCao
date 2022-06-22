@@ -8,6 +8,7 @@
 import Foundation
 
 class Service {
+    private let session = URLSession.shared
     let db = DataBase.shared
     var loggedUser: Usuario?
     var minhaLista = DataBase.shared.minhaLista
@@ -34,6 +35,40 @@ class Service {
             return true
         }
         return false
+    }
+    
+    func loginAsync(email: String,  password: String, completion: @escaping (Usuario?) -> Void)  {
+        guard let user = getUserBy(email: email) else { return }
+        var repostaUsuario: Usuario? = nil
+        if user.senha == password {
+            self.loggedUser = user
+            repostaUsuario = user
+        }
+        completion(repostaUsuario)
+    }
+
+    func loadBreeds(completion: @escaping ([Raca]) -> Void, failure: @escaping (Error) -> Void) {
+        let url = URL(string: "https://adocao.azurewebsites.net/api/raca/")!
+        
+        let task = session.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                return
+            }
+            if let error = error {
+                failure(error)
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let racas = try decoder.decode([Raca].self, from: data)
+                completion(racas)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        task.resume()
     }
     
     func getBreeds() -> [Raca] {

@@ -30,6 +30,7 @@ class ListarAmigosCustomCellViewModel {
         self.cao = cao
 
     }
+    let service = Service()
     
     func getNome() -> String {
         return self.cao?.nome ?? ""
@@ -63,5 +64,16 @@ class ListarAmigosCustomCellViewModel {
         usuarioAtual.amigosFavoritos.append(cao!)
     }
     
+    func verificaSeAmigoEFavorito(amigoSelecionado: Amigo) -> Bool {
+        let usuarioAtual = service.getLoggedUser()
+        
+        guard let usuarioAtual = usuarioAtual else {
+            return false
+        }
+
+        return usuarioAtual.amigosFavoritos.contains(where: { amigo in
+            amigo.nome == amigoSelecionado.nome
+        })
+    }
 }
 

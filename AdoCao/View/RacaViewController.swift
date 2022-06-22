@@ -38,7 +38,7 @@ extension RacaViewController: UITableViewDataSource {
         let cell = UITableViewCell()
         let raca = viewModel.obterRaca(posicao: indexPath.row)
         cell.textLabel?.text = raca.nome
-        cell.imageView?.image = UIImage(named: raca.foto)
+        cell.imageView?.image = UIImage(named: raca.imagemURL)
         return cell
     }
 }
