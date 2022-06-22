@@ -14,11 +14,25 @@ protocol RacasViewModelDelegate {
 class RacasViewModel {
     
     var delegate: RacasViewModelDelegate?
-    var dataBase = DataBase.shared
     var racasPesquisa: [Raca] = []
+    var todasAsRacas: [Raca] = []
+    var service = Service()
     
     init() {
-        iniciaListaDeRacas()
+        obterTodasAsRacas()
+    }
+    
+    private func obterTodasAsRacas() {
+        service.loadBreeds(completion: { racas in
+            self.todasAsRacas = racas
+            self.iniciaListaDeRacas()
+        }, failure: { error in
+            print(error.localizedDescription)
+        })
+    }
+    
+    func iniciaListaDeRacas() {
+        self.racasPesquisa = todasAsRacas
     }
     
     func obterTotalDeRacas() -> Int {
@@ -34,7 +48,7 @@ class RacasViewModel {
             iniciaListaDeRacas()
         }
         else {
-            let racasSelecionadas = dataBase.racas.filter({ raca in
+            let racasSelecionadas = self.todasAsRacas.filter({ raca in
                 raca.nome.lowercased().contains(nomePesquisado.lowercased())
             })
             racasPesquisa = racasSelecionadas
@@ -47,9 +61,5 @@ class RacasViewModel {
         let racaSelecionada = racasPesquisa[posicao]
         let detalhesRacaVM = DetalhesRacaViewModel(raca: racaSelecionada)
         return detalhesRacaVM
-    }
-    
-    private func iniciaListaDeRacas() {
-        racasPesquisa = dataBase.racas
     }
 }

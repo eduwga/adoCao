@@ -22,6 +22,12 @@ class DetalhesUsuarioViewController: UIViewController {
         performSegue(withIdentifier: "editarUsuarioSegue", sender: viewModel?.getUsuario())
     }
     
+    @IBAction func sairButtonAction(_ sender: Any) {
+        UserDefaults.standard.set("", forKey: "emailDoUsuario")
+        UserDefaults.standard.set("", forKey: "senhaDoUsuario")
+        performSegue(withIdentifier: "telaLoginSegue", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let emailUsuario = UserDefaults.standard.string(forKey: "emailDoUsuario")

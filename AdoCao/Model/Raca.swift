@@ -7,39 +7,51 @@
 
 import Foundation
 
-class Raca {
+class Raca: Codable {
+    
+    init(id: String, nome: String, outrosNomes: String, foto: String, caracteristicas: String, naturalidade: String, peso: String, altura: String, estimativaDeVida: String) {
+        self.id = UUID.init(uuidString: id)!
+        self.nome = nome
+        self.nivelDeCuidado = outrosNomes
+        self.imagemURL = foto
+        self.caracteristicas = caracteristicas
+        self.origem = naturalidade
+        self.pesoMedio = peso
+        self.alturaMedia = altura
+        self.estimativaDeVida = estimativaDeVida
+    }
     
     init(nome: String, outrosNomes: String, foto: String, caracteristicas: String, naturalidade: String, peso: String, altura: String, estimativaDeVida: String) {
         self.id = UUID.init()
         self.nome = nome
-        self.outrosNomes = outrosNomes
-        self.foto = foto
+        self.nivelDeCuidado = outrosNomes
+        self.imagemURL = foto
         self.caracteristicas = caracteristicas
-        self.naturalidade = naturalidade
-        self.peso = peso
-        self.altura = altura
+        self.origem = naturalidade
+        self.pesoMedio = peso
+        self.alturaMedia = altura
         self.estimativaDeVida = estimativaDeVida
     }
     
     init(nome: String, foto: String) {
         self.id = UUID.init()
         self.nome = nome
-        self.foto = foto
+        self.imagemURL = foto
         self.caracteristicas = ""
-        self.naturalidade = ""
-        self.peso = ""
-        self.altura = ""
+        self.origem = ""
+        self.pesoMedio = ""
+        self.alturaMedia = ""
         self.estimativaDeVida = ""
-        self.outrosNomes = ""
+        self.nivelDeCuidado = ""
     }
     
     let id: UUID
     let nome: String
-    let outrosNomes: String
-    let foto: String
+    let nivelDeCuidado: String
+    let imagemURL: String
     let caracteristicas: String
-    let naturalidade: String
-    let peso: String
-    let altura: String
+    let origem: String
+    let pesoMedio: String
+    let alturaMedia: String
     let estimativaDeVida: String
 }

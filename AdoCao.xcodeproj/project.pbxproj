@@ -11,6 +11,8 @@
 		26F148372852A46000128396 /* EditarAmigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F148362852A46000128396 /* EditarAmigoViewController.swift */; };
 		49D71286284E827200C42519 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71285284E827200C42519 /* LoginViewController.swift */; };
 		49D71288284E828700C42519 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71287284E828700C42519 /* RegisterViewController.swift */; };
+		6D3DE88C285692EC00F7B58E /* BoasVindasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DE88B285692EC00F7B58E /* BoasVindasViewController.swift */; };
+		6D3DE8D22858BF5200F7B58E /* BoasVindasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DE8D12858BF5200F7B58E /* BoasVindasViewModel.swift */; };
 		6D66293D284D6B8100D4195F /* DetalhesUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */; };
 		6D66293F284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66293E284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift */; };
 		6D662941284D719600D4195F /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D662940284D719600D4195F /* Usuario.swift */; };
@@ -47,6 +49,8 @@
 		26F148362852A46000128396 /* EditarAmigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAmigoViewController.swift; sourceTree = "<group>"; };
 		49D71285284E827200C42519 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		49D71287284E828700C42519 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		6D3DE88B285692EC00F7B58E /* BoasVindasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoasVindasViewController.swift; sourceTree = "<group>"; };
+		6D3DE8D12858BF5200F7B58E /* BoasVindasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoasVindasViewModel.swift; sourceTree = "<group>"; };
 		6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesUsuarioViewController.swift; sourceTree = "<group>"; };
 		6D66293E284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesUsuarioViewModel.swift; sourceTree = "<group>"; };
 		6D662940284D719600D4195F /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				2601156A285280CA00BB2C48 /* SuporteViewController.swift */,
 				6D6629912851074600D4195F /* EditarUsuarioViewController.swift */,
 				6DEBFCD82854D81000906023 /* FavoritosViewController.swift */,
+				6D3DE88B285692EC00F7B58E /* BoasVindasViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				6D6629932851082500D4195F /* EditarUsuarioViewModel.swift */,
 				6DEBFCDA2854DCD900906023 /* FavoritosViewModel.swift */,
 				6DEBFCDF2855787B00906023 /* FavoritoCellViewModel.swift */,
+				6D3DE8D12858BF5200F7B58E /* BoasVindasViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 				C02B5045284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift in Sources */,
 				6D6629922851074600D4195F /* EditarUsuarioViewController.swift in Sources */,
 				6D66298C28500FE900D4195F /* RacasViewModel.swift in Sources */,
+				6D3DE8D22858BF5200F7B58E /* BoasVindasViewModel.swift in Sources */,
 				6D662945284D73D600D4195F /* Raca.swift in Sources */,
 				6D66293F284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift in Sources */,
 				6DEBFCD92854D81000906023 /* FavoritosViewController.swift in Sources */,
@@ -269,6 +276,7 @@
 				6DEBFCDB2854DCD900906023 /* FavoritosViewModel.swift in Sources */,
 				C0975F9E2851302800029B19 /* DetalheAmigoViewModel.swift in Sources */,
 				C02B5046284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift in Sources */,
+				6D3DE88C285692EC00F7B58E /* BoasVindasViewController.swift in Sources */,
 				6D662941284D719600D4195F /* Usuario.swift in Sources */,
 				6DEBFCD52854D79500906023 /* FavoritoCollectionViewCell.swift in Sources */,
 				6D6629942851082500D4195F /* EditarUsuarioViewModel.swift in Sources */,
