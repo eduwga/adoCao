@@ -24,6 +24,9 @@ class FavoritosViewModel {
     }
     
     func obterQuantidadeDeFavoritos() -> Int {
+        if let usuario = service.getLoggedUser() {
+            self.usuarioLogado = usuario
+        }
         if let usuarioLogado = usuarioLogado {
             return usuarioLogado.amigosFavoritos.count
         }
@@ -31,6 +34,9 @@ class FavoritosViewModel {
     }
     
     func obterAmigoFavorito(posicao: Int) -> Amigo? {
+        if let usuario = service.getLoggedUser() {
+            self.usuarioLogado = usuario
+        }
         guard let usuarioLogado = usuarioLogado else {
             return nil
         }

@@ -19,7 +19,10 @@ class FavoritosViewController: UIViewController {
         favoritosCollectionView.delegate = self
         
     }
-    
+    func viewDidApper() {
+        super.viewDidAppear(true)
+        favoritosCollectionView.reloadData()
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let telaDetalhes = segue.destination as? DetalheAmigoViewController else { return }
         guard let posicao = sender as? Int else { return }
@@ -41,11 +44,10 @@ extension FavoritosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         recarregarTela()
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoritoCell", for: indexPath) as? FavoritoCollectionViewCell {
-            let vmCell = viewModel.obterViewModelParaCell(posicao: indexPath.item)
-            vmCell?.delegate = cell
-            cell.viewModel = vmCell
-            vmCell?.inicializaCell()
-            return cell
+            if let vmCell = viewModel.obterViewModelParaCell(posicao: indexPath.item) {
+                cell.configura(vm: vmCell)
+                return cell
+            }
         }
         return UICollectionViewCell()
     }

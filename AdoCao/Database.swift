@@ -114,7 +114,7 @@ public class DataBase {
             amigo.nome == "Jimmy"
         }
         if let amigoAndre = amigoAndre {
-            andre.amigosFavoritos.append(amigoAndre)
+            andre.amigosCadastrados.append(amigoAndre)
         }
         usuarios.append(andre)
         

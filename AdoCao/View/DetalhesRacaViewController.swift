@@ -16,6 +16,7 @@ class DetalhesRacaViewController: UIViewController {
     @IBOutlet weak var pesoLabel: UILabel!
     @IBOutlet weak var alturaLabel: UILabel!
     @IBOutlet weak var estimativaDeVidaLabel: UILabel!
+    @IBOutlet weak var racaLabel: UILabel!
     
     var viewModel: DetalhesRacaViewModel?
     
@@ -50,7 +51,7 @@ class DetalhesRacaViewController: UIViewController {
     
     private func configuraFotoDoUsuario(nomeFoto: String?) {
         if let nomeFoto = viewModel?.validarFoto(nomeFoto: nomeFoto) {
-            racaImageView.image = UIImage(named: nomeFoto)
+            racaImageView.loadFrom(URLAddress: nomeFoto)
         }
         let valorRadius = racaImageView.frame.size.height / 2.0
         racaImageView.layer.cornerRadius = valorRadius
@@ -78,6 +79,7 @@ extension DetalhesRacaViewController: DetalhesRacaViewModelDelegate {
         pesoLabel.text = raca.pesoMedio
         alturaLabel.text = raca.alturaMedia
         estimativaDeVidaLabel.text = raca.estimativaDeVida
+        racaLabel.text = raca.nome
         finalizaActivityIndicator()
     }
 }

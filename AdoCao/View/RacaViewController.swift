@@ -24,7 +24,7 @@ class RacaViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let telaDetalhes = segue.destination as? DetalhesRacaViewController else { return }
-        var detalhesRacaViewModel = viewModel.selecionouCelula(posicao: sender)
+        let detalhesRacaViewModel = viewModel.selecionouCelula(posicao: sender)
         telaDetalhes.configInicial(vm: detalhesRacaViewModel)
     }
 
@@ -38,7 +38,11 @@ extension RacaViewController: UITableViewDataSource {
         let cell = UITableViewCell()
         let raca = viewModel.obterRaca(posicao: indexPath.row)
         cell.textLabel?.text = raca.nome
-        cell.imageView?.image = UIImage(named: raca.imagemURL)
+        cell.imageView?.loadFrom(URLAddress: raca.imagemURL)
+        cell.imageView?.bounds.size.width = 150
+        cell.imageView?.bounds.size.height = 140
+//        cell.imageView?.frame.size.width = 150
+//        cell.imageView?.frame.size.height = 140
         return cell
     }
 }
@@ -64,4 +68,18 @@ extension RacaViewController: RacasViewModelDelegate {
     
     
 }
-
+extension UIImageView {
+    func loadFrom(URLAddress: String) {
+        guard let url = URL(string: URLAddress) else {
+            return
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                        self?.image = loadedImage
+                }
+            }
+        }
+    }
+}

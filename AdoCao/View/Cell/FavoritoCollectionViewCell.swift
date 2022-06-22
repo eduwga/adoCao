@@ -27,6 +27,12 @@ class FavoritoCollectionViewCell: UICollectionViewCell {
         fotoImageView.layer.borderWidth = 1
         fotoImageView.layer.borderColor = UIColor.purple.cgColor
     }
+    
+    func configura(vm: FavoritoCellViewModel) {
+        self.viewModel = vm
+        nomeLabel.text = vm.amigoFavorito.nome
+        configuraFotoDoUsuario(nomeFoto: vm.amigoFavorito.foto)
+    }
 }
 extension FavoritoCollectionViewCell: FavoritoCellViewModelDelegate {
     func configuraCellFavorito(amigoFavorito: Amigo) {
