@@ -12,43 +12,107 @@ class Service {
     let db = DataBase.shared
     var loggedUser: Usuario?
     var minhaLista = DataBase.shared.minhaLista
+    
+    let base_url = "https://adocao.azurewebsites.net/api/"
+    var currentUser: LoginResult?
+    
+    static var shared = Service()
+    
+    private init() {
+//        if let currentUserEmail = UserDefaults.standard.string(forKey: "emailDoUsuario") {
+//            if let currentUser = getUserBy(email: currentUserEmail) {
+//                self.loggedUser = currentUser
+//            }
+//            else {
+//                ///Usuario não encontrado pelo Email / Estamos forçando um só pra testar o uso das outras funções
+//                self.loggedUser = DataBase.shared.usuarios[2]
+//            }
+//        }
+//        else { ///email do Usuario não foi gravado nos UserDefaults -> provavelmente não fez login / Estamos forçando um só pra testar o uso das outras funções
+//            self.loggedUser = DataBase.shared.usuarios[2]
+//        }
+    }
+    
+    private func loginAction(path: String, userLogin: UserLogin, completion: @escaping (Data) -> Void, failure: @escaping (Error) -> Void) {
+        guard let serviceUrl = URL(string: base_url + path) else { return }
+        
+        var request = URLRequest(url: serviceUrl)
 
-    init() {
-        if let currentUserEmail = UserDefaults.standard.string(forKey: "emailDoUsuario") {
-            if let currentUser = getUserBy(email: currentUserEmail) {
-                self.loggedUser = currentUser
+        //Se precisar de autenticação por JWT
+//        if let token = token {
+//            let authString = "Bearer \(token)"
+//            request.addValue(authString, forHTTPHeaderField: "Authorization")
+//        }
+        
+        request.httpMethod =  "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        guard let httpBody = try? JSONEncoder().encode(userLogin) else { return }
+        request.httpBody = httpBody
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                failure(error)
             }
-            else {
-                ///Usuario não encontrado pelo Email / Estamos forçando um só pra testar o uso das outras funções
-                self.loggedUser = DataBase.shared.usuarios[2]
+            
+            if let data = data {
+                completion(data)
             }
-        }
-        else { ///email do Usuario não foi gravado nos UserDefaults -> provavelmente não fez login / Estamos forçando um só pra testar o uso das outras funções
-            self.loggedUser = DataBase.shared.usuarios[2]
-        }
+        }.resume()
     }
     
-    func login(email: String,  password: String) -> Bool {
-        guard let user = getUserBy(email: email) else { return false }
-        if user.senha == password {
-            self.loggedUser = user
-            return true
+    private func postAction(path: String, bodyParameter: Encodable, completion: @escaping (Data) -> Void, failure: @escaping (Error) -> Void) {
+        guard let serviceUrl = URL(string: base_url + path) else { return }
+        
+        var request = URLRequest(url: serviceUrl)
+
+        guard let currentUser = self.currentUser else { return }
+        let authString = "Bearer \(currentUser.token)"
+        request.addValue(authString, forHTTPHeaderField: "Authorization")
+        
+        request.httpMethod =  "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        ///Definir os tipos de objeto dependendo do Path (ex: Post p/ Usuario, p/ Cachorro, /Favoritos...
+        if let usuarioParameter = bodyParameter as? UsuarioAPI {
+            guard let httpBody = try? JSONEncoder().encode(usuarioParameter) else { return }
+            request.httpBody = httpBody
         }
-        return false
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                failure(error)
+            }
+            
+            if let data = data {
+                completion(data)
+            }
+        }.resume()
     }
     
-    func loginAsync(email: String,  password: String, completion: @escaping (Usuario?) -> Void)  {
-        guard let user = getUserBy(email: email) else { return }
-        var repostaUsuario: Usuario? = nil
-        if user.senha == password {
-            self.loggedUser = user
-            repostaUsuario = user
-        }
-        completion(repostaUsuario)
+    func login(email: String,  password: String, completion: @escaping (Usuario) -> Void, failure: @escaping(Error) -> Void) {
+        let userLogin: UserLogin = UserLogin(email: email, senha: password)
+        loginAction(path: "usuarios/login/", userLogin: userLogin, completion: { data in
+            do {
+                let loginResult = try JSONDecoder().decode(LoginResult.self, from: data)
+                let usuarioResposta = Usuario(usuarioLogado: loginResult.user)
+                self.currentUser = loginResult
+                completion(usuarioResposta)
+            }
+            catch {
+                print(error)
+            }
+        }, failure: { error in
+            failure(error)
+        })
     }
 
     func loadBreeds(completion: @escaping ([Raca]) -> Void, failure: @escaping (Error) -> Void) {
-        let url = URL(string: "https://adocao.azurewebsites.net/api/raca/")!
+        let path = "raca/"
+        guard let url = URL(string: base_url + path) else { return }
         
         let task = session.dataTask(with: url) { data, _, error in
             guard let data = data else {
@@ -100,7 +164,7 @@ class Service {
         return dogs
     }
 
-    func getUserBy(id: UUID) -> Usuario? {
+    func getUserBy(id: Int) -> Usuario? {
         let user = db.usuarios.first { usuario in
             usuario.id == id
         }
@@ -115,12 +179,23 @@ class Service {
     }
 
     func getLoggedUser() -> Usuario? {
-        return loggedUser
+        guard let currentUser = self.currentUser else { return nil }
+        return Usuario(usuarioLogado: currentUser.user)
     }
 
     func create(user: Usuario) -> Bool {
         //TO-DO: - Pensar nas validações
-        db.usuarios.append(user)
+        //Mock pra testar a gravacao
+        let endereco = Endereco(logradouro: "Rua Logo Ali", numero: "123", complemento: "", bairro: "Centro", cidade: "Cabrobró", uf: "SP", cep: "01001-000")
+        let edu = Tutor(id: 0, nome: "Eduardo", cpf: "123.123.123-99", telefone: "(11) 1234-1234", celular: "(11) 91234-1234", ativo: true, endereco: endereco, amigosDoacao: [])
+        let usuarioAPI = UsuarioAPI(id: nil, email: "eduardo@adocao.com.br", senha: "123", imagemURL: "", ativo: true, ultimoAcesso: "", funcao: "Admin", tutor: edu)
+        
+        postAction(path: "usuarios/", bodyParameter: usuarioAPI) { data in
+            print(data)
+        } failure: { error in
+            print(error)
+        }
+        
         return true
     }
 

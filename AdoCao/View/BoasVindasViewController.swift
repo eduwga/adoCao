@@ -30,7 +30,8 @@ class BoasVindasViewController: UIViewController {
             seguirParaLogin()
             return
         }
-        viewModel.validaLogin(email: emailUsuarioArmazenado, senha: senhaUsuarioArmazenado)
+        ///Deve buscar do CoreData e ver se pula o login
+        //viewModel.validaLogin(email: emailUsuarioArmazenado, senha: senhaUsuarioArmazenado)
     }
     
     private func seguirParaLogin() {
@@ -39,12 +40,13 @@ class BoasVindasViewController: UIViewController {
 }
 extension BoasVindasViewController: BoasVindasViewModelDelegate {
     func atualizaLogin(devePermitir: Bool, usuario: Usuario?) {
-        if devePermitir {
-            performSegue(withIdentifier: "telaPrincipalSegue", sender: usuario)
-        }
-        else {
-            self.seguirParaLogin()
-        }
+        self.seguirParaLogin()
+//        if devePermitir {
+//            performSegue(withIdentifier: "telaPrincipalSegue", sender: usuario)
+//        }
+//        else {
+//            self.seguirParaLogin()
+//        }
     }
     
     

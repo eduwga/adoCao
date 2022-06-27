@@ -15,7 +15,7 @@ protocol ListarAmigosViewModelDelegate {
 class ListarAmigosViewModel {
     
 
-    let service = Service()
+    let service = Service.shared
     var amigos: [Amigo] = []
     var favoritos = [Int: Bool]()
     var minhaLista: [Amigo] = []
@@ -27,10 +27,8 @@ class ListarAmigosViewModel {
         self.amigos = service.getDogsForAdoption()
     }
     
-    func obterViewModelParaDetalhes(posicao: Any?) -> DetalheAmigoViewModel? {
-        guard let posicao = posicao as? Int else {
-            return nil
-        }
+    func obterViewModelParaDetalhes(posicao: Any?) -> DetalheAmigoViewModel {
+        let posicao = posicao as! Int 
         let amigo = amigos[posicao]
         let vm = DetalheAmigoViewModel(amigo: amigo)
         return vm

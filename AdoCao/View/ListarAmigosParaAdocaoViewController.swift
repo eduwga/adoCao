@@ -74,24 +74,14 @@ extension ListarAmigosParaAdocaoViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        let cell = tableView.cellForRow(at: indexPath) as! ListarAmigosCustomCell
-
-        viewModel.favoritos[indexPath.row] = true
         performSegue(withIdentifier: "detalheAmigoSegue", sender: indexPath.row)
     }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! ListarAmigosCustomCell
-
-        viewModel.favoritos[indexPath.count] = false
-    }
-    
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detalheAmigoSegue" {
             if let destination = segue.destination as? DetalheAmigoViewController {
                 let vm = viewModel.obterViewModelParaDetalhes(posicao: sender)
-                destination.viewModel = vm
+                destination.configura(viewModel: vm)
             }
         }
     }

@@ -19,16 +19,17 @@ class FavoritosViewController: UIViewController {
         favoritosCollectionView.delegate = self
         
     }
-    func viewDidApper() {
-        super.viewDidAppear(true)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         favoritosCollectionView.reloadData()
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let telaDetalhes = segue.destination as? DetalheAmigoViewController else { return }
         guard let posicao = sender as? Int else { return }
         let vmDetalhes = viewModel.obterViewModelParaTelaDetalhe(posicao: posicao)
-        vmDetalhes?.delegate = telaDetalhes
-        telaDetalhes.viewModel = vmDetalhes
+        telaDetalhes.configura(viewModel: vmDetalhes)
     }
 }
 extension FavoritosViewController: UICollectionViewDelegate {
@@ -56,6 +57,4 @@ extension FavoritosViewController: FavoritosViewModelDelegate {
     func recarregarTela() {
         favoritosCollectionView.reloadData()
     }
-    
-    
 }

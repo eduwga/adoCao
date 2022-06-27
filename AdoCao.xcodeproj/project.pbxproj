@@ -24,6 +24,10 @@
 		6D66298E285015AD00D4195F /* DetalhesRacaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66298D285015AD00D4195F /* DetalhesRacaViewModel.swift */; };
 		6D6629922851074600D4195F /* EditarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6629912851074600D4195F /* EditarUsuarioViewController.swift */; };
 		6D6629942851082500D4195F /* EditarUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6629932851082500D4195F /* EditarUsuarioViewModel.swift */; };
+		6DB9E7842868E53200C0B791 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB9E7832868E53200C0B791 /* User.swift */; };
+		6DB9E78628690BC300C0B791 /* LoginResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB9E78528690BC300C0B791 /* LoginResultDTO.swift */; };
+		6DB9E78828690DDC00C0B791 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB9E78728690DDC00C0B791 /* LoginViewModel.swift */; };
+		6DB9E78A2869243A00C0B791 /* RegistroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB9E7892869243A00C0B791 /* RegistroViewModel.swift */; };
 		6DEBFCD52854D79500906023 /* FavoritoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEBFCD42854D79500906023 /* FavoritoCollectionViewCell.swift */; };
 		6DEBFCD92854D81000906023 /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEBFCD82854D81000906023 /* FavoritosViewController.swift */; };
 		6DEBFCDB2854DCD900906023 /* FavoritosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEBFCDA2854DCD900906023 /* FavoritosViewModel.swift */; };
@@ -62,6 +66,10 @@
 		6D66298D285015AD00D4195F /* DetalhesRacaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesRacaViewModel.swift; sourceTree = "<group>"; };
 		6D6629912851074600D4195F /* EditarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarUsuarioViewController.swift; sourceTree = "<group>"; };
 		6D6629932851082500D4195F /* EditarUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarUsuarioViewModel.swift; sourceTree = "<group>"; };
+		6DB9E7832868E53200C0B791 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6DB9E78528690BC300C0B791 /* LoginResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResultDTO.swift; sourceTree = "<group>"; };
+		6DB9E78728690DDC00C0B791 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6DB9E7892869243A00C0B791 /* RegistroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewModel.swift; sourceTree = "<group>"; };
 		6DEBFCD42854D79500906023 /* FavoritoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoCollectionViewCell.swift; sourceTree = "<group>"; };
 		6DEBFCD82854D81000906023 /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		6DEBFCDA2854DCD900906023 /* FavoritosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewModel.swift; sourceTree = "<group>"; };
@@ -98,6 +106,7 @@
 		6D662946284D7D6E00D4195F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6DB9E7822868E4C600C0B791 /* Api */,
 				6D662940284D719600D4195F /* Usuario.swift */,
 				6D662942284D732A00D4195F /* Amigo.swift */,
 				6D662944284D73D600D4195F /* Raca.swift */,
@@ -139,8 +148,19 @@
 				6DEBFCDA2854DCD900906023 /* FavoritosViewModel.swift */,
 				6DEBFCDF2855787B00906023 /* FavoritoCellViewModel.swift */,
 				6D3DE8D12858BF5200F7B58E /* BoasVindasViewModel.swift */,
+				6DB9E78728690DDC00C0B791 /* LoginViewModel.swift */,
+				6DB9E7892869243A00C0B791 /* RegistroViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6DB9E7822868E4C600C0B791 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				6DB9E7832868E53200C0B791 /* User.swift */,
+				6DB9E78528690BC300C0B791 /* LoginResultDTO.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		6DEBFCDE2855781B00906023 /* Cell */ = {
@@ -270,9 +290,12 @@
 				6D3DE8D22858BF5200F7B58E /* BoasVindasViewModel.swift in Sources */,
 				6D662945284D73D600D4195F /* Raca.swift in Sources */,
 				6D66293F284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift in Sources */,
+				6DB9E78A2869243A00C0B791 /* RegistroViewModel.swift in Sources */,
+				6DB9E78828690DDC00C0B791 /* LoginViewModel.swift in Sources */,
 				6DEBFCD92854D81000906023 /* FavoritosViewController.swift in Sources */,
 				EDD14A50285150AA0014FDCA /* CadastrarAmigoViewController.swift in Sources */,
 				2601156B285280CA00BB2C48 /* SuporteViewController.swift in Sources */,
+				6DB9E78628690BC300C0B791 /* LoginResultDTO.swift in Sources */,
 				6DEBFCDB2854DCD900906023 /* FavoritosViewModel.swift in Sources */,
 				C0975F9E2851302800029B19 /* DetalheAmigoViewModel.swift in Sources */,
 				C02B5046284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift in Sources */,
@@ -289,6 +312,7 @@
 				6D66298A28500C8C00D4195F /* RacaViewController.swift in Sources */,
 				C0DB9912283FE3EA000ABDA3 /* SceneDelegate.swift in Sources */,
 				6D662943284D732A00D4195F /* Amigo.swift in Sources */,
+				6DB9E7842868E53200C0B791 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

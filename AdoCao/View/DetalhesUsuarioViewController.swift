@@ -25,7 +25,7 @@ class DetalhesUsuarioViewController: UIViewController {
     @IBAction func sairButtonAction(_ sender: Any) {
         UserDefaults.standard.set("", forKey: "emailDoUsuario")
         UserDefaults.standard.set("", forKey: "senhaDoUsuario")
-        performSegue(withIdentifier: "telaLoginSegue", sender: nil)
+        tabBarController?.navigationController?.popToRootViewController(animated: true)
     }
     
     override func viewDidLoad() {

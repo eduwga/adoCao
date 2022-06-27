@@ -21,19 +21,21 @@ class DetalheAmigoViewModel {
     
     init(amigo: Amigo) {
         self.amigo = amigo
-        delegate?.configura(amigo: amigo)
     }
     
-    func telaInicial() {
-        delegate?.configura(amigo: amigo)
+    func getNome() -> String {
+        return amigo.nome
     }
     
-    func validarFoto(nomeFoto: String?) -> String {
-        if let nomeFoto = nomeFoto {
-            if nomeFoto != ""{
-                return nomeFoto
-            }
-        }
-        return fotoPadrao
+    func getLocalizacao() -> String {
+        return amigo.localizacao
+    }
+    
+    func getDescricao() -> String {
+        return amigo.descricao
+    }
+    
+    func getFoto() -> String {
+        return amigo.foto != "" ? amigo.foto : fotoPadrao
     }
 }

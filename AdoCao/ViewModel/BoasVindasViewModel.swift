@@ -13,23 +13,19 @@ protocol BoasVindasViewModelDelegate {
 
 class BoasVindasViewModel {
     
-    private let service: Service
-    
+    private let service = Service.shared
     var delegate: BoasVindasViewModelDelegate?
     
-    init(service: Service = .init()) {
-        self.service = service
-    }
-    
-    func validaLogin(email: String, senha: String) {
-        service.loginAsync(email: email, password: senha,completion: { usuario in
-            if usuario == nil {
-                self.delegate?.atualizaLogin(devePermitir: false, usuario: nil)
-            }
-            else {
-                self.delegate?.atualizaLogin(devePermitir: true, usuario: usuario)
-            }
-        })
-    }
+    ///Buscar do CoreData e validar
+//    func validaLogin(email: String, senha: String) {
+//        service.loginAsync(email: email, password: senha,completion: { usuario in
+//            if usuario == nil {
+//                self.delegate?.atualizaLogin(devePermitir: false, usuario: nil)
+//            }
+//            else {
+//                self.delegate?.atualizaLogin(devePermitir: true, usuario: usuario)
+//            }
+//        })
+//    }
     
 }

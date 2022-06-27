@@ -16,7 +16,7 @@ protocol DetalhesUsuarioViewModelDelegate {
 class DetalhesUsuarioViewModel {
     
     var delegate: DetalhesUsuarioViewModelDelegate?
-    private let service = Service()
+    private let service = Service.shared
     private let fotoPadrao = "customPerson"
     private let usuario: Usuario
     

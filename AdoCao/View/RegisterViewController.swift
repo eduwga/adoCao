@@ -16,8 +16,11 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var estadoTextField: UITextField!
     @IBOutlet weak var CEPTextField: UITextField!
     
+    let viewModel: RegistroViewModel = .init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -28,44 +31,29 @@ class RegisterViewController: UIViewController {
     
     @IBAction func cadastrarButton(_ sender: Any) {
         
-        let nomeDoUsuario = nomeTextField.text
-        let emailDoUsuario = emailTextField.text
-        let senhaDoUsuario = senhaTextField.text
-        let confirmarSenhaDoUsuario = confirmarSenhaTextField.text
-        let estadoDoUsuario = estadoTextField.text
-        let CEPDoUsuario = CEPTextField.text
+        viewModel.cadastraUsuario(nome: nomeTextField.text, email: emailTextField.text, uf: estadoTextField.text, cep: CEPTextField.text, senha: senhaTextField.text, confirmacao: confirmarSenhaTextField.text)
         
-        // verificar se todos os campos estao preenchidos
+    }
+    
+    private func exibeAlerta(mensagem: String) {
+        let alerta = UIAlertController(title: "Ops!", message: mensagem, preferredStyle: UIAlertController.Style.alert)
         
-        if nomeDoUsuario == "" ||
-        emailDoUsuario == "" ||
-        senhaDoUsuario == "" ||
-        confirmarSenhaDoUsuario == "" ||
-        estadoDoUsuario == "" ||
-        CEPDoUsuario == "" {
-            
-            // mensagem de alerta
-            
-            alertaNaTela(mensagemNaTela: "Todos os campos são obrigatórios!")
-            
-            return
-            
-        }
+        let botaoCadastrar = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
         
-        if senhaDoUsuario != confirmarSenhaDoUsuario {
-            
-            // alerta na tela de senhas diferentes
-            alertaNaTela(mensagemNaTela: "As senhas estão diferentes!")
-            return
-        }
-        
-        // armazenar dados cadastrais
-        UserDefaults.standard.set(emailDoUsuario, forKey: "emailDoUsuario")
-        UserDefaults.standard.set(senhaDoUsuario, forKey: "senhaDoUsuario")
-        UserDefaults.standard.synchronize()
+        alerta.addAction(botaoCadastrar)
+        self.present(alerta, animated: true, completion: nil)
+    }
+}
+extension RegisterViewController: RegistroViewModelDelegate {
+    func exibeAlertaErro(mensagem: String) {
+        self.exibeAlerta(mensagem: mensagem)
+    }
+    
+    func cadastroComSucesso(mensagem: String) {
+        self.exibeAlerta(mensagem: "Usuario cadastrado com sucesso!")
         
         // alerta de confirmacao de cadastro
-        var alertaConfirmacao = UIAlertController(title: "Muito bem!", message: "Seu cadastro foi realizado com sucesso. Seja bem vindo(a)!", preferredStyle: UIAlertController.Style.alert)
+        let alertaConfirmacao = UIAlertController(title: "Muito bem!", message: "Seu cadastro foi realizado com sucesso. Seja bem vindo(a)!", preferredStyle: UIAlertController.Style.alert)
         
         let botaoCadastrar = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) { action in
             self.dismiss(animated: true, completion: nil)
@@ -73,15 +61,7 @@ class RegisterViewController: UIViewController {
         
         alertaConfirmacao.addAction(botaoCadastrar)
         self.present(alertaConfirmacao, animated: true, completion: nil)
-        
     }
     
-    func alertaNaTela(mensagemNaTela: String) {
-        var alerta = UIAlertController(title: "Ops!", message: mensagemNaTela, preferredStyle: UIAlertController.Style.alert)
-        
-        let botaoCadastrar = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
-        
-        alerta.addAction(botaoCadastrar)
-        self.present(alerta, animated: true, completion: nil)
-    }
+    
 }

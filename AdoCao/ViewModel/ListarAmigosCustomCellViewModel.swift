@@ -15,10 +15,8 @@ protocol ListarAmigosCustomCellViewModelDelegate {
 
 class ListarAmigosCustomCellViewModel {
         
-    let service = Service()
-   
-    var usuarioAtual: Usuario
-    
+    let service = Service.shared
+    var usuarioAtual: Usuario?
     let cao: Amigo?
     
     
@@ -26,7 +24,7 @@ class ListarAmigosCustomCellViewModel {
     var delegate: ListarAmigosCustomCellViewModelDelegate?
 
     init(cao: Amigo?) {
-        self.usuarioAtual = service.getLoggedUser()!
+        self.usuarioAtual = service.getLoggedUser()
         self.cao = cao
 
     }
@@ -49,18 +47,22 @@ class ListarAmigosCustomCellViewModel {
         
     
     func verificaSeAmigoEFavorito() -> Bool {
-
-            return usuarioAtual.amigosFavoritos.contains(where: { amigo in
-                amigo.nome == self.cao?.nome
-            })
+        if let existe =  usuarioAtual?.amigosFavoritos.contains(where: { amigo in
+            amigo.nome == self.cao?.nome
+        }) {
+            return existe
         }
+        else {
+            return false
+        }
+    }
     func removeFavoritos() {
-        usuarioAtual.amigosFavoritos.removeAll { amigo in
+        usuarioAtual?.amigosFavoritos.removeAll { amigo in
             amigo.nome == cao?.nome
         }
     }
     func adicionaFavoritos() {
-        usuarioAtual.amigosFavoritos.append(cao!)
+        usuarioAtual?.amigosFavoritos.append(cao!)
     }
     
     func verificaSeAmigoEFavorito(amigoSelecionado: Amigo) -> Bool {

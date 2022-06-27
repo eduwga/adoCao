@@ -13,10 +13,7 @@ public class DataBase {
     var racas: [Raca] = []
     var minhaLista: [Amigo] = []
     
-    static var shared: DataBase = {
-        let instance = DataBase()
-        return instance
-    }()
+    static var shared = DataBase()
     
     private init() {
         preencheAmigos()
@@ -26,7 +23,7 @@ public class DataBase {
     
     private func preencheUsuarios() {
         
-        let admin = Usuario(
+        let admin = Usuario(id: 1,
             nome: "Admin",
             email: "admin",
             cep: "---",
@@ -34,7 +31,7 @@ public class DataBase {
             uf: "---",
             contato: "---")
         
-        let marcia = Usuario(
+        let marcia = Usuario(id: 2,
             nome: "Marcia Araújo",
             email: "marcia@projetoadocao.com.br",
             cep: "01001-000",
@@ -44,7 +41,7 @@ public class DataBase {
             foto: "Usuaria"
         )
         
-        let juliana = Usuario(
+        let juliana = Usuario(id: 3,
             nome: "Juliana Ferreira",
             email: "juliana@projetoadocao.com.br",
             cep: "01001-000",
@@ -54,7 +51,7 @@ public class DataBase {
             foto: "usrJuliana"
         )
         
-        let andre = Usuario(
+        let andre = Usuario(id: 4,
             nome: "André Nepomuceno",
             email: "andre@projetoadocao.com.br",
             cep: "01001-000",
@@ -65,7 +62,7 @@ public class DataBase {
         )
         
         
-        let marcos = Usuario(
+        let marcos = Usuario(id: 5,
             nome: "Marcos Vinícius",
             email: "marcos@projetoadocao.com.br",
             cep: "01001-000",
@@ -75,7 +72,7 @@ public class DataBase {
             foto: "Usuario"
         )
         
-        let thales = Usuario(
+        let thales = Usuario(id: 6,
             nome: "Thales Bernardes",
             email: "thales@projetoadocao.com.br",
             cep: "01001-000",
@@ -85,7 +82,7 @@ public class DataBase {
             foto: "Usuario"
         )
         
-        let eduardo = Usuario(
+        let eduardo = Usuario(id: 7,
             nome: "Eduardo Waked",
             email: "eduardo@projetoadocao.com.br",
             cep: "01001-000",
@@ -95,7 +92,7 @@ public class DataBase {
             foto: "Usuario"
         )
         
-        let murilo = Usuario(
+        let murilo = Usuario(id: 8,
             nome: "Murilo Oliveira",
             email: "murilo@projetoadocao.com.br",
             cep: "01001-000",
@@ -105,11 +102,8 @@ public class DataBase {
             foto: "Usuario"
         )
         
-        admin.senha = "admin"
-        
         usuarios.append(admin)
         
-        andre.senha = "123"
         let amigoAndre = amigos.first { amigo in
             amigo.nome == "Jimmy"
         }
@@ -118,7 +112,6 @@ public class DataBase {
         }
         usuarios.append(andre)
         
-        marcia.senha = "123"
         let amigoMarcia = amigos.first { amigo in
             amigo.nome == "Nina"
         }
@@ -127,10 +120,8 @@ public class DataBase {
         }
         usuarios.append(marcia)
         
-        juliana.senha = "123"
         usuarios.append(juliana)
         
-        marcos.senha = "123"
         let amigoMarcos = amigos.first { amigo in
             amigo.nome == "Sapecao"
         }
@@ -139,10 +130,8 @@ public class DataBase {
         }
         usuarios.append(marcos)
         
-        thales.senha = "123"
         usuarios.append(thales)
         
-        murilo.senha = "123"
         let amigoMurilo = amigos.first { amigo in
             amigo.nome == "Bilu"
         }
@@ -151,7 +140,6 @@ public class DataBase {
         }
         usuarios.append(murilo)
         
-        eduardo.senha = "123"
         let amigoEduardo = amigos.first { amigo in
             amigo.nome == "Torresmo"
         }
@@ -167,7 +155,7 @@ public class DataBase {
                 nome: "Bilu",
                 idade: 2,
                 raca: "Daschund",
-                tutor: .init(nome: "Teste1", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
+                tutor: .init(id: 1, nome: "Teste1", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .medio,
                 foto: "Bilu",
                 localizacao: "Sumaré - SP",
@@ -179,7 +167,7 @@ public class DataBase {
                 nome: "Torresmo",
                 idade: 1,
                 raca: "Sharpei",
-                tutor: .init(nome: "Teste2", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
+                tutor: .init(id: 2, nome: "Teste2", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .medio,
                 foto: "Torresmo",
                 localizacao: "Goiania - GO",
@@ -191,7 +179,7 @@ public class DataBase {
                 nome: "Nina",
                 idade: 2,
                 raca: "Lhasa Apso",
-                tutor: .init(nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
+                tutor: .init(id: 3, nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .grande,
                 foto: "",
                 localizacao: "Piracicaba - SP",
@@ -203,7 +191,7 @@ public class DataBase {
                 nome: "Jimmy",
                 idade: 1,
                 raca: "Bull Terrier",
-                tutor: .init(nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
+                tutor: .init(id: 4, nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .grande,
                 foto: "jimmy",
                 localizacao: "São Paulo",
@@ -215,7 +203,7 @@ public class DataBase {
                 nome: "Sapecao",
                 idade: 4,
                 raca: "Fox Paulistinha",
-                tutor: .init(nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
+                tutor: .init(id: 4, nome: "Teste3", email: "teste@teste.com.br", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .medio,
                 foto: "Sapecao",
                 localizacao: "São José dos Campos",

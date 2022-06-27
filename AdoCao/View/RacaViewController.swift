@@ -22,6 +22,11 @@ class RacaViewController: UIViewController {
         pesquisarRacaSearchBar.becomeFirstResponder()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let telaDetalhes = segue.destination as? DetalhesRacaViewController else { return }
         let detalhesRacaViewModel = viewModel.selecionouCelula(posicao: sender)
@@ -39,10 +44,12 @@ extension RacaViewController: UITableViewDataSource {
         let raca = viewModel.obterRaca(posicao: indexPath.row)
         cell.textLabel?.text = raca.nome
         cell.imageView?.loadFrom(URLAddress: raca.imagemURL)
-        cell.imageView?.bounds.size.width = 150
-        cell.imageView?.bounds.size.height = 140
-//        cell.imageView?.frame.size.width = 150
-//        cell.imageView?.frame.size.height = 140
+        tableView.estimatedRowHeight = 140
+//        cell.imageView?.bounds.size.width = 150
+//        cell.imageView?.bounds.size.height = 140
+        cell.imageView?.frame.size.width = 150
+        cell.imageView?.frame.size.height = 140
+        cell.imageView?.contentMode = .scaleAspectFit
         return cell
     }
 }

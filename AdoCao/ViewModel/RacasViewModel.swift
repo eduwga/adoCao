@@ -16,7 +16,7 @@ class RacasViewModel {
     var delegate: RacasViewModelDelegate?
     var racasPesquisa: [Raca] = []
     var todasAsRacas: [Raca] = []
-    var service = Service()
+    var service = Service.shared
     
     init() {
         obterTodasAsRacas()

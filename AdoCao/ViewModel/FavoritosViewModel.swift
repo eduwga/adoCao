@@ -14,7 +14,7 @@ protocol FavoritosViewModelDelegate {
 class FavoritosViewModel {
     
     var delegate: FavoritosViewModelDelegate?
-    let service = Service()
+    let service = Service.shared
     var usuarioLogado: Usuario?
     
     init() {
@@ -48,8 +48,9 @@ class FavoritosViewModel {
         let vmCell = FavoritoCellViewModel(amigoFavorito: amigoFavorito)
         return vmCell
     }
-    func obterViewModelParaTelaDetalhe(posicao: Int) -> DetalheAmigoViewModel? {
-        guard let amigoFavorito = obterAmigoFavorito(posicao: posicao) else { return nil }
+    func obterViewModelParaTelaDetalhe(posicao: Int) -> DetalheAmigoViewModel {
+        ///TO-DO: Avaliar se existe caso em que isso possa ser nulo
+        let amigoFavorito = obterAmigoFavorito(posicao: posicao)!
         let vmDetalhe = DetalheAmigoViewModel(amigo: amigoFavorito)
         return vmDetalhe
     }

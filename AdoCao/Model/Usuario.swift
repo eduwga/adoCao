@@ -8,8 +8,8 @@
 import Foundation
 
 class Usuario {
-    internal init(nome: String, email: String, cep: String, cidade: String, uf: String, contato: String) {
-        self.id = UUID.init()
+    internal init(id: Int, nome: String, email: String, cep: String, cidade: String, uf: String, contato: String) {
+        self.id = id
         self.nome = nome
         self.email = email
         self.cep = cep
@@ -18,8 +18,8 @@ class Usuario {
         self.contato = contato
      }
     
-    internal init(nome: String, email: String, cep: String, cidade: String, uf: String, contato: String, foto: String) {
-        self.id = UUID.init()
+    internal init(id: Int, nome: String, email: String, cep: String, cidade: String, uf: String, contato: String, foto: String) {
+        self.id = id
         self.nome = nome
         self.email = email
         self.cep = cep
@@ -29,7 +29,18 @@ class Usuario {
         self.foto = foto
      }
     
-    let id: UUID
+    internal init(usuarioLogado: UsuarioAPI) {
+        self.id = usuarioLogado.id ?? 0
+        self.nome = usuarioLogado.tutor.nome
+        self.email = usuarioLogado.email
+        self.cep = usuarioLogado.tutor.endereco.cep
+        self.cidade = usuarioLogado.tutor.endereco.cidade
+        self.uf = usuarioLogado.tutor.endereco.uf
+        self.contato = "Telefone: \(usuarioLogado.tutor.telefone) - Celular: \(usuarioLogado.tutor.celular)"
+        self.foto = usuarioLogado.imagemURL
+     }
+    
+    let id: Int
     let nome: String
     let email: String
     var cep: String
@@ -37,7 +48,6 @@ class Usuario {
     var uf: String
     var contato: String
     var foto: String?
-    var senha: String?
     
     var amigosFavoritos: [Amigo] = []
     var amigosCadastrados: [Amigo] = []
