@@ -26,25 +26,20 @@ struct UsuarioAPI: Codable {
     let ativo: Bool
     let ultimoAcesso, funcao: String
     let tutor: Tutor
-
-    enum CodingKeys: String, CodingKey {
-        case id, email, senha, imagemURL, ativo, ultimoAcesso, funcao
-        case tutor
-    }
 }
 
 // MARK: - Tutor
 struct Tutor: Codable {
-    let id: Int
+    let id: Int?
     let nome, cpf, telefone, celular: String
     let ativo: Bool
     let endereco: Endereco
-    let amigosDoacao: [AmigosDoacao]
+    let amigosDoacao: [AmigosDoacao]?
 }
 
 // MARK: - AmigosDoacao
 struct AmigosDoacao: Codable {
-    let id: Int
+    let id: Int?
     let nome: String
     let idade, tamanho: Int
     let imagemURL, descricao, caracteristicas: String

@@ -30,8 +30,7 @@ class DetalhesUsuarioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let emailUsuario = UserDefaults.standard.string(forKey: "emailDoUsuario")
-        viewModel = DetalhesUsuarioViewModel(emailUsuario: emailUsuario!)
+        viewModel = DetalhesUsuarioViewModel()
         viewModel?.delegate = self
         viewModel?.forcarInicioTela()
     }

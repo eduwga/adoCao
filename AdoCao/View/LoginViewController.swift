@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
         if viewModel.validaEmail(email: emailTextField.text) && viewModel.validaSenha(senha: senhaTextField.text) {
             viewModel.login(email: emailTextField.text, senha: senhaTextField.text)
         }
-        adicionaViewControllerInicial()
+//        adicionaViewControllerInicial()
     }
     
     private func configuraImagemRevelarSenha() {

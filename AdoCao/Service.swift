@@ -14,7 +14,8 @@ class Service {
     var minhaLista = DataBase.shared.minhaLista
     
     let base_url = "https://adocao.azurewebsites.net/api/"
-    var currentUser: LoginResult?
+    var currentUser: Usuario?
+    var token: String?
     
     static var shared = Service()
     
@@ -67,8 +68,40 @@ class Service {
         
         var request = URLRequest(url: serviceUrl)
 
+//        guard let currentUser = self.currentUser else { return }
+//        let authString = "Bearer \(currentUser.token)"
+//        request.addValue(authString, forHTTPHeaderField: "Authorization")
+        
+        request.httpMethod =  "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        ///Definir os tipos de objeto dependendo do Path (ex: Post p/ Usuario, p/ Cachorro, /Favoritos...
+        if let usuarioParameter = bodyParameter as? UsuarioAPI {
+            guard let httpBody = try? JSONEncoder().encode(usuarioParameter) else { return }
+            request.httpBody = httpBody
+        }
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                failure(error)
+            }
+            
+            if let data = data {
+                completion(data)
+            }
+        }.resume()
+    }
+    
+    
+    private func postImage(path: String, bodyParameter: Encodable, completion: @escaping (Data) -> Void, failure: @escaping (Error) -> Void) {
+        guard let serviceUrl = URL(string: base_url + path) else { return }
+        
+        var request = URLRequest(url: serviceUrl)
+
         guard let currentUser = self.currentUser else { return }
-        let authString = "Bearer \(currentUser.token)"
+        let authString = "Bearer \(self.token)"
         request.addValue(authString, forHTTPHeaderField: "Authorization")
         
         request.httpMethod =  "POST"
@@ -98,8 +131,12 @@ class Service {
         loginAction(path: "usuarios/login/", userLogin: userLogin, completion: { data in
             do {
                 let loginResult = try JSONDecoder().decode(LoginResult.self, from: data)
+                
                 let usuarioResposta = Usuario(usuarioLogado: loginResult.user)
-                self.currentUser = loginResult
+                self.currentUser = usuarioResposta
+                self.token = loginResult.token
+
+                self.currentUser = usuarioResposta
                 completion(usuarioResposta)
             }
             catch {
@@ -180,7 +217,7 @@ class Service {
 
     func getLoggedUser() -> Usuario? {
         guard let currentUser = self.currentUser else { return nil }
-        return Usuario(usuarioLogado: currentUser.user)
+        return currentUser
     }
 
     func create(user: Usuario) -> Bool {
@@ -202,6 +239,12 @@ class Service {
     func addForAdoption(dog: Amigo) -> Bool {
         //TO-DO: - Pensar nas validações
         db.amigos.append(dog)
+        return true
+    }
+    
+    func addToFavorite(dog: Amigo) -> Bool {
+        //TO-DO: - Pensar nas validações
+        getLoggedUser()?.amigosFavoritos.append(dog)
         return true
     }
 }

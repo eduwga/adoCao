@@ -18,7 +18,7 @@ class DetalhesUsuarioViewModel {
     var delegate: DetalhesUsuarioViewModelDelegate?
     private let service = Service.shared
     private let fotoPadrao = "customPerson"
-    private let usuario: Usuario
+    private var usuario: Usuario?
     
     init(usuario: Usuario) {
         self.usuario = usuario
@@ -31,7 +31,17 @@ class DetalhesUsuarioViewModel {
         delegate?.configuraPropriedadesView(usuario: usuario!)
     }
     
+    init() {
+        if let usuario = service.getLoggedUser() {
+            self.usuario = usuario
+        }
+    }
+    
     func forcarInicioTela() {
+        guard let usuario = usuario else {
+            return
+        }
+
         delegate?.configuraPropriedadesView(usuario: usuario)
     }
     
@@ -43,7 +53,7 @@ class DetalhesUsuarioViewModel {
         return nil
     }
     
-    func getUsuario() -> Usuario {
+    func getUsuario() -> Usuario? {
         return usuario
     }
     

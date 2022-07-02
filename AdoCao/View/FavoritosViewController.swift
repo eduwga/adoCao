@@ -9,6 +9,7 @@ import UIKit
 
 class FavoritosViewController: UIViewController {
 
+    @IBOutlet weak var backgroundUIVIew: UIView!
     @IBOutlet weak var favoritosCollectionView: UICollectionView!
     let viewModel: FavoritosViewModel = FavoritosViewModel()
     
@@ -17,6 +18,7 @@ class FavoritosViewController: UIViewController {
         viewModel.delegate = self
         favoritosCollectionView.dataSource = self
         favoritosCollectionView.delegate = self
+        backgroundUIVIew.roundCorners(cornerRadius: 50.0, cornerType: [.superiorEsquerdo, .superiorDireito])
         
     }
     

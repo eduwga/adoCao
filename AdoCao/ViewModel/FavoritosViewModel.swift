@@ -24,23 +24,29 @@ class FavoritosViewModel {
     }
     
     func obterQuantidadeDeFavoritos() -> Int {
-        if let usuario = service.getLoggedUser() {
-            self.usuarioLogado = usuario
-        }
         if let usuarioLogado = usuarioLogado {
             return usuarioLogado.amigosFavoritos.count
+        }
+        else {
+            if let usuario = service.getLoggedUser() {
+                self.usuarioLogado = usuario
+                return usuario.amigosFavoritos.count
+            }
         }
         return  0
     }
     
     func obterAmigoFavorito(posicao: Int) -> Amigo? {
-        if let usuario = service.getLoggedUser() {
-            self.usuarioLogado = usuario
+        if let usuarioLogado = usuarioLogado {
+            return usuarioLogado.amigosFavoritos[posicao]
         }
-        guard let usuarioLogado = usuarioLogado else {
-            return nil
+        else {
+            if let usuario = service.getLoggedUser() {
+                self.usuarioLogado = usuario
+                return usuario.amigosFavoritos[posicao]
+            }
         }
-        return usuarioLogado.amigosFavoritos[posicao]
+        return nil
     }
     
     func obterViewModelParaCell(posicao: Int) -> FavoritoCellViewModel? {

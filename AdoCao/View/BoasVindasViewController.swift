@@ -18,18 +18,21 @@ class BoasVindasViewController: UIViewController {
     }
 
     @IBAction func vamosLaButtonAction(_ sender: Any) {
-        guard let emailUsuarioArmazenado = UserDefaults.standard.string(forKey: "emailDoUsuario") else {
-            seguirParaLogin()
-            return
-        }
-        guard let senhaUsuarioArmazenado = UserDefaults.standard.string(forKey: "senhaDoUsuario") else {
-            seguirParaLogin()
-            return
-        }
-        if emailUsuarioArmazenado == "" || senhaUsuarioArmazenado == ""{
-            seguirParaLogin()
-            return
-        }
+        seguirParaLogin()
+        return
+//        
+//        guard let emailUsuarioArmazenado = UserDefaults.standard.string(forKey: "emailDoUsuario") else {
+//            seguirParaLogin()
+//            return
+//        }
+//        guard let senhaUsuarioArmazenado = UserDefaults.standard.string(forKey: "senhaDoUsuario") else {
+//            seguirParaLogin()
+//            return
+//        }
+//        if emailUsuarioArmazenado == "" || senhaUsuarioArmazenado == ""{
+//            seguirParaLogin()
+//            return
+//        }
         ///Deve buscar do CoreData e ver se pula o login
         //viewModel.validaLogin(email: emailUsuarioArmazenado, senha: senhaUsuarioArmazenado)
     }
