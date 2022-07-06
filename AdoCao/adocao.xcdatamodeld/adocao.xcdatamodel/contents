@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
     <entity name="SystemUser" representedClassName="SystemUser" syncable="YES">
         <attribute name="cep" optional="YES" attributeType="String"/>
         <attribute name="cidade" optional="YES" attributeType="String"/>
@@ -13,5 +14,6 @@
     </entity>
     <elements>
         <element name="SystemUser" positionX="-54" positionY="-9" width="128" height="164"/>
+        <element name="Entity" positionX="-54" positionY="63" width="128" height="29"/>
     </elements>
 </model>

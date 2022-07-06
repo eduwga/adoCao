@@ -65,4 +65,12 @@ class DetalhesUsuarioViewModel {
         }
         return fotoPadrao
     }
+    
+    func deslogarUsuario() {
+        guard let usuario = usuario else { return }
+        let coreData = CoreDataService()
+        if coreData.removeSystemUser(usuario: usuario) {
+            service.currentUser = nil
+        }
+    }
 }

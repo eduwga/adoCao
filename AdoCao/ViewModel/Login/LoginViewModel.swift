@@ -17,19 +17,18 @@ class LoginViewModel {
     var delegate: LoginViewModelDelegate?
     private let service = Service.shared
     private let coreDataService: CoreDataService = .init()
-    private var systemUsers: [SystemUser] = []
+    private var systemUser: SystemUser?
     
     init() {
         service.delegate = self
     }
     
     func verificaSeTemUsuarioLogado() {
-        systemUsers = coreDataService.pegaSystemUser()
-        if !systemUsers.isEmpty {
-            guard let systemUser = systemUsers.first else { return }
-            login(email: systemUser.email, senha: systemUser.senha)
-            //delegate?.temUsuarioLogado()
-        }
+        systemUser = coreDataService.pegaSystemUser()
+        guard let systemUser = systemUser else { return }
+        
+        login(email: systemUser.email, senha: systemUser.senha)
+        //delegate?.temUsuarioLogado()
     }
     
     func validaEmail(email: String?) -> Bool {

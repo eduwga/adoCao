@@ -25,12 +25,11 @@ class EditarUsuarioViewController: UIViewController {
         super.viewDidLoad()
         iniciaActivityIndicator()
         configuraFotoDoUsuario(nomeFoto: fotoPadrao)
+        configuraTela()
     }
     
     func configuraTela(vm: EditarUsuarioViewModel) {
         self.viewModel = vm
-        self.viewModel?.delegate = self
-        self.viewModel?.configurarTela()
     }
     
     @IBAction func alterarUsuarioButtonAction(_ sender: Any) {
@@ -43,6 +42,17 @@ class EditarUsuarioViewController: UIViewController {
     
     @IBAction func buscarNaGaleriaButtonAction(_ sender: Any) {
         abrirImagePickerViewController(modo: .photoLibrary)
+    }
+    
+    private func configuraTela() {
+        if let usuario = viewModel?.getUsuario() {
+            self.nomeTextField.text = usuario.getNome()
+            self.cidadetextField.text = usuario.getCidade()
+            self.ufTextField.text = usuario.getUF()
+            self.contatoTextField.text = usuario.getContato()
+            configuraFoto(nomeFoto: usuario.getCaminhoDaFoto(), imageView: fotoImageView)
+        }
+        finalizaActivityIndicator()
     }
     
     private func iniciaActivityIndicator() {
@@ -90,18 +100,6 @@ class EditarUsuarioViewController: UIViewController {
         alerta.addAction(actionCancela)
         
         present(alerta, animated: true)
-    }
-}
-extension EditarUsuarioViewController: EditarUsuarioViewModelDelegate {
-    
-    func configuraTelaCom(usuario: Usuario) {
-        self.nomeTextField.text = usuario.getNome()
-        self.cidadetextField.text = usuario.getCidade()
-        self.ufTextField.text = usuario.getUF()
-        self.contatoTextField.text = usuario.getContato()
-
-        configuraFotoDoUsuario(nomeFoto: usuario.getCaminhoDaFoto())
-        finalizaActivityIndicator()
     }
 }
 

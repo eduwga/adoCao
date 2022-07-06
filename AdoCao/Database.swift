@@ -189,7 +189,7 @@ public class DataBase {
                 raca: "Lhasa Apso",
                 tutor: .init(id: 3, nome: "Teste3", email: "teste@teste.com.br", senha: "123", cep: "01001-001", cidade: "São Paulo", uf: "SP", contato: "(11) 1234-5678"),
                 porte: .grande,
-                foto: "",
+                foto: "SaintDog",
                 localizacao: "Piracicaba - SP",
                 descricao: "Baixinha, esquentada mais de belos pelos"
             )

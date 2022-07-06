@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         viewModel.delegate = self
-        verificaSeHaUsuarioLogado()
+            //verificaSeHaUsuarioLogado()
         
         super.viewDidLoad()
 

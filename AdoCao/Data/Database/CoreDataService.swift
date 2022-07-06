@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class CoreDataService {
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -23,19 +24,37 @@ class CoreDataService {
         systemUser.uf = usuario.uf
         systemUser.contato = usuario.contato
         systemUser.foto = usuario.foto
-        systemUser.senha = usuario.senha
+        systemUser.senha =  "123"
         
         salvarContexto()
     }
     
-    func pegaSystemUser() -> [SystemUser] {
+    func removeSystemUser(usuario: Usuario) -> Bool {
         do {
-            return try context.fetch(SystemUser.fetchRequest())
+            let loggedUsers = try context.fetch(SystemUser.fetchRequest())
+
+            if let object = loggedUsers.first(where: { systemUser in
+                systemUser.id == usuario.id
+            }) as? NSManagedObject {
+                context.delete(object)
+                salvarContexto()
+            }
         } catch {
             print(error)
         }
-        
-        return []
+        return true
+    }
+    
+    func pegaSystemUser() -> SystemUser? {
+        do {
+            let users = try context.fetch(SystemUser.fetchRequest())
+            if !users.isEmpty {
+                return users.last
+            }
+        } catch {
+            print(error)
+        }
+        return nil
     }
     
     private func salvarContexto() {

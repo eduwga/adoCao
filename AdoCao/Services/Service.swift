@@ -271,9 +271,45 @@ class Service {
     func create(user: Usuario) -> Bool {
         //TO-DO: - Pensar nas validações
         //Mock pra testar a gravacao
-        let endereco = Endereco(logradouro: "Rua Logo Ali", numero: "123", complemento: "", bairro: "Centro", cidade: "Cabrobró", uf: "SP", cep: "01001-000")
-        let edu = Tutor(id: 0, nome: "Eduardo", cpf: "123.123.123-99", telefone: "(11) 1234-1234", celular: "(11) 91234-1234", ativo: true, endereco: endereco, amigosDoacao: [])
-        let usuarioAPI = UsuarioAPI(id: nil, email: "eduardo@adocao.com.br", senha: "123", imagemURL: "", ativo: true, ultimoAcesso: "", funcao: "Admin", tutor: edu)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "br")
+        
+        
+        let endereco = Endereco(
+            logradouro: "",
+            numero: "",
+            complemento: "",
+            bairro: "",
+            cidade: user.getCidade(),
+            uf: user.getUF(),
+            cep: ""
+        )
+        let usuario = Tutor(
+            id: 0,
+            nome: user.nome,
+            cpf: "",
+            telefone: "",
+            celular: user.contato,
+            ativo: true,
+            endereco: endereco,
+            amigosDoacao: []
+        )
+        let usuarioAPI = UsuarioAPI(
+            id: 0,
+            email: user.getEmail(),
+            senha: user.senha,
+            imagemURL: "",
+            ativo: true,
+            ultimoAcesso: dateFormatter.string(from: Date.now),
+            funcao: "Admin",
+            tutor: usuario
+        )
+        
+        
+        
+//        let endereco = Endereco(logradouro: "Rua Logo Ali", numero: "123", complemento: "", bairro: "Centro", cidade: "Cabrobró", uf: "SP", cep: "01001-000")
+//        let edu = Tutor(id: 0, nome: "Eduardo", cpf: "123.123.123-99", telefone: "(11) 1234-1234", celular: "(11) 91234-1234", ativo: true, endereco: endereco, amigosDoacao: [])
+//        let usuarioAPI = UsuarioAPI(id: nil, email: "eduardo@adocao.com.br", senha: "123", imagemURL: "", ativo: true, ultimoAcesso: "", funcao: "Admin", tutor: edu)
         
         postAction(path: "usuarios/", bodyParameter: usuarioAPI) { data in
             print(data)

@@ -11,12 +11,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        verificaSeTemUsuarioLogado(windowScene)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +47,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    func login(email: String?, senha: String?, _ windowScene: UIWindowScene) {
+        
+        let service = Service.shared
+        guard let email = email,
+              let senha = senha
+        else { return }
+        
+        //Efetua login com os dados salvos no CoreData
+        service.login(email: email, password: senha, completion: { usuarioLogado in
+            DispatchQueue.main.async {
+                //instancia ViewController de Home
+                let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let initialViewController = storyBoard.instantiateViewController(withIdentifier: "amigoParaAdocao")
+                
+                //muda root controller para a de home, para exibi-la
+                let window = UIWindow(windowScene: windowScene)
+                window.rootViewController = initialViewController
+                self.window = window
+                window.makeKeyAndVisible()
+            }
+        }) { error in
+            print("Falha no login: \(error.localizedDescription)")
+        }
+    }
+    
+    func verificaSeTemUsuarioLogado(_ scene: UIWindowScene) {
+        let coreDataService: CoreDataService = .init()
+       
+        let systemUser = coreDataService.pegaSystemUser()
+        guard let systemUser = systemUser else { return }
+        
+        login(email: systemUser.email, senha: systemUser.senha, scene)
+        //delegate?.temUsuarioLogado()
+    }
 
 }
 
