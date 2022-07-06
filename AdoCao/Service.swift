@@ -7,7 +7,15 @@
 
 import Foundation
 
+protocol ServiceDelegate {
+    
+    func returnAPIMessage(message: String)
+}
+
 class Service {
+    
+    public var delegate: ServiceDelegate?
+    
     private let session = URLSession.shared
     let db = DataBase.shared
     var loggedUser: Usuario?
@@ -38,12 +46,6 @@ class Service {
         guard let serviceUrl = URL(string: base_url + path) else { return }
         
         var request = URLRequest(url: serviceUrl)
-
-        //Se precisar de autenticação por JWT
-//        if let token = token {
-//            let authString = "Bearer \(token)"
-//            request.addValue(authString, forHTTPHeaderField: "Authorization")
-//        }
         
         request.httpMethod =  "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -100,8 +102,9 @@ class Service {
         
         var request = URLRequest(url: serviceUrl)
 
-        guard let currentUser = self.currentUser else { return }
-        let authString = "Bearer \(self.token)"
+        guard let token = token else { return }
+        let authString = "Bearer \(token)"
+        
         request.addValue(authString, forHTTPHeaderField: "Authorization")
         
         request.httpMethod =  "POST"
@@ -129,19 +132,23 @@ class Service {
     func login(email: String,  password: String, completion: @escaping (Usuario) -> Void, failure: @escaping(Error) -> Void) {
         let userLogin: UserLogin = UserLogin(email: email, senha: password)
         loginAction(path: "usuarios/login/", userLogin: userLogin, completion: { data in
-            do {
-                let loginResult = try JSONDecoder().decode(LoginResult.self, from: data)
+            
+            if let loginResult = try? JSONDecoder().decode(LoginResult.self, from: data) {
                 
                 let usuarioResposta = Usuario(usuarioLogado: loginResult.user)
-                self.currentUser = usuarioResposta
+                self.currentUser = usuarioResposta	
                 self.token = loginResult.token
-
+                
                 self.currentUser = usuarioResposta
                 completion(usuarioResposta)
             }
-            catch {
-                print(error)
+            else {
+                let loginResult = try? JSONDecoder().decode(LoginFailure.self, from: data)
+                if let loginResult = loginResult {
+                    self.delegate?.returnAPIMessage(message: loginResult.message)
+                }
             }
+
         }, failure: { error in
             failure(error)
         })

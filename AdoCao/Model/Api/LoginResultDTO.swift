@@ -14,3 +14,7 @@ struct LoginResult: Codable {
     let user: UsuarioAPI
     let token: String
 }
+
+struct LoginFailure: Codable {
+    let message: String
+}

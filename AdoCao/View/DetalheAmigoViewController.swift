@@ -20,16 +20,22 @@ class DetalheAmigoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configuraTela()
     }
 
     @IBAction func caracteristicaRacaButtonAction(_ sender: Any) { }
     
     func configura(viewModel: DetalheAmigoViewModel) {
         self.viewModel = viewModel
-        nomeCaoLabel.text = viewModel.getNome()
-        localizaCaoLabel.text = viewModel.getLocalizacao()
-        descriCaoLabel.text = viewModel.getDescricao()
-        configuraFotoDoUsuario(nomeFoto: viewModel.getFoto())
+    }
+    
+    private func configuraTela() {
+        if let viewModel = viewModel {
+            nomeCaoLabel.text = viewModel.getNome()
+            localizaCaoLabel.text = viewModel.getLocalizacao()
+            descriCaoLabel.text = viewModel.getDescricao()
+            configuraFoto(nomeFoto: viewModel.getFoto(), imageView: fotoCaoImageView)
+        }
     }
     
     private func configuraFotoDoUsuario(nomeFoto: String) {

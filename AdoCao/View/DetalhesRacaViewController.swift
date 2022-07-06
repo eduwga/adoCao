@@ -22,8 +22,8 @@ class DetalhesRacaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        iniciaActivityIndicator()
-        configuraFotoDoUsuario(nomeFoto: "")
+        iniciaActivityIndicator(activityIndicatorView: activityIndicatorView)
+        configuraFoto(nomeFoto: "", imageView: racaImageView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,38 +48,16 @@ class DetalhesRacaViewController: UIViewController {
         self.viewModel?.delegate = self
         self.viewModel?.configuracaotela()
     }
-    
-    private func configuraFotoDoUsuario(nomeFoto: String?) {
-        if let nomeFoto = viewModel?.validarFoto(nomeFoto: nomeFoto) {
-            racaImageView.loadFrom(URLAddress: nomeFoto)
-        }
-        let valorRadius = racaImageView.frame.size.height / 2.0
-        racaImageView.layer.cornerRadius = valorRadius
-        racaImageView.layer.borderWidth = 1
-        racaImageView.layer.borderColor = UIColor.purple.cgColor
-    }
-    
-    private func iniciaActivityIndicator() {
-        activityIndicatorView.isHidden = false
-        activityIndicatorView.color = UIColor.purple
-        activityIndicatorView.style = .large
-        activityIndicatorView.startAnimating()
-    }
-    
-    private func finalizaActivityIndicator() {
-        activityIndicatorView.isHidden = true
-        activityIndicatorView.stopAnimating()
-    }
 }
 extension DetalhesRacaViewController: DetalhesRacaViewModelDelegate {
     func exibeDadosIniciais(raca: Raca) {
-        self.configuraFotoDoUsuario(nomeFoto: raca.imagemURL)
+        self.configuraFoto(nomeFoto: raca.imagemURL, imageView: racaImageView)
         carcteristicasLabel.text = raca.caracteristicas
         naturalidadeLabel.text = raca.origem
         pesoLabel.text = raca.pesoMedio
         alturaLabel.text = raca.alturaMedia
         estimativaDeVidaLabel.text = raca.estimativaDeVida
         racaLabel.text = raca.nome
-        finalizaActivityIndicator()
+        finalizaActivityIndicator(activityIndicatorView: activityIndicatorView)
     }
 }

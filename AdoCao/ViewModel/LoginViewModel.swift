@@ -16,6 +16,10 @@ class LoginViewModel {
     var delegate: LoginViewModelDelegate?
     private let service = Service.shared
     
+    init() {
+        service.delegate = self
+    }
+    
     func validaEmail(email: String?) -> Bool {
         if let email = email {
             if(email != "") {
@@ -46,5 +50,10 @@ class LoginViewModel {
         }) { error in
             self.delegate?.exibeMensagemAlert(mensagem: "Falha no login: \(error.localizedDescription)")
         }
+    }
+}
+extension LoginViewModel: ServiceDelegate {
+    func returnAPIMessage(message: String) {
+        self.delegate?.exibeMensagemAlert(mensagem: message)
     }
 }

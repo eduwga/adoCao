@@ -11,6 +11,8 @@
 		26F148372852A46000128396 /* EditarAmigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F148362852A46000128396 /* EditarAmigoViewController.swift */; };
 		49D71286284E827200C42519 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71285284E827200C42519 /* LoginViewController.swift */; };
 		49D71288284E828700C42519 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71287284E828700C42519 /* RegisterViewController.swift */; };
+		6D281EC4287247700099A412 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D281EC3287247700099A412 /* UIViewControllerExtension.swift */; };
+		6D281EC6287248F80099A412 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D281EC5287248F80099A412 /* UIImageViewExtension.swift */; };
 		6D3DE88C285692EC00F7B58E /* BoasVindasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DE88B285692EC00F7B58E /* BoasVindasViewController.swift */; };
 		6D3DE8D22858BF5200F7B58E /* BoasVindasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DE8D12858BF5200F7B58E /* BoasVindasViewModel.swift */; };
 		6D66293D284D6B8100D4195F /* DetalhesUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */; };
@@ -54,6 +56,8 @@
 		26F148362852A46000128396 /* EditarAmigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAmigoViewController.swift; sourceTree = "<group>"; };
 		49D71285284E827200C42519 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		49D71287284E828700C42519 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		6D281EC3287247700099A412 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		6D281EC5287248F80099A412 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		6D3DE88B285692EC00F7B58E /* BoasVindasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoasVindasViewController.swift; sourceTree = "<group>"; };
 		6D3DE8D12858BF5200F7B58E /* BoasVindasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoasVindasViewModel.swift; sourceTree = "<group>"; };
 		6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesUsuarioViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				6DCADC37286E46CB00E61541 /* UIViewExtension.swift */,
+				6D281EC3287247700099A412 /* UIViewControllerExtension.swift */,
+				6D281EC5287248F80099A412 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 				6D6629922851074600D4195F /* EditarUsuarioViewController.swift in Sources */,
 				6D66298C28500FE900D4195F /* RacasViewModel.swift in Sources */,
 				6D3DE8D22858BF5200F7B58E /* BoasVindasViewModel.swift in Sources */,
+				6D281EC6287248F80099A412 /* UIImageViewExtension.swift in Sources */,
 				6D662945284D73D600D4195F /* Raca.swift in Sources */,
 				6D66293F284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift in Sources */,
 				6DB9E78A2869243A00C0B791 /* RegistroViewModel.swift in Sources */,
@@ -320,6 +327,7 @@
 				26F148372852A46000128396 /* EditarAmigoViewController.swift in Sources */,
 				C02B5047284BB87400888A1C /* ListarAmigosViewModel.swift in Sources */,
 				49D71286284E827200C42519 /* LoginViewController.swift in Sources */,
+				6D281EC4287247700099A412 /* UIViewControllerExtension.swift in Sources */,
 				6D66298A28500C8C00D4195F /* RacaViewController.swift in Sources */,
 				C0DB9912283FE3EA000ABDA3 /* SceneDelegate.swift in Sources */,
 				6D662943284D732A00D4195F /* Amigo.swift in Sources */,
