@@ -7,4 +7,5 @@ target 'AdoCao' do
 
   # Pods for AdoCao
 	pod 'Alamofire'
+	pod 'Kingfisher'
 end

@@ -14,13 +14,14 @@
 		608D58F0039445F5A69A4139 /* Pods_AdoCao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE5B1572EB627208C166CEA /* Pods_AdoCao.framework */; };
 		6D281EC4287247700099A412 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D281EC3287247700099A412 /* UIViewControllerExtension.swift */; };
 		6D281EC6287248F80099A412 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D281EC5287248F80099A412 /* UIImageViewExtension.swift */; };
+		6D28442F2875D49400DCCEAD /* Raca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28442C2875D49300DCCEAD /* Raca.swift */; };
+		6D2844302875D49400DCCEAD /* Amigo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28442D2875D49300DCCEAD /* Amigo.swift */; };
+		6D2844312875D49400DCCEAD /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28442E2875D49300DCCEAD /* Usuario.swift */; };
+		6D2844332875D4BA00DCCEAD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2844322875D4BA00DCCEAD /* Service.swift */; };
 		6D3DE88C285692EC00F7B58E /* BoasVindasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DE88B285692EC00F7B58E /* BoasVindasViewController.swift */; };
 		6D3DE8D22858BF5200F7B58E /* BoasVindasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DE8D12858BF5200F7B58E /* BoasVindasViewModel.swift */; };
 		6D66293D284D6B8100D4195F /* DetalhesUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */; };
 		6D66293F284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66293E284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift */; };
-		6D662941284D719600D4195F /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D662940284D719600D4195F /* Usuario.swift */; };
-		6D662943284D732A00D4195F /* Amigo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D662942284D732A00D4195F /* Amigo.swift */; };
-		6D662945284D73D600D4195F /* Raca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D662944284D73D600D4195F /* Raca.swift */; };
 		6D66294A284D7F9500D4195F /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D662949284D7F9500D4195F /* Database.swift */; };
 		6D66298A28500C8C00D4195F /* RacaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66298928500C8A00D4195F /* RacaViewController.swift */; };
 		6D66298C28500FE900D4195F /* RacasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D66298B28500FE900D4195F /* RacasViewModel.swift */; };
@@ -35,7 +36,6 @@
 		6DEBFCD52854D79500906023 /* FavoritoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEBFCD42854D79500906023 /* FavoritoCollectionViewCell.swift */; };
 		6DEBFCD92854D81000906023 /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEBFCD82854D81000906023 /* FavoritosViewController.swift */; };
 		6DEBFCDB2854DCD900906023 /* FavoritosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEBFCDA2854DCD900906023 /* FavoritosViewModel.swift */; };
-		6DEBFCDD2854DD2900906023 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEBFCDC2854DD2900906023 /* Service.swift */; };
 		6DEBFCE02855787B00906023 /* FavoritoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEBFCDF2855787B00906023 /* FavoritoCellViewModel.swift */; };
 		C02B5044284BB87400888A1C /* ListarAmigosCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B503E284BB87400888A1C /* ListarAmigosCustomCell.swift */; };
 		C02B5045284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B503F284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift */; };
@@ -65,13 +65,14 @@
 		49D71287284E828700C42519 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6D281EC3287247700099A412 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		6D281EC5287248F80099A412 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		6D28442C2875D49300DCCEAD /* Raca.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Raca.swift; sourceTree = "<group>"; };
+		6D28442D2875D49300DCCEAD /* Amigo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amigo.swift; sourceTree = "<group>"; };
+		6D28442E2875D49300DCCEAD /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		6D2844322875D4BA00DCCEAD /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		6D3DE88B285692EC00F7B58E /* BoasVindasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoasVindasViewController.swift; sourceTree = "<group>"; };
 		6D3DE8D12858BF5200F7B58E /* BoasVindasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoasVindasViewModel.swift; sourceTree = "<group>"; };
 		6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesUsuarioViewController.swift; sourceTree = "<group>"; };
 		6D66293E284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesUsuarioViewModel.swift; sourceTree = "<group>"; };
-		6D662940284D719600D4195F /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
-		6D662942284D732A00D4195F /* Amigo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amigo.swift; sourceTree = "<group>"; };
-		6D662944284D73D600D4195F /* Raca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raca.swift; sourceTree = "<group>"; };
 		6D662949284D7F9500D4195F /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		6D66298928500C8A00D4195F /* RacaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacaViewController.swift; sourceTree = "<group>"; };
 		6D66298B28500FE900D4195F /* RacasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacasViewModel.swift; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		6DEBFCD42854D79500906023 /* FavoritoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoCollectionViewCell.swift; sourceTree = "<group>"; };
 		6DEBFCD82854D81000906023 /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		6DEBFCDA2854DCD900906023 /* FavoritosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewModel.swift; sourceTree = "<group>"; };
-		6DEBFCDC2854DD2900906023 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		6DEBFCDF2855787B00906023 /* FavoritoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoCellViewModel.swift; sourceTree = "<group>"; };
 		A53C91EDCE08480E14290CCC /* Pods-AdoCao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoCao.release.xcconfig"; path = "Target Support Files/Pods-AdoCao/Pods-AdoCao.release.xcconfig"; sourceTree = "<group>"; };
 		C02B503E284BB87400888A1C /* ListarAmigosCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosCustomCell.swift; sourceTree = "<group>"; };
@@ -126,10 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				ED68FFB628751E1E00A8486E /* CoreData */,
-				6DB9E7822868E4C600C0B791 /* Api */,
-				6D662940284D719600D4195F /* Usuario.swift */,
-				6D662942284D732A00D4195F /* Amigo.swift */,
-				6D662944284D73D600D4195F /* Raca.swift */,
+				6DC11B4A2875AD87002F2ED4 /* DTO */,
+				6DC11B492875AD7E002F2ED4 /* BO */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,20 +135,19 @@
 		6D662947284D7D8200D4195F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6DEBFCDE2855781B00906023 /* Cell */,
-				49D71285284E827200C42519 /* LoginViewController.swift */,
-				49D71287284E828700C42519 /* RegisterViewController.swift */,
-				C02B5040284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift */,
-				C0975F9B28511D0900029B19 /* DetalheAmigoViewController.swift */,
-				EDD14A4F285150AA0014FDCA /* CadastrarAmigoViewController.swift */,
-				EDD14A51285155130014FDCA /* DetalhesRacaViewController.swift */,
-				6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */,
-				6D66298928500C8A00D4195F /* RacaViewController.swift */,
-				26F148362852A46000128396 /* EditarAmigoViewController.swift */,
-				2601156A285280CA00BB2C48 /* SuporteViewController.swift */,
-				6D6629912851074600D4195F /* EditarUsuarioViewController.swift */,
-				6DEBFCD82854D81000906023 /* FavoritosViewController.swift */,
-				6D3DE88B285692EC00F7B58E /* BoasVindasViewController.swift */,
+				6DC11B482875AD1E002F2ED4 /* AmigosParaAdocao */,
+				6DC11B472875AD13002F2ED4 /* DetalhesRaca */,
+				6DC11B462875AD0B002F2ED4 /* DetalhesAmigo */,
+				6DC11B452875AC61002F2ED4 /* DetalhesUsuario */,
+				6DC11B442875AC3F002F2ED4 /* EditarUsuario */,
+				6DC11B432875AC29002F2ED4 /* Racas */,
+				6DC11B422875AC1E002F2ED4 /* BoasVindas */,
+				6DC11B412875AC14002F2ED4 /* Favoritos */,
+				6DC11B402875AC10002F2ED4 /* Suporte */,
+				6DC11B3F2875AC03002F2ED4 /* EditarAmigo */,
+				6DC11B3E2875ABED002F2ED4 /* CadastrarAmigoDoacao */,
+				6DC11B3D2875ABB7002F2ED4 /* CadastrarUsuario */,
+				6DC11B3C2875ABAB002F2ED4 /* Login */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,29 +155,233 @@
 		6D662948284D7D8B00D4195F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C02B503F284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift */,
-				C02B5041284BB87400888A1C /* ListarAmigosViewModel.swift */,
-				C0975F9D2851302800029B19 /* DetalheAmigoViewModel.swift */,
-				6D66293E284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift */,
-				6D66298B28500FE900D4195F /* RacasViewModel.swift */,
-				6D66298D285015AD00D4195F /* DetalhesRacaViewModel.swift */,
-				6D6629932851082500D4195F /* EditarUsuarioViewModel.swift */,
-				6DEBFCDA2854DCD900906023 /* FavoritosViewModel.swift */,
-				6DEBFCDF2855787B00906023 /* FavoritoCellViewModel.swift */,
-				6D3DE8D12858BF5200F7B58E /* BoasVindasViewModel.swift */,
-				6DB9E78728690DDC00C0B791 /* LoginViewModel.swift */,
-				6DB9E7892869243A00C0B791 /* RegistroViewModel.swift */,
+				6DC11B552875AF07002F2ED4 /* CadastrarUsuario */,
+				6DC11B542875AEFE002F2ED4 /* Login */,
+				6DC11B532875AEF8002F2ED4 /* BoasVindas */,
+				6DC11B522875AEEE002F2ED4 /* Favoritos */,
+				6DC11B512875AEE4002F2ED4 /* EditarUsuario */,
+				6DC11B502875AED9002F2ED4 /* DetalhesRaca */,
+				6DC11B4F2875AED4002F2ED4 /* Racas */,
+				6DC11B4E2875AECB002F2ED4 /* DetalhesAmigo */,
+				6DC11B4D2875AEBB002F2ED4 /* DetalhesUsuario */,
+				6DC11B4C2875AEB0002F2ED4 /* ListarAmigos */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		6DB9E7822868E4C600C0B791 /* Api */ = {
+		6DC11B3C2875ABAB002F2ED4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				49D71285284E827200C42519 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6DC11B3D2875ABB7002F2ED4 /* CadastrarUsuario */ = {
+			isa = PBXGroup;
+			children = (
+				49D71287284E828700C42519 /* RegisterViewController.swift */,
+			);
+			path = CadastrarUsuario;
+			sourceTree = "<group>";
+		};
+		6DC11B3E2875ABED002F2ED4 /* CadastrarAmigoDoacao */ = {
+			isa = PBXGroup;
+			children = (
+				EDD14A4F285150AA0014FDCA /* CadastrarAmigoViewController.swift */,
+			);
+			path = CadastrarAmigoDoacao;
+			sourceTree = "<group>";
+		};
+		6DC11B3F2875AC03002F2ED4 /* EditarAmigo */ = {
+			isa = PBXGroup;
+			children = (
+				26F148362852A46000128396 /* EditarAmigoViewController.swift */,
+			);
+			path = EditarAmigo;
+			sourceTree = "<group>";
+		};
+		6DC11B402875AC10002F2ED4 /* Suporte */ = {
+			isa = PBXGroup;
+			children = (
+				2601156A285280CA00BB2C48 /* SuporteViewController.swift */,
+			);
+			path = Suporte;
+			sourceTree = "<group>";
+		};
+		6DC11B412875AC14002F2ED4 /* Favoritos */ = {
+			isa = PBXGroup;
+			children = (
+				6DEBFCD42854D79500906023 /* FavoritoCollectionViewCell.swift */,
+				6DEBFCD82854D81000906023 /* FavoritosViewController.swift */,
+			);
+			path = Favoritos;
+			sourceTree = "<group>";
+		};
+		6DC11B422875AC1E002F2ED4 /* BoasVindas */ = {
+			isa = PBXGroup;
+			children = (
+				6D3DE88B285692EC00F7B58E /* BoasVindasViewController.swift */,
+			);
+			path = BoasVindas;
+			sourceTree = "<group>";
+		};
+		6DC11B432875AC29002F2ED4 /* Racas */ = {
+			isa = PBXGroup;
+			children = (
+				6D66298928500C8A00D4195F /* RacaViewController.swift */,
+			);
+			path = Racas;
+			sourceTree = "<group>";
+		};
+		6DC11B442875AC3F002F2ED4 /* EditarUsuario */ = {
+			isa = PBXGroup;
+			children = (
+				6D6629912851074600D4195F /* EditarUsuarioViewController.swift */,
+			);
+			path = EditarUsuario;
+			sourceTree = "<group>";
+		};
+		6DC11B452875AC61002F2ED4 /* DetalhesUsuario */ = {
+			isa = PBXGroup;
+			children = (
+				6D66293C284D6B8100D4195F /* DetalhesUsuarioViewController.swift */,
+			);
+			path = DetalhesUsuario;
+			sourceTree = "<group>";
+		};
+		6DC11B462875AD0B002F2ED4 /* DetalhesAmigo */ = {
+			isa = PBXGroup;
+			children = (
+				C0975F9B28511D0900029B19 /* DetalheAmigoViewController.swift */,
+			);
+			path = DetalhesAmigo;
+			sourceTree = "<group>";
+		};
+		6DC11B472875AD13002F2ED4 /* DetalhesRaca */ = {
+			isa = PBXGroup;
+			children = (
+				EDD14A51285155130014FDCA /* DetalhesRacaViewController.swift */,
+			);
+			path = DetalhesRaca;
+			sourceTree = "<group>";
+		};
+		6DC11B482875AD1E002F2ED4 /* AmigosParaAdocao */ = {
+			isa = PBXGroup;
+			children = (
+				C02B503E284BB87400888A1C /* ListarAmigosCustomCell.swift */,
+				C02B5040284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift */,
+			);
+			path = AmigosParaAdocao;
+			sourceTree = "<group>";
+		};
+		6DC11B492875AD7E002F2ED4 /* BO */ = {
+			isa = PBXGroup;
+			children = (
+				6D28442D2875D49300DCCEAD /* Amigo.swift */,
+				6D28442C2875D49300DCCEAD /* Raca.swift */,
+				6D28442E2875D49300DCCEAD /* Usuario.swift */,
+			);
+			path = BO;
+			sourceTree = "<group>";
+		};
+		6DC11B4A2875AD87002F2ED4 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
 				6DB9E7832868E53200C0B791 /* User.swift */,
 				6DB9E78528690BC300C0B791 /* LoginResultDTO.swift */,
 			);
-			path = Api;
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		6DC11B4B2875ADB0002F2ED4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6D2844322875D4BA00DCCEAD /* Service.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6DC11B4C2875AEB0002F2ED4 /* ListarAmigos */ = {
+			isa = PBXGroup;
+			children = (
+				C02B503F284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift */,
+				C02B5041284BB87400888A1C /* ListarAmigosViewModel.swift */,
+			);
+			path = ListarAmigos;
+			sourceTree = "<group>";
+		};
+		6DC11B4D2875AEBB002F2ED4 /* DetalhesUsuario */ = {
+			isa = PBXGroup;
+			children = (
+				6D66293E284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift */,
+			);
+			path = DetalhesUsuario;
+			sourceTree = "<group>";
+		};
+		6DC11B4E2875AECB002F2ED4 /* DetalhesAmigo */ = {
+			isa = PBXGroup;
+			children = (
+				C0975F9D2851302800029B19 /* DetalheAmigoViewModel.swift */,
+			);
+			path = DetalhesAmigo;
+			sourceTree = "<group>";
+		};
+		6DC11B4F2875AED4002F2ED4 /* Racas */ = {
+			isa = PBXGroup;
+			children = (
+				6D66298B28500FE900D4195F /* RacasViewModel.swift */,
+			);
+			path = Racas;
+			sourceTree = "<group>";
+		};
+		6DC11B502875AED9002F2ED4 /* DetalhesRaca */ = {
+			isa = PBXGroup;
+			children = (
+				6D66298D285015AD00D4195F /* DetalhesRacaViewModel.swift */,
+			);
+			path = DetalhesRaca;
+			sourceTree = "<group>";
+		};
+		6DC11B512875AEE4002F2ED4 /* EditarUsuario */ = {
+			isa = PBXGroup;
+			children = (
+				6D6629932851082500D4195F /* EditarUsuarioViewModel.swift */,
+			);
+			path = EditarUsuario;
+			sourceTree = "<group>";
+		};
+		6DC11B522875AEEE002F2ED4 /* Favoritos */ = {
+			isa = PBXGroup;
+			children = (
+				6DEBFCDA2854DCD900906023 /* FavoritosViewModel.swift */,
+				6DEBFCDF2855787B00906023 /* FavoritoCellViewModel.swift */,
+			);
+			path = Favoritos;
+			sourceTree = "<group>";
+		};
+		6DC11B532875AEF8002F2ED4 /* BoasVindas */ = {
+			isa = PBXGroup;
+			children = (
+				6D3DE8D12858BF5200F7B58E /* BoasVindasViewModel.swift */,
+			);
+			path = BoasVindas;
+			sourceTree = "<group>";
+		};
+		6DC11B542875AEFE002F2ED4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6DB9E78728690DDC00C0B791 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6DC11B552875AF07002F2ED4 /* CadastrarUsuario */ = {
+			isa = PBXGroup;
+			children = (
+				6DB9E7892869243A00C0B791 /* RegistroViewModel.swift */,
+			);
+			path = CadastrarUsuario;
 			sourceTree = "<group>";
 		};
 		6DCADC36286E46AB00E61541 /* Extensions */ = {
@@ -191,15 +392,6 @@
 				6D281EC5287248F80099A412 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		6DEBFCDE2855781B00906023 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				C02B503E284BB87400888A1C /* ListarAmigosCustomCell.swift */,
-				6DEBFCD42854D79500906023 /* FavoritoCollectionViewCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		6F6F7A1749F5B81AE166E7F5 /* Frameworks */ = {
@@ -216,7 +408,6 @@
 				03B45C910AD5FAB004E484D7 /* Pods-AdoCao.debug.xcconfig */,
 				A53C91EDCE08480E14290CCC /* Pods-AdoCao.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -242,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				ED68FFB9287521DC00A8486E /* Data */,
+				6DC11B4B2875ADB0002F2ED4 /* Services */,
 				6DCADC36286E46AB00E61541 /* Extensions */,
 				6D662948284D7D8B00D4195F /* ViewModel */,
 				6D662947284D7D8200D4195F /* View */,
@@ -253,7 +445,6 @@
 				C0DB991A283FE3EB000ABDA3 /* LaunchScreen.storyboard */,
 				C0DB991D283FE3EB000ABDA3 /* Info.plist */,
 				6D662949284D7F9500D4195F /* Database.swift */,
-				6DEBFCDC2854DD2900906023 /* Service.swift */,
 				ED68FFB328750ED000A8486E /* adocao.xcdatamodeld */,
 			);
 			path = AdoCao;
@@ -402,6 +593,7 @@
 				6DEBFCE02855787B00906023 /* FavoritoCellViewModel.swift in Sources */,
 				49D71288284E828700C42519 /* RegisterViewController.swift in Sources */,
 				C02B5044284BB87400888A1C /* ListarAmigosCustomCell.swift in Sources */,
+				6D2844302875D49400DCCEAD /* Amigo.swift in Sources */,
 				6D66298E285015AD00D4195F /* DetalhesRacaViewModel.swift in Sources */,
 				C0DB9910283FE3EA000ABDA3 /* AppDelegate.swift in Sources */,
 				C0975F9C28511D0900029B19 /* DetalheAmigoViewController.swift in Sources */,
@@ -411,10 +603,10 @@
 				6D66298C28500FE900D4195F /* RacasViewModel.swift in Sources */,
 				6D3DE8D22858BF5200F7B58E /* BoasVindasViewModel.swift in Sources */,
 				6D281EC6287248F80099A412 /* UIImageViewExtension.swift in Sources */,
-				6D662945284D73D600D4195F /* Raca.swift in Sources */,
 				6D66293F284D6BAC00D4195F /* DetalhesUsuarioViewModel.swift in Sources */,
 				6DB9E78A2869243A00C0B791 /* RegistroViewModel.swift in Sources */,
 				6DB9E78828690DDC00C0B791 /* LoginViewModel.swift in Sources */,
+				6D2844332875D4BA00DCCEAD /* Service.swift in Sources */,
 				6DEBFCD92854D81000906023 /* FavoritosViewController.swift in Sources */,
 				EDD14A50285150AA0014FDCA /* CadastrarAmigoViewController.swift in Sources */,
 				2601156B285280CA00BB2C48 /* SuporteViewController.swift in Sources */,
@@ -424,13 +616,12 @@
 				ED68FFB828751E3400A8486E /* SystemUser.swift in Sources */,
 				C02B5046284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift in Sources */,
 				6D3DE88C285692EC00F7B58E /* BoasVindasViewController.swift in Sources */,
-				6D662941284D719600D4195F /* Usuario.swift in Sources */,
 				6DEBFCD52854D79500906023 /* FavoritoCollectionViewCell.swift in Sources */,
 				6D6629942851082500D4195F /* EditarUsuarioViewModel.swift in Sources */,
 				ED68FFBC2875220B00A8486E /* CoreDataService.swift in Sources */,
 				6D66293D284D6B8100D4195F /* DetalhesUsuarioViewController.swift in Sources */,
 				EDD14A52285155130014FDCA /* DetalhesRacaViewController.swift in Sources */,
-				6DEBFCDD2854DD2900906023 /* Service.swift in Sources */,
+				6D2844312875D49400DCCEAD /* Usuario.swift in Sources */,
 				ED68FFBE2875365500A8486E /* SystemUserProperties.swift in Sources */,
 				26F148372852A46000128396 /* EditarAmigoViewController.swift in Sources */,
 				C02B5047284BB87400888A1C /* ListarAmigosViewModel.swift in Sources */,
@@ -439,7 +630,7 @@
 				ED68FFB528750ED000A8486E /* adocao.xcdatamodeld in Sources */,
 				6D66298A28500C8C00D4195F /* RacaViewController.swift in Sources */,
 				C0DB9912283FE3EA000ABDA3 /* SceneDelegate.swift in Sources */,
-				6D662943284D732A00D4195F /* Amigo.swift in Sources */,
+				6D28442F2875D49400DCCEAD /* Raca.swift in Sources */,
 				6DB9E7842868E53200C0B791 /* User.swift in Sources */,
 				6DCADC38286E46CB00E61541 /* UIViewExtension.swift in Sources */,
 			);
