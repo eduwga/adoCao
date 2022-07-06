@@ -27,7 +27,7 @@ class CoreDataService {
         salvarContexto()
     }
     
-    private func pegaSystemUser() -> [SystemUser] {
+    func pegaSystemUser() -> [SystemUser] {
         do {
             return try context.fetch(SystemUser.fetchRequest())
         } catch {

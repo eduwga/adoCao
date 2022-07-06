@@ -10,15 +10,24 @@ import Foundation
 protocol LoginViewModelDelegate {
     func loginComSucesso(_ usuario: Usuario)
     func exibeMensagemAlert(mensagem: String)
+    func temUsuarioLogado()
 }
 
 class LoginViewModel {
     var delegate: LoginViewModelDelegate?
     private let service = Service.shared
     private let coreDataService: CoreDataService = .init()
+    private var systemUsers: [SystemUser] = []
     
     init() {
         service.delegate = self
+    }
+    
+    func verificaSeTemUsuarioLogado() {
+        systemUsers = coreDataService.pegaSystemUser()
+        if !systemUsers.isEmpty {
+            delegate?.temUsuarioLogado()
+        }
     }
     
     func validaEmail(email: String?) -> Bool {

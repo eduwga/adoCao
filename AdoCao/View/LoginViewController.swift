@@ -17,9 +17,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var senhaTextField: UITextField!
     
     override func viewDidLoad() {
+        viewModel.delegate = self
+        verificaSeHaUsuarioLogado()
+        
         super.viewDidLoad()
 
-        viewModel.delegate = self
         configuraImagemRevelarSenha()
         emailTextField.becomeFirstResponder()
     }
@@ -44,6 +46,10 @@ class LoginViewController: UIViewController {
             viewModel.login(email: emailTextField.text, senha: senhaTextField.text)
         }
 //        adicionaViewControllerInicial()
+    }
+    
+    private func verificaSeHaUsuarioLogado() {
+        viewModel.verificaSeTemUsuarioLogado()
     }
     
     private func configuraImagemRevelarSenha() {
@@ -92,6 +98,10 @@ class LoginViewController: UIViewController {
     }
 }
 extension LoginViewController: LoginViewModelDelegate {
+    func temUsuarioLogado() {
+        self.adicionaViewControllerInicial()
+    }
+    
     func loginComSucesso(_ usuario: Usuario) {
         self.adicionaViewControllerInicial()
         // alerta de confirmacao de login
