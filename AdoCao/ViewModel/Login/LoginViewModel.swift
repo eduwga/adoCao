@@ -26,7 +26,9 @@ class LoginViewModel {
     func verificaSeTemUsuarioLogado() {
         systemUsers = coreDataService.pegaSystemUser()
         if !systemUsers.isEmpty {
-            delegate?.temUsuarioLogado()
+            guard let systemUser = systemUsers.first else { return }
+            login(email: systemUser.email, senha: systemUser.senha)
+            //delegate?.temUsuarioLogado()
         }
     }
     

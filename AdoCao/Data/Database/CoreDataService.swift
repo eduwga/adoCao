@@ -23,6 +23,7 @@ class CoreDataService {
         systemUser.uf = usuario.uf
         systemUser.contato = usuario.contato
         systemUser.foto = usuario.foto
+        systemUser.senha = usuario.senha
         
         salvarContexto()
     }
