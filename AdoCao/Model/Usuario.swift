@@ -40,6 +40,17 @@ class Usuario {
         self.foto = usuarioLogado.imagemURL
      }
     
+    internal init(systemUser: SystemUser) {
+        self.id = Int(systemUser.id)
+        self.nome = systemUser.nome
+        self.email = systemUser.email
+        self.cep = systemUser.cep
+        self.cidade = systemUser.cidade
+        self.uf = systemUser.uf
+        self.contato = systemUser.contato
+        self.foto = systemUser.foto
+    }
+    
     let id: Int
     let nome: String
     let email: String

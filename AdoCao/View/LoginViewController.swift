@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
     @IBAction func entrarButton(_ sender: Any) {
         
         if viewModel.validaEmail(email: emailTextField.text) && viewModel.validaSenha(senha: senhaTextField.text) {
+            
             viewModel.login(email: emailTextField.text, senha: senhaTextField.text)
         }
 //        adicionaViewControllerInicial()

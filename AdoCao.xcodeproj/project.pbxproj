@@ -47,6 +47,10 @@
 		C0DB9917283FE3EA000ABDA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0DB9915283FE3EA000ABDA3 /* Main.storyboard */; };
 		C0DB9919283FE3EB000ABDA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0DB9918283FE3EB000ABDA3 /* Assets.xcassets */; };
 		C0DB991C283FE3EB000ABDA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0DB991A283FE3EB000ABDA3 /* LaunchScreen.storyboard */; };
+		ED68FFB528750ED000A8486E /* adocao.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED68FFB328750ED000A8486E /* adocao.xcdatamodeld */; };
+		ED68FFB828751E3400A8486E /* SystemUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED68FFB728751E3400A8486E /* SystemUser.swift */; };
+		ED68FFBC2875220B00A8486E /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED68FFBB2875220B00A8486E /* CoreDataService.swift */; };
+		ED68FFBE2875365500A8486E /* SystemUserProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED68FFBD2875365500A8486E /* SystemUserProperties.swift */; };
 		EDD14A50285150AA0014FDCA /* CadastrarAmigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD14A4F285150AA0014FDCA /* CadastrarAmigoViewController.swift */; };
 		EDD14A52285155130014FDCA /* DetalhesRacaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD14A51285155130014FDCA /* DetalhesRacaViewController.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +98,10 @@
 		C0DB9918283FE3EB000ABDA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0DB991B283FE3EB000ABDA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0DB991D283FE3EB000ABDA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED68FFB428750ED000A8486E /* adocao.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = adocao.xcdatamodel; sourceTree = "<group>"; };
+		ED68FFB728751E3400A8486E /* SystemUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUser.swift; sourceTree = "<group>"; };
+		ED68FFBB2875220B00A8486E /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		ED68FFBD2875365500A8486E /* SystemUserProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUserProperties.swift; sourceTree = "<group>"; };
 		EDD14A4F285150AA0014FDCA /* CadastrarAmigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarAmigoViewController.swift; sourceTree = "<group>"; };
 		EDD14A51285155130014FDCA /* DetalhesRacaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesRacaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +120,7 @@
 		6D662946284D7D6E00D4195F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ED68FFB628751E1E00A8486E /* CoreData */,
 				6DB9E7822868E4C600C0B791 /* Api */,
 				6D662940284D719600D4195F /* Usuario.swift */,
 				6D662942284D732A00D4195F /* Amigo.swift */,
@@ -207,6 +216,7 @@
 		C0DB990E283FE3EA000ABDA3 /* AdoCao */ = {
 			isa = PBXGroup;
 			children = (
+				ED68FFB9287521DC00A8486E /* Data */,
 				6DCADC36286E46AB00E61541 /* Extensions */,
 				6D662948284D7D8B00D4195F /* ViewModel */,
 				6D662947284D7D8200D4195F /* View */,
@@ -219,8 +229,34 @@
 				C0DB991D283FE3EB000ABDA3 /* Info.plist */,
 				6D662949284D7F9500D4195F /* Database.swift */,
 				6DEBFCDC2854DD2900906023 /* Service.swift */,
+				ED68FFB328750ED000A8486E /* adocao.xcdatamodeld */,
 			);
 			path = AdoCao;
+			sourceTree = "<group>";
+		};
+		ED68FFB628751E1E00A8486E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				ED68FFB728751E3400A8486E /* SystemUser.swift */,
+				ED68FFBD2875365500A8486E /* SystemUserProperties.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		ED68FFB9287521DC00A8486E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ED68FFBA287521F000A8486E /* Database */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		ED68FFBA287521F000A8486E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				ED68FFBB2875220B00A8486E /* CoreDataService.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,18 +352,22 @@
 				6DB9E78628690BC300C0B791 /* LoginResultDTO.swift in Sources */,
 				6DEBFCDB2854DCD900906023 /* FavoritosViewModel.swift in Sources */,
 				C0975F9E2851302800029B19 /* DetalheAmigoViewModel.swift in Sources */,
+				ED68FFB828751E3400A8486E /* SystemUser.swift in Sources */,
 				C02B5046284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift in Sources */,
 				6D3DE88C285692EC00F7B58E /* BoasVindasViewController.swift in Sources */,
 				6D662941284D719600D4195F /* Usuario.swift in Sources */,
 				6DEBFCD52854D79500906023 /* FavoritoCollectionViewCell.swift in Sources */,
 				6D6629942851082500D4195F /* EditarUsuarioViewModel.swift in Sources */,
+				ED68FFBC2875220B00A8486E /* CoreDataService.swift in Sources */,
 				6D66293D284D6B8100D4195F /* DetalhesUsuarioViewController.swift in Sources */,
 				EDD14A52285155130014FDCA /* DetalhesRacaViewController.swift in Sources */,
 				6DEBFCDD2854DD2900906023 /* Service.swift in Sources */,
+				ED68FFBE2875365500A8486E /* SystemUserProperties.swift in Sources */,
 				26F148372852A46000128396 /* EditarAmigoViewController.swift in Sources */,
 				C02B5047284BB87400888A1C /* ListarAmigosViewModel.swift in Sources */,
 				49D71286284E827200C42519 /* LoginViewController.swift in Sources */,
 				6D281EC4287247700099A412 /* UIViewControllerExtension.swift in Sources */,
+				ED68FFB528750ED000A8486E /* adocao.xcdatamodeld in Sources */,
 				6D66298A28500C8C00D4195F /* RacaViewController.swift in Sources */,
 				C0DB9912283FE3EA000ABDA3 /* SceneDelegate.swift in Sources */,
 				6D662943284D732A00D4195F /* Amigo.swift in Sources */,
@@ -548,6 +588,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ED68FFB328750ED000A8486E /* adocao.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ED68FFB428750ED000A8486E /* adocao.xcdatamodel */,
+			);
+			currentVersion = ED68FFB428750ED000A8486E /* adocao.xcdatamodel */;
+			path = adocao.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C0DB9904283FE3EA000ABDA3 /* Project object */;
 }
