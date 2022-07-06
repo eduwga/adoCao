@@ -1,0 +1,6 @@
+framework module Pods_AdoCao {
+  umbrella header "Pods-AdoCao-umbrella.h"
+
+  export *
+  module * { export * }
+}

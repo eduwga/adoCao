@@ -11,6 +11,7 @@
 		26F148372852A46000128396 /* EditarAmigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F148362852A46000128396 /* EditarAmigoViewController.swift */; };
 		49D71286284E827200C42519 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71285284E827200C42519 /* LoginViewController.swift */; };
 		49D71288284E828700C42519 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71287284E828700C42519 /* RegisterViewController.swift */; };
+		608D58F0039445F5A69A4139 /* Pods_AdoCao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE5B1572EB627208C166CEA /* Pods_AdoCao.framework */; };
 		6D281EC4287247700099A412 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D281EC3287247700099A412 /* UIViewControllerExtension.swift */; };
 		6D281EC6287248F80099A412 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D281EC5287248F80099A412 /* UIImageViewExtension.swift */; };
 		6D3DE88C285692EC00F7B58E /* BoasVindasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3DE88B285692EC00F7B58E /* BoasVindasViewController.swift */; };
@@ -52,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03B45C910AD5FAB004E484D7 /* Pods-AdoCao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoCao.debug.xcconfig"; path = "Target Support Files/Pods-AdoCao/Pods-AdoCao.debug.xcconfig"; sourceTree = "<group>"; };
+		0CE5B1572EB627208C166CEA /* Pods_AdoCao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdoCao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2601156A285280CA00BB2C48 /* SuporteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuporteViewController.swift; sourceTree = "<group>"; };
 		26F148362852A46000128396 /* EditarAmigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAmigoViewController.swift; sourceTree = "<group>"; };
 		49D71285284E827200C42519 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		6DEBFCDA2854DCD900906023 /* FavoritosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewModel.swift; sourceTree = "<group>"; };
 		6DEBFCDC2854DD2900906023 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		6DEBFCDF2855787B00906023 /* FavoritoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoCellViewModel.swift; sourceTree = "<group>"; };
+		A53C91EDCE08480E14290CCC /* Pods-AdoCao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoCao.release.xcconfig"; path = "Target Support Files/Pods-AdoCao/Pods-AdoCao.release.xcconfig"; sourceTree = "<group>"; };
 		C02B503E284BB87400888A1C /* ListarAmigosCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosCustomCell.swift; sourceTree = "<group>"; };
 		C02B503F284BB87400888A1C /* ListarAmigosCustomCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosCustomCellViewModel.swift; sourceTree = "<group>"; };
 		C02B5040284BB87400888A1C /* ListarAmigosParaAdocaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListarAmigosParaAdocaoViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				608D58F0039445F5A69A4139 /* Pods_AdoCao.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,11 +193,31 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		6F6F7A1749F5B81AE166E7F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0CE5B1572EB627208C166CEA /* Pods_AdoCao.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		964DC03147341B35BEBE8A1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				03B45C910AD5FAB004E484D7 /* Pods-AdoCao.debug.xcconfig */,
+				A53C91EDCE08480E14290CCC /* Pods-AdoCao.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C0DB9903283FE3EA000ABDA3 = {
 			isa = PBXGroup;
 			children = (
 				C0DB990E283FE3EA000ABDA3 /* AdoCao */,
 				C0DB990D283FE3EA000ABDA3 /* Products */,
+				964DC03147341B35BEBE8A1A /* Pods */,
+				6F6F7A1749F5B81AE166E7F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,9 +255,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0DB9920283FE3EB000ABDA3 /* Build configuration list for PBXNativeTarget "AdoCao" */;
 			buildPhases = (
+				8417BC577919E5319418BA49 /* [CP] Check Pods Manifest.lock */,
 				C0DB9908283FE3EA000ABDA3 /* Sources */,
 				C0DB9909283FE3EA000ABDA3 /* Frameworks */,
 				C0DB990A283FE3EA000ABDA3 /* Resources */,
+				99611D940AA9164F867646D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +315,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8417BC577919E5319418BA49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdoCao-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99611D940AA9164F867646D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdoCao/Pods-AdoCao-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdoCao/Pods-AdoCao-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdoCao/Pods-AdoCao-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C0DB9908283FE3EA000ABDA3 /* Sources */ = {
@@ -474,6 +543,7 @@
 		};
 		C0DB9921283FE3EB000ABDA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03B45C910AD5FAB004E484D7 /* Pods-AdoCao.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -501,6 +571,7 @@
 		};
 		C0DB9922283FE3EB000ABDA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A53C91EDCE08480E14290CCC /* Pods-AdoCao.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
