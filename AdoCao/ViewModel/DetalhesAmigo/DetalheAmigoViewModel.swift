@@ -38,4 +38,21 @@ class DetalheAmigoViewModel {
     func getFoto() -> String {
         return amigo.foto != "" ? amigo.foto : fotoPadrao
     }
+    
+    func getCoordenadas() -> [Double] {
+        let localizacao = amigo.localizacao.split(separator: ",")
+        if localizacao.count == 0 {
+            return []
+        }
+        guard let latitude = Double(localizacao[0])  else { return [] }
+        guard let longitude = Double(localizacao[1]) else { return [] }
+        return [latitude, longitude]
+        
+    }
+    
+    func getEndereco() -> String {
+        return "\(amigo.tutor.getCidade()) - \(amigo.tutor.getUF())"
+    }
+    
+
 }

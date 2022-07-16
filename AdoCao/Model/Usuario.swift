@@ -31,16 +31,16 @@ class Usuario {
         self.foto = foto
      }
     
-    internal init(usuarioLogado: UsuarioAPI) {
-        self.id = usuarioLogado.id ?? 0
-        self.nome = usuarioLogado.tutor.nome
-        self.senha = usuarioLogado.senha
-        self.email = usuarioLogado.email
-        self.cep = usuarioLogado.tutor.endereco.cep
-        self.cidade = usuarioLogado.tutor.endereco.cidade
-        self.uf = usuarioLogado.tutor.endereco.uf
-        self.contato = "Telefone: \(usuarioLogado.tutor.telefone) - Celular: \(usuarioLogado.tutor.celular)"
-        self.foto = usuarioLogado.imagemURL
+    internal init(usuarioResponse: UsuarioResponse) {
+        self.id = usuarioResponse.usuarioID
+        self.nome = usuarioResponse.nome
+        self.senha = ""
+        self.email = usuarioResponse.email
+        self.cep = usuarioResponse.cep
+        self.cidade = usuarioResponse.cidade
+        self.uf = usuarioResponse.uf
+        self.contato = usuarioResponse.contato
+        self.foto = usuarioResponse.foto
      }
     
     internal init(systemUser: SystemUser) {
@@ -96,4 +96,20 @@ class Usuario {
         func getCaminhoDaFoto() -> String {
             return self.foto ?? ""
         }
+    
+    func copiaParaUsuarioAPI() -> UsuariosRequest {
+        
+        let usuarioRequest = UsuariosRequest(
+            usuarioID: id,
+            nome: nome,
+            senha: senha,
+            email: email,
+            cep: cep,
+            cidade: cidade,
+            uf: uf,
+            contato: contato,
+            foto: "")
+        
+        return usuarioRequest
+    }
 }

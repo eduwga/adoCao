@@ -9,24 +9,24 @@ import Foundation
 
 protocol ListarAmigosCustomCellViewModelDelegate {
     
+    func exibeMensagemResposta(sucesso: Bool)
     
+    func amigoFoiAdicionado()
+    func amigoFoiRemovido()
 }
 
 
 class ListarAmigosCustomCellViewModel {
         
     let service = Service.shared
-    var usuarioAtual: Usuario?
     let cao: Amigo?
-    
-    
-    
+    var usuarioAtual: Usuario?
     var delegate: ListarAmigosCustomCellViewModelDelegate?
 
     init(cao: Amigo?) {
         self.usuarioAtual = service.getLoggedUser()
         self.cao = cao
-
+        buscaAmigosFavoritos()
     }
     
     func getNome() -> String {
@@ -42,39 +42,62 @@ class ListarAmigosCustomCellViewModel {
     }
     
     func getLocalizacao() -> String {
-        return self.cao?.localizacao ?? ""
+        guard let amigo = cao?.tutor else { return self.cao?.localizacao ?? "" }
+        return "\(amigo.cidade) - \(amigo.uf)"
     }
         
-    
-    func verificaSeAmigoEFavorito() -> Bool {
-        if let existe =  usuarioAtual?.amigosFavoritos.contains(where: { amigo in
-            amigo.nome == self.cao?.nome
-        }) {
-            return existe
-        }
-        else {
-            return false
+    func buscaAmigosFavoritos() {
+        service.getUserFavorites { amigos in
+            if let usuarioAtual = self.usuarioAtual {
+                usuarioAtual.amigosFavoritos = amigos
+            }
         }
     }
+    func verificaSeAmigoEFavorito() {
+        service.getUserFavorites { amigos in
+            if let usuarioAtual = self.usuarioAtual {
+                usuarioAtual.amigosFavoritos = amigos
+            }
+            let existe =  amigos.contains(where: { amigo in
+                amigo.nome == self.cao?.nome
+            })
+            if existe {
+                self.removeFavoritos()
+            }
+            else {
+                self.adicionaFavoritos()
+            }
+        }
+    }
+    
     func removeFavoritos() {
         usuarioAtual?.amigosFavoritos.removeAll { amigo in
             amigo.nome == cao?.nome
         }
     }
+    
     func adicionaFavoritos() {
-        usuarioAtual?.amigosFavoritos.append(cao!)
+        guard let cao = cao else { return }
+        service.addToFavorite(dog: cao) { resposta in
+            if resposta {
+                self.delegate?.amigoFoiAdicionado()
+            }
+            else {
+                self.delegate?.amigoFoiRemovido()
+            }
+        }
     }
     
-    func verificaSeAmigoEFavorito(amigoSelecionado: Amigo) -> Bool {
-        let usuarioAtual = service.getLoggedUser()
-        
-        guard let usuarioAtual = usuarioAtual else {
-            return false
-        }
-
-        return usuarioAtual.amigosFavoritos.contains(where: { amigo in
-            amigo.nome == amigoSelecionado.nome
-        })
-    }
+//    func verificaSeAmigoEFavorito(amigoSelecionado: Amigo) -> Bool {
+//        let usuarioAtual = service.getLoggedUser()
+//        
+//        guard let usuarioAtual = usuarioAtual else {
+//            return false
+//        }
+//
+//        return usuarioAtual.amigosFavoritos.contains(where: { amigo in
+//            amigo.nome == amigoSelecionado.nome
+//        })
+//    }
 }
 

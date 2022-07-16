@@ -23,33 +23,40 @@ class ListarAmigosCustomCell: UITableViewCell {
     
     @IBOutlet weak var favoritarImagemButton: UIButton!
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+//
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
+    
     @IBAction func favoritarButtonAction(_ sender: Any) {
-        guard let tapButtonFavorite = sender as? UIButton else { return }
-        guard let estaNaLista = viewModel?.verificaSeAmigoEFavorito() else { return }
-        
-        if estaNaLista {
-            viewModel?.removeFavoritos()
-            tapButtonFavorite.setImage(UIImage(systemName: "heart"), for: .normal)
-        } else {
-            viewModel?.adicionaFavoritos()
-            tapButtonFavorite.setImage(UIImage(systemName: "heart.fill")?.withTintColor(.yellow), for: .normal)
-        }
-        
+        viewModel?.verificaSeAmigoEFavorito()
     }
     
     func configura(vm: ListarAmigosCustomCellViewModel) {
         self.viewModel = vm
-        imagemCaoImageView.image = UIImage(named: vm.getFoto())
         nomeCaoLabel.text = vm.getNome()
         descriCaoLabel.text = vm.getDescricao()
         localizaCaoLabel.text = vm.getLocalizacao()
+        configuraFoto(nomeFoto: vm.getFoto(), imageView: imagemCaoImageView)
+    }
+}
+extension ListarAmigosCustomCell: ListarAmigosCustomCellViewModelDelegate {
+    func amigoFoiAdicionado() {
+        self.favoritarImagemButton.setImage(UIImage(systemName: "heart.fill")?.withTintColor(.yellow), for: .normal)
     }
     
+    func amigoFoiRemovido() {
+        self.favoritarImagemButton.setImage(UIImage(systemName: "heart"), for: .normal)
     }
+    
+    func exibeMensagemResposta(sucesso: Bool) {
+        if sucesso {
+            self.favoritarImagemButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        } else {
+            self.favoritarImagemButton.setImage(UIImage(systemName: "heart.fill")?.withTintColor(.yellow), for: .normal)
+        }        
+    }
+}
   
     
     

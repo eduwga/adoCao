@@ -2,6 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+<<<<<<< HEAD
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -13,6 +14,8 @@
 			</array>
 		</dict>
 	</array>
+=======
+>>>>>>> e191add (Altera todas as classes Model da API, para simplificar e se adeaquar as mudancas da mesma. Adiciona duas novas entidades no coredata, de cachorros e uma associacao dos favoritos. Implementados metdos de favoritos na service e vms. Altera Login no coredata para a scenedelegate. Implementa Mapkit na tela de detalhes do cachorro para adocao)
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

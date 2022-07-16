@@ -24,7 +24,7 @@ class CoreDataService {
         systemUser.uf = usuario.uf
         systemUser.contato = usuario.contato
         systemUser.foto = usuario.foto
-        systemUser.senha =  "123"
+        systemUser.senha =  usuario.senha
         
         salvarContexto()
     }
@@ -35,7 +35,7 @@ class CoreDataService {
 
             if let object = loggedUsers.first(where: { systemUser in
                 systemUser.id == usuario.id
-            }) as? NSManagedObject {
+            }) {
                 context.delete(object)
                 salvarContexto()
             }

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol ListarAmigosViewModelDelegate {
-    
+    func listaDeAmigosFoiAlterada()
 }
 
 class ListarAmigosViewModel {
@@ -24,7 +24,10 @@ class ListarAmigosViewModel {
     var delegate: ListarAmigosViewModelDelegate?
     
     init() {
-        self.amigos = service.getDogsForAdoption()
+        service.getDogsForAdoption(completion: { amigos in
+            self.amigos = amigos
+            self.delegate?.listaDeAmigosFoiAlterada()
+        })
     }
     
     func obterViewModelParaDetalhes(posicao: Any?) -> DetalheAmigoViewModel {

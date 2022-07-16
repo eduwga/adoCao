@@ -95,6 +95,10 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+        print("saiu")
+    }
+    
     
     
     private func verificaSeHaUsuarioLogado() {

@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/asantos/ProjetosGithub/ProjetoAdoCao/adoCao/AdoCao/Model/Friends+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/asantos/ProjetosGithub/ProjetoAdoCao/adoCao/AdoCao/Model/Friends+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/asantos/ProjetosGithub/ProjetoAdoCao/adoCao/AdoCao/Model/UserFavorites+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/asantos/ProjetosGithub/ProjetoAdoCao/adoCao/AdoCao/Model/UserFavorites+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:AdoCao.xcodeproj">
    </FileRef>
    <FileRef

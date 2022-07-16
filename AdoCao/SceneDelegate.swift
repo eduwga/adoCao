@@ -50,9 +50,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func login(email: String?, senha: String?, _ windowScene: UIWindowScene) {
         
         let service = Service.shared
+
         guard let email = email,
               let senha = senha
         else { return }
+        
+
+        //Busca controller da launchScreen para manter exibição  até que a validação de usuario responda
+        let launchScreen = UIStoryboard(name: "LaunchScreen", bundle: Bundle.main)
+        let launchScreenViewController = launchScreen.instantiateInitialViewController()
+        
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = launchScreenViewController
+        self.window = window
+        window.makeKeyAndVisible()
         
         //Efetua login com os dados salvos no CoreData
         service.login(email: email, password: senha, completion: { usuarioLogado in
@@ -61,10 +72,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 let initialViewController = storyBoard.instantiateViewController(withIdentifier: "amigoParaAdocao")
                 
-                //muda root controller para a de home, para exibi-la
-                let window = UIWindow(windowScene: windowScene)
                 window.rootViewController = initialViewController
-                self.window = window
                 window.makeKeyAndVisible()
             }
         }) { error in
@@ -74,13 +82,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func verificaSeTemUsuarioLogado(_ scene: UIWindowScene) {
         let coreDataService: CoreDataService = .init()
-       
         let systemUser = coreDataService.pegaSystemUser()
-        guard let systemUser = systemUser else { return }
         
+        guard let systemUser = systemUser else { return }
         login(email: systemUser.email, senha: systemUser.senha, scene)
-        //delegate?.temUsuarioLogado()
     }
-
 }
 

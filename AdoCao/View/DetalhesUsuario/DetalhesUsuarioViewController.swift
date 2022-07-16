@@ -24,7 +24,6 @@ class DetalhesUsuarioViewController: UIViewController {
     
     @IBAction func sairButtonAction(_ sender: Any) {
         viewModel?.deslogarUsuario()
-        tabBarController?.navigationController?.popToRootViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -57,5 +56,10 @@ extension DetalhesUsuarioViewController: DetalhesUsuarioViewModelDelegate {
         ufLabel.text = usuario.getUF()
         contatoLabel.text = usuario.getContato()
         configuraFoto(nomeFoto: usuario.getCaminhoDaFoto(),  imageView: fotoImageView)
+    }
+    
+    func retornaParaLogin() {
+//        performSegue(withIdentifier: "unwindToLogin", sender: self)
+        tabBarController?.navigationController?.popToRootViewController(animated: true)
     }
 }

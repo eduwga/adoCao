@@ -18,7 +18,7 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        iniciaActivityIndicator()
+        iniciaActivityIndicator(activityIndicatorView: listarAmigosActivityIndicator)
         navigationItem.hidesBackButton = true
         listarAmigosTableView.dataSource = self
         listarAmigosTableView.delegate = self
@@ -30,18 +30,6 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
         listarAmigosTableView.reloadData()
     }
     
-    private func iniciaActivityIndicator() {
-        listarAmigosActivityIndicator.startAnimating()
-        listarAmigosActivityIndicator.isHidden = false
-        listarAmigosActivityIndicator.color = UIColor.purple
-        listarAmigosActivityIndicator.style = .large
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-        self.listarAmigosActivityIndicator.stopAnimating()
-        self.listarAmigosActivityIndicator.isHidden = true
-        }
-    }
-    
-    
     private func naoFavoritado() {
         for i in 0...viewModel.favoritos.count {
             viewModel.favoritos[i] = false
@@ -51,9 +39,7 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
 
 extension ListarAmigosParaAdocaoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return viewModel.obterQuantidadeDeAmigos(segmento: listarAmigosSegmentedControl.selectedSegmentIndex)
-
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,7 +74,10 @@ extension ListarAmigosParaAdocaoViewController: UITableViewDelegate {
 }
 
 extension ListarAmigosParaAdocaoViewController: ListarAmigosViewModelDelegate {
-    
+    func listaDeAmigosFoiAlterada() {
+        listarAmigosTableView.reloadData()
+        finalizaActivityIndicator(activityIndicatorView: listarAmigosActivityIndicator)
+    }
 }
 
 

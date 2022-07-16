@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class FavoritosViewController: UIViewController {
 
@@ -19,7 +20,6 @@ class FavoritosViewController: UIViewController {
         favoritosCollectionView.dataSource = self
         favoritosCollectionView.delegate = self
         backgroundUIVIew.roundCorners(cornerRadius: 50.0, cornerType: [.superiorEsquerdo, .superiorDireito])
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

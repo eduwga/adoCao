@@ -10,6 +10,7 @@ import Foundation
 // MARK: - Protocolo do Delegate
 protocol DetalhesUsuarioViewModelDelegate {
     func configuraPropriedadesView(usuario: Usuario)
+    func retornaParaLogin()
 }
 
 // MARK: - Definição da Classe
@@ -71,6 +72,7 @@ class DetalhesUsuarioViewModel {
         let coreData = CoreDataService()
         if coreData.removeSystemUser(usuario: usuario) {
             service.currentUser = nil
+            self.delegate?.retornaParaLogin()
         }
     }
 }
