@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2601156B285280CA00BB2C48 /* SuporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2601156A285280CA00BB2C48 /* SuporteViewController.swift */; };
+		267CC25328820B0500A7535A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 267CC25228820B0500A7535A /* GoogleService-Info.plist */; };
 		26F148372852A46000128396 /* EditarAmigoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F148362852A46000128396 /* EditarAmigoViewController.swift */; };
 		49D71286284E827200C42519 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71285284E827200C42519 /* LoginViewController.swift */; };
 		49D71288284E828700C42519 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71287284E828700C42519 /* RegisterViewController.swift */; };
@@ -60,6 +61,7 @@
 		03B45C910AD5FAB004E484D7 /* Pods-AdoCao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoCao.debug.xcconfig"; path = "Target Support Files/Pods-AdoCao/Pods-AdoCao.debug.xcconfig"; sourceTree = "<group>"; };
 		0CE5B1572EB627208C166CEA /* Pods_AdoCao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdoCao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2601156A285280CA00BB2C48 /* SuporteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuporteViewController.swift; sourceTree = "<group>"; };
+		267CC25228820B0500A7535A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26F148362852A46000128396 /* EditarAmigoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAmigoViewController.swift; sourceTree = "<group>"; };
 		49D71285284E827200C42519 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		49D71287284E828700C42519 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				C0DB9918283FE3EB000ABDA3 /* Assets.xcassets */,
 				C0DB991A283FE3EB000ABDA3 /* LaunchScreen.storyboard */,
 				C0DB991D283FE3EB000ABDA3 /* Info.plist */,
+				267CC25228820B0500A7535A /* GoogleService-Info.plist */,
 				6D662949284D7F9500D4195F /* Database.swift */,
 				ED68FFB328750ED000A8486E /* adocao.xcdatamodeld */,
 			);
@@ -536,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0DB991C283FE3EB000ABDA3 /* LaunchScreen.storyboard in Resources */,
+				267CC25328820B0500A7535A /* GoogleService-Info.plist in Resources */,
 				C0DB9919283FE3EB000ABDA3 /* Assets.xcassets in Resources */,
 				C0DB9917283FE3EA000ABDA3 /* Main.storyboard in Resources */,
 			);
@@ -782,6 +786,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AdoCao/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "O Aplicativo precisa de sua permissão para usar a câmera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -810,6 +815,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AdoCao/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "O Aplicativo precisa de sua permissão para usar a câmera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

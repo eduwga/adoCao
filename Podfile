@@ -8,4 +8,6 @@ target 'AdoCao' do
   # Pods for AdoCao
 	pod 'Alamofire'
 	pod 'Kingfisher'
+	pod 'FirebaseAuth'
+	pod 'GoogleSignIn'
 end
