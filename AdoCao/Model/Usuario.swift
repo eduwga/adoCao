@@ -34,7 +34,7 @@ class Usuario {
     internal init(usuarioResponse: UsuarioResponse) {
         self.id = usuarioResponse.usuarioID
         self.nome = usuarioResponse.nome
-        self.senha = ""
+        self.senha = "123"
         self.email = usuarioResponse.email
         self.cep = usuarioResponse.cep
         self.cidade = usuarioResponse.cidade

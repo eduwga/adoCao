@@ -158,7 +158,7 @@ class Service {
             }
 
         }, failure: { error in
-            failure(error)
+            self.delegate?.returnAPIMessage(message: error.localizedDescription)
         })
     }
 

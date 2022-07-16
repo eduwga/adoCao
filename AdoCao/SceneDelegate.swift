@@ -85,6 +85,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let systemUser = coreDataService.pegaSystemUser()
         
         guard let systemUser = systemUser else { return }
+
         login(email: systemUser.email, senha: systemUser.senha, scene)
     }
 }
