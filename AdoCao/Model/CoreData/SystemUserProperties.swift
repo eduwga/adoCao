@@ -23,6 +23,7 @@ extension SystemUser {
     @NSManaged var contato: String
     @NSManaged var foto: String?
     @NSManaged var senha: String?
+    @NSManaged var token: String?
 }
 
 extension SystemUser: Identifiable {}

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Breed" representedClassName="Breed" syncable="YES">
+        <attribute name="alturaMedia" optional="YES" attributeType="String"/>
+        <attribute name="caracteristicas" optional="YES" attributeType="String"/>
+        <attribute name="estimativaDeVida" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imagemURL" optional="YES" attributeType="String"/>
+        <attribute name="nivelDeCuidado" optional="YES" attributeType="String"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="origem" optional="YES" attributeType="String"/>
+        <attribute name="pesoMedio" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Friends" representedClassName="Friends" syncable="YES">
         <attribute name="caracteristicas" optional="YES" attributeType="String"/>
         <attribute name="descricao" optional="YES" attributeType="String"/>
@@ -24,6 +35,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="nome" optional="YES" attributeType="String"/>
         <attribute name="senha" optional="YES" attributeType="String"/>
+        <attribute name="token" optional="YES" attributeType="String"/>
         <attribute name="uf" optional="YES" attributeType="String"/>
     </entity>
     <entity name="UserFavorites" representedClassName="UserFavorites" syncable="YES">
@@ -31,8 +43,9 @@
         <attribute name="userId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="UserFavorites" positionX="-54" positionY="63" width="128" height="59"/>
-        <element name="SystemUser" positionX="-54" positionY="-9" width="128" height="164"/>
         <element name="Friends" positionX="-45" positionY="72" width="128" height="224"/>
+        <element name="SystemUser" positionX="-54" positionY="-9" width="128" height="179"/>
+        <element name="UserFavorites" positionX="-54" positionY="63" width="128" height="59"/>
+        <element name="Breed" positionX="-45" positionY="126" width="128" height="164"/>
     </elements>
 </model>
