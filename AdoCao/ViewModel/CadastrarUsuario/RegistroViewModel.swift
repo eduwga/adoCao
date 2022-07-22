@@ -37,12 +37,14 @@ class RegistroViewModel {
             return
         }
         if validaSenhaConfirmacao(senha: senha, confirmacao: confirmacao) {
-            let usuario = Usuario(id: 0, nome: nome, email: email, senha: "123", cep: cep, cidade: "", uf: uf, contato: "")
+            let usuario = Usuario(id: 0, nome: nome, email: email, senha: senha, cep: cep, cidade: "", uf: uf, contato: "")
             
-            _ = service.create(user: usuario)
-            armazenaUsuarioNoDispositivo(email: email, senha: senha)
-            
-            delegate?.cadastroComSucesso(mensagem: "Sucesso")
+            service.create(user: usuario) { novoUsuario in
+                ///Deveriamos salvar o usuario todo no dispositivo
+                self.armazenaUsuarioNoDispositivo(email: email, senha: senha)
+                self.delegate?.cadastroComSucesso(mensagem: "Sucesso")
+
+            }
         }
     }
 }

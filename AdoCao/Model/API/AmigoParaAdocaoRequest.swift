@@ -26,4 +26,18 @@ struct AmigoParaAdocaoRequest: Codable {
         case tutorID = "tutorId"
         case racaID = "racaId"
     }
+    
+    init(amigo: Amigo) {
+        nome = amigo.nome
+        idade =  amigo.idade
+        tamanho = amigo.porte.rawValue
+        imagem = ""
+        descricao = amigo.descricao
+        caracteristicas = ""
+        nomeRaca = amigo.raca
+        latitude =  0
+        longitude = 0
+        tutorID = amigo.tutor.id
+        racaID = 0
+    }
 }

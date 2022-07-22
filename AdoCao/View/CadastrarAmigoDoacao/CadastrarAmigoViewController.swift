@@ -16,50 +16,56 @@ class CadastrarAmigoViewController: UIViewController {
     @IBOutlet weak var amigoIdadeTextField: UITextField!
     @IBOutlet weak var amigoCaracteristicasTextField: UITextField!
     
+    var viewModel: CadastrarAmigoViewModel?
+    
     override func viewWillAppear(_ animated: Bool) {
-        setGradientBackground()
+        setGradientBackground(
+            colorTop: UIColor(red: 250.0/255.0, green: 214.0/255.0, blue: 255/255.0, alpha: 1.0),
+            colorBottom: UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 0.0)
+        )
         super.viewWillAppear(animated)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configuraFoto(nomeFoto: viewModel?.getCaminhoDaFoto(), imageView: amigoImageView)
     }
     
     @IBAction func botaoCadastrar(_ sender: Any) {
         
     }
     
-    func setGradientBackground() {
-        let colorTop =  UIColor(red: 250.0/255.0, green: 214.0/255.0, blue: 255/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 0.0).cgColor
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorTop, colorBottom]
-        gradientLayer.locations = [0.0, 0.35]
-        gradientLayer.frame = self.view.bounds
-        
-        self.view.layer.insertSublayer(gradientLayer, at:0)
+    @IBAction func tirarFotoButtonAction(_ sender: Any) {
+        abrirImagePickerViewController(modo: .camera)
     }
     
-    private func configuraFotoDoUsuario(nomeFoto: String?) {
-        if let nomeFoto =  nomeFoto {
-            amigoImageView.image = UIImage(named: nomeFoto)
+    @IBAction func buscarNaGaleriaButtonAction(_ sender: Any) {
+        abrirImagePickerViewController(modo: .photoLibrary)
+    }
+    
+    private func abrirImagePickerViewController(modo: UIImagePickerController.SourceType) {
+        iniciaActivityIndicator(activityIndicatorView: activityIndicator)
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = modo
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
+    }
+}
+extension CadastrarAmigoViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        finalizaActivityIndicator(activityIndicatorView: activityIndicator)
+        dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            amigoImageView.image = image
+            let imageStringBase64 = image.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
+            self.viewModel?.enviarFotoAmigoParaAPI(base64Image: imageStringBase64)
         }
-        let valorRadius = amigoImageView.frame.size.height / 2.0
-        amigoImageView.layer.cornerRadius = valorRadius
-        amigoImageView.layer.borderWidth = 1
-        amigoImageView.layer.borderColor = UIColor.purple.cgColor
-    }
-    
-    private func iniciaActivityIndicator() {
-        activityIndicator.isHidden = false
-        activityIndicator.color = UIColor.purple
-        activityIndicator.style = .large
-        activityIndicator.startAnimating()
-    }
-    
-    private func finalizaActivityIndicator() {
-        activityIndicator.isHidden = true
-        activityIndicator.stopAnimating()
+        
+        finalizaActivityIndicator(activityIndicatorView: activityIndicator)
+        dismiss(animated: true)
     }
 }

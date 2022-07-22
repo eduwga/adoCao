@@ -6,9 +6,10 @@
 //
 
 import UIKit
-import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
+import FacebookLogin
+import FacebookCore
 
 class LoginViewController: UIViewController {
     
@@ -19,16 +20,29 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var loginGoogleButton: GIDSignInButton!
+    @IBOutlet weak var loginFacebookButton: UIView!
     
     
     override func viewDidLoad() {
-        viewModel.delegate = self
-        //verificaSeHaUsuarioLogado()
-        
         super.viewDidLoad()
+        
+        ///Botao de login Facebook
+        let loginButton = FBLoginButton(
+            frame: .zero,
+            permissions: [.publicProfile]
+        )
+        loginButton.center = loginFacebookButton.center
+        loginButton.delegate = self
+        view.addSubview(loginButton)
+        
+        viewModel.delegate = self
         
         configuraImagemRevelarSenha()
         emailTextField.becomeFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     @objc func clickImage(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -45,61 +59,54 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func googleLoginButton(_ sender: Any) {
-    
-        loginGoogle()
-        
+        viewModel.efetuarLoginGoogle()
+        //loginGoogle()
     }
     
     
     @IBAction func entrarButton(_ sender: Any) {
-        
         if viewModel.validaEmail(email: emailTextField.text) && viewModel.validaSenha(senha: senhaTextField.text) {
-            
             viewModel.login(email: emailTextField.text, senha: senhaTextField.text)
         }
-        //        adicionaViewControllerInicial()
     }
     
-    
-    private func loginGoogle(){
-        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-        
-        // Create Google Sign In configuration object.
-        let config = GIDConfiguration(clientID: clientID)
-        
-        // Start the sign in flow!
-        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
-            
-            if let error = error {
-                // ...
-                return
-            }
-            
-            guard
-                let authentication = user?.authentication,
-                let idToken = authentication.idToken
-            else {
-                return
-            }
-            
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                           accessToken: authentication.accessToken)
-            
-            
-            Auth.auth().signIn(with: credential) { authResult, error in
-                if let error = error {
-                    
-                }
-                return
-            }
-        }
-    }
+//    private func loginGoogle(){
+//        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+//
+//        // Create Google Sign In configuration object.
+//        let config = GIDConfiguration(clientID: clientID)
+//
+//        // Start the sign in flow!
+//        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
+//
+//            if let error = error {
+//                // ...
+//                return
+//            }
+//
+//            guard
+//                let authentication = user?.authentication,
+//                let idToken = authentication.idToken
+//            else {
+//                return
+//            }
+//
+//            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+//                                                           accessToken: authentication.accessToken)
+//
+//
+//            Auth.auth().signIn(with: credential) { authResult, error in
+//                if let error = error {
+//
+//                }
+//                return
+//            }
+//        }
+//    }
     
     @IBAction func unwind( _ seg: UIStoryboardSegue) {
-        print("saiu")
+        exibeAlerta(mensagem: "saiu")
     }
-    
-    
     
     private func verificaSeHaUsuarioLogado() {
         viewModel.verificaSeTemUsuarioLogado()
@@ -168,5 +175,30 @@ extension LoginViewController: LoginViewModelDelegate {
     
     func exibeMensagemAlert(mensagem: String) {
         exibeAlerta(mensagem: mensagem)
+    }
+    
+    func loginGoogle(configuration: GIDConfiguration) {
+        GIDSignIn.sharedInstance.signIn(
+            with: configuration,
+            presenting: self
+        ) { [unowned self] user, error in
+            self.viewModel.tratarLoginGoogle(
+                user: user,
+                error: error
+            )
+        }
+    }
+}
+
+extension LoginViewController: LoginButtonDelegate {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        viewModel.tratarLoginFacebook(
+            result: result,
+            error: error
+        )
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        print("O usuário efetuou logout")
     }
 }

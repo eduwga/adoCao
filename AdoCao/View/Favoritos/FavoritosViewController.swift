@@ -12,7 +12,6 @@ class FavoritosViewController: UIViewController {
 
     @IBOutlet weak var backgroundTopView: UIImageView!
     @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var backgroundUIVIew: UIView!
     @IBOutlet weak var favoritosCollectionView: UICollectionView!
     let viewModel: FavoritosViewModel = FavoritosViewModel()
     
@@ -21,9 +20,10 @@ class FavoritosViewController: UIViewController {
         viewModel.delegate = self
         favoritosCollectionView.dataSource = self
         favoritosCollectionView.delegate = self
-        backgroundUIVIew.roundCorners(cornerRadius: 50.0, cornerType: [.superiorEsquerdo, .superiorDireito])
-        topView.roundCorners(cornerRadius: 50.0, cornerType: [.inferiorDireito, .inferiorEsquerdo])
-        backgroundTopView.roundCorners(cornerRadius: 50.0, cornerType: [.inferiorDireito, .inferiorEsquerdo])
+        
+        topView.roundCorners(cornerRadius: 20.0, cornerType: [.inferiorDireito, .inferiorEsquerdo])
+
+        backgroundTopView.roundCorners(cornerRadius: 20.0, cornerType: [.inferiorDireito, .inferiorEsquerdo])
     }
     
     override func viewWillAppear(_ animated: Bool) {

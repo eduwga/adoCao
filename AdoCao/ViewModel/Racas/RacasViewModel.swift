@@ -7,6 +7,7 @@
 
 import Foundation
 import Kingfisher
+import SwiftUI
 
 protocol RacasViewModelDelegate {
     func listaDeRacasFoiModificada()
@@ -19,19 +20,28 @@ class RacasViewModel {
     var racasPesquisa: [Raca] = []
     var todasAsRacas: [Raca] = []
     var service = Service.shared
-    
+    var listaDeImagens: [Int: UIImage] = [:]
+
     init() {
         obterTodasAsRacas()
     }
     
-    private func obterTodasAsRacas() {
-        service.loadBreeds(completion: { racas in
-            self.todasAsRacas = racas
-            self.iniciaListaDeRacas()
-            self.delegate?.listaDeRacasFoiModificada(racas: racas)
-        }, failure: { error in
-            print(error.localizedDescription)
-        })
+//    func carregarImagensRacas() {
+//        imagensCarregadas += 1
+//        if imagensCarregadas == todasAsRacas.count {
+//            self.delegate?.listaDeRacasFoiModificada()
+//        }
+//    }
+    
+    func carregarImagensRacas(posicao: Int, image: UIImage) {
+        listaDeImagens[posicao] = image
+        if listaDeImagens.count == todasAsRacas.count {
+            self.delegate?.listaDeRacasFoiModificada()
+        }
+    }
+    
+    func buscarImagem(posicao: Int) -> UIImage? {
+        return listaDeImagens[posicao]
     }
     
     func iniciaListaDeRacas() {
@@ -69,5 +79,15 @@ class RacasViewModel {
         let racaSelecionada = racasPesquisa[posicao]
         let detalhesRacaVM = DetalhesRacaViewModel(raca: racaSelecionada)
         return detalhesRacaVM
+    }
+    
+    private func obterTodasAsRacas() {
+        service.loadBreeds(completion: { racas in
+            self.todasAsRacas = racas
+            self.iniciaListaDeRacas()
+            self.delegate?.listaDeRacasFoiModificada(racas: racas)
+        }, failure: { error in
+            print(error.localizedDescription)
+        })
     }
 }

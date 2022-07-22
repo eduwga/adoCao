@@ -26,6 +26,10 @@ class DetalhesUsuarioViewController: UIViewController {
         viewModel?.deslogarUsuario()
     }
     
+    @IBAction func irParaListaAmigosButtonAction(_ sender: Any) {
+        tabBarController?.selectedIndex = 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = DetalhesUsuarioViewModel()

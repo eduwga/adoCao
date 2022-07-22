@@ -6,15 +6,21 @@
 //
 
 import Foundation
+import FirebaseAuth
+import GoogleSignIn
+import FacebookLogin
 
 protocol LoginViewModelDelegate {
     func loginComSucesso(_ usuario: Usuario)
     func exibeMensagemAlert(mensagem: String)
     func temUsuarioLogado()
+    func loginGoogle(configuration: GIDConfiguration)
 }
 
 class LoginViewModel {
+    private let loginService: LoginService = .init()
     var delegate: LoginViewModelDelegate?
+    
     private let service = Service.shared
     private let coreDataService: CoreDataService = .init()
     private var systemUser: SystemUser?
@@ -68,6 +74,49 @@ class LoginViewModel {
     
     private func salvaUsuario (usuarioLogado: Usuario) {
         coreDataService.salvaUserAsSystemUser(usuario: usuarioLogado)
+    }
+    
+    // MARK: - Login com provedores externos (Firebase: Google/Facebook)
+    func efetuarLoginGoogle() {
+        guard let configuration = loginService.pegarConfiguracaoGoogle() else { return }
+        
+        delegate?.loginGoogle(configuration: configuration)
+    }
+    
+    func tratarLoginGoogle(user: GIDGoogleUser?, error: Error?) {
+        // tratativa de erro
+        if let error = error {
+            print(error)
+            return
+        }
+        
+        // login do google deu certo
+        salvarDadosNoFirebase(user: user)
+        
+        // User is signed in
+       
+        // fazer alguma coisa - delegate
+    }
+    
+    func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?) {
+        loginService.tratarResultadoLoginFacebook(
+            result: result,
+            error: error
+        )
+    }
+    
+    private func pegarInformacoesDoUsuario() {
+//        let currentUser = Auth.auth().currentUser
+        
+//        let email = currentUser?.email
+//        let name = currentUser?.displayName
+//        let photo = currentUser?.photoURL
+    }
+    
+    private func salvarDadosNoFirebase(user: GIDGoogleUser?) {
+        guard let credencial = loginService.pegarCredencialGoogle(de: user) else { return }
+        
+        loginService.salvarNoFirebase(com: credencial)
     }
 }
 

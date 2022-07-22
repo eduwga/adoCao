@@ -71,8 +71,14 @@ class ListarAmigosCustomCellViewModel {
     }
     
     func removeFavoritos() {
-        usuarioAtual?.amigosFavoritos.removeAll { amigo in
-            amigo.nome == cao?.nome
+        guard let cao = cao else { return }
+        service.removeFromFavorites(dog: cao) { resposta in
+            if resposta {
+                self.delegate?.amigoFoiRemovido()
+            }
+            else {
+                self.delegate?.amigoFoiAdicionado()
+            }
         }
     }
     
@@ -87,17 +93,5 @@ class ListarAmigosCustomCellViewModel {
             }
         }
     }
-    
-//    func verificaSeAmigoEFavorito(amigoSelecionado: Amigo) -> Bool {
-//        let usuarioAtual = service.getLoggedUser()
-//        
-//        guard let usuarioAtual = usuarioAtual else {
-//            return false
-//        }
-//
-//        return usuarioAtual.amigosFavoritos.contains(where: { amigo in
-//            amigo.nome == amigoSelecionado.nome
-//        })
-//    }
 }
 

@@ -41,6 +41,31 @@ class Usuario {
         self.uf = usuarioResponse.uf
         self.contato = usuarioResponse.contato
         self.foto = usuarioResponse.foto
+        self.ativo = usuarioResponse.ativo
+        
+        for favoritoResponse in usuarioResponse.amigosFavoritos {
+            let favorito = Amigo(amigoResponse: favoritoResponse)
+            self.amigosFavoritos.append(favorito)
+        }
+        
+        for amigoParaDoacaoResponse in usuarioResponse.amigosParaDoacao {
+            let amigoParaDoacao = Amigo(amigoResponse: amigoParaDoacaoResponse)
+            self.amigosCadastrados.append(amigoParaDoacao)
+        }
+     }
+    
+    internal init(usuarioResponse: UsuarioResponse, token: String) {
+        self.id = usuarioResponse.usuarioID
+        self.nome = usuarioResponse.nome
+        self.senha = ""
+        self.email = usuarioResponse.email
+        self.cep = usuarioResponse.cep
+        self.cidade = usuarioResponse.cidade
+        self.uf = usuarioResponse.uf
+        self.contato = usuarioResponse.contato
+        self.foto = usuarioResponse.foto
+        self.token = token
+        self.ativo = usuarioResponse.ativo
      }
     
     internal init(systemUser: SystemUser) {
@@ -53,6 +78,7 @@ class Usuario {
         self.uf = systemUser.uf
         self.contato = systemUser.contato
         self.foto = systemUser.foto
+        self.token = systemUser.token
     }
     
     let id: Int
@@ -64,6 +90,8 @@ class Usuario {
     var uf: String
     var contato: String
     var foto: String?
+    var token: String?
+    var ativo: Bool = false
     
     var amigosFavoritos: [Amigo] = []
     var amigosCadastrados: [Amigo] = []

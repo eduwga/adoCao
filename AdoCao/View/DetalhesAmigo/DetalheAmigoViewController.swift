@@ -48,7 +48,7 @@ class DetalheAmigoViewController: UIViewController {
     private func defineValorLabels() {
         if let viewModel = viewModel {
             nomeCaoLabel.text = viewModel.getNome()
-            localizaCaoLabel.text = viewModel.getEndereco()
+            localizaCaoLabel.text = viewModel.getLocalizacao()
             descriCaoLabel.text = viewModel.getDescricao()
         }
     }

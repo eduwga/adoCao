@@ -10,8 +10,7 @@ import UIKit
 class ListarAmigosCustomCell: UITableViewCell {
     
 
-    var cao: Amigo?
-    var minhaLista: Amigo?
+
     var clickFavorito = false
     var viewModel: ListarAmigosCustomCellViewModel?
     
@@ -23,17 +22,13 @@ class ListarAmigosCustomCell: UITableViewCell {
     
     @IBOutlet weak var favoritarImagemButton: UIButton!
     
-//
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
-    
     @IBAction func favoritarButtonAction(_ sender: Any) {
         viewModel?.verificaSeAmigoEFavorito()
     }
     
     func configura(vm: ListarAmigosCustomCellViewModel) {
         self.viewModel = vm
+        vm.delegate = self
         nomeCaoLabel.text = vm.getNome()
         descriCaoLabel.text = vm.getDescricao()
         localizaCaoLabel.text = vm.getLocalizacao()

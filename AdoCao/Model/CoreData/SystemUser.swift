@@ -11,3 +11,4 @@ import UIKit
 
 @objc(SystemUser)
 class SystemUser: NSManagedObject {}
+

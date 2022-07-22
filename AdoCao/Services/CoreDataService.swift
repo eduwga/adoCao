@@ -25,6 +25,7 @@ class CoreDataService {
         systemUser.contato = usuario.contato
         systemUser.foto = usuario.foto
         systemUser.senha =  usuario.senha
+        systemUser.token =  usuario.token
         
         salvarContexto()
     }

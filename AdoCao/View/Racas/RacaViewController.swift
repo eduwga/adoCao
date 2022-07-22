@@ -21,12 +21,17 @@ class RacaViewController: UIViewController {
         racasTableView.delegate = self
         pesquisarRacaSearchBar.delegate = self
         viewModel.delegate = self
+        racasTableView.keyboardDismissMode = .onDrag // or .interactive
         pesquisarRacaSearchBar.becomeFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,35 +49,38 @@ extension RacaViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let raca = viewModel.obterRaca(posicao: indexPath.row)
-        let processor = DownsamplingImageProcessor(size: cell.imageView!.bounds.size)
-                     |> RoundCornerImageProcessor(cornerRadius: 20)
         
         guard let urlImagem = viewModel.obterURLImagem(raca: raca) else { return UITableViewCell() }
         cell.textLabel?.text = raca.nome
         
-        cell.imageView?.kf.setImage(
-            with: urlImagem,
-            placeholder: UIImage(named: "iconDog"),
-            options: [
-                .processor(processor),
-                .loadDiskFileSynchronously,
-                .cacheOriginalImage,
-                .transition(.fade(0.25))
-            ],
-            progressBlock: { receivedSize, totalSize in
-                // Progress updated
-            },
-            completionHandler: { result in
-                // Done
-            }
-        )
+        let imagem = viewModel.buscarImagem(posicao: indexPath.row)
+        if let imagem = imagem {
+            cell.imageView?.image = imagem
+        }
+        else {
+            cell.imageView?.kf.setImage(
+                with: urlImagem,
+                placeholder: UIImage(named: "iconDog"),
+                options: [
+                    .loadDiskFileSynchronously,
+                    .cacheOriginalImage,
+                    .transition(.fade(0.25))
+                ],
+                progressBlock: { receivedSize, totalSize in
+                    // Progress updated
+                },
+                completionHandler: { result in
+                    switch result {
+                    case .success(let imagemResult):
+                        self.viewModel.carregarImagensRacas(posicao: indexPath.row, image: imagemResult.image)
+                    case .failure(_):
+                        break
+                    }
+                }
+            )
+        }
         cell.imageView?.contentMode = .scaleAspectFill
         
-//        cell.imageView?.loadFrom(URLAddress: raca.imagemURL)
-//        tableView.estimatedRowHeight = 140
-//        cell.imageView?.frame.size.width = 150
-//        cell.imageView?.frame.size.height = 140
-//        cell.imageView?.contentMode = .scaleAspectFit
         return cell
     }
 }
@@ -80,6 +88,7 @@ extension RacaViewController: UITableViewDataSource {
 extension RacaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "detalhesRacaSegue", sender: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

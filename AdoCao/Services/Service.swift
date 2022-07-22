@@ -59,89 +59,98 @@ class Service {
     }
     
     private func postAction(path: String, bodyParameter: Encodable, completion: @escaping (Data) -> Void, failure: @escaping (Error) -> Void) {
-        
         guard let serviceUrl = URL(string: base_url + path) else { return }
         var request = URLRequest(url: serviceUrl)
 
         guard let token = token else { return }
         let authString = "Bearer \(token)"
 
-        ///Definir os tipos de objeto dependendo do Path (ex: Post p/ Usuario, p/ Cachorro, /Favoritos...
-        guard let usuarioParameter = bodyParameter as? UsuariosRequest else { return }
-        guard let httpBody = try? JSONEncoder().encode(usuarioParameter) else { return }
-        
-        request.httpMethod =  "POST"
-        request.addValue(authString, forHTTPHeaderField: "Authorization")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        request.httpBody = httpBody
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                failure(error)
-            }
-            
-            if let data = data {
-                completion(data)
-            }
-        }.resume()
-    }
-    
-    
-    private func postImage(path: String, bodyParameter: Encodable, completion: @escaping (Data) -> Void, failure: @escaping (Error) -> Void) {
-        guard let serviceUrl = URL(string: base_url + path) else { return }
-        
-        var request = URLRequest(url: serviceUrl)
-
-        guard let token = token else { return }
-        let authString = "Bearer \(token)"
-        
-        
-//        let parameter = createParameterDictionary()
-//        if let parameter = parameter {
-//            AF.upload(multipartFormData: { multipartFormData in
-//                for (key, value) in parameter {
-//                    multipartFormData.append(value, withName: key)
-//                    multipartFormData.append(image!.jpegData(compressionQuality: 0.5)!, withName: "upload_data" , fileName: "file.jpeg", mimeType: "image/jpeg")
-//                }
-//            }, to: serviceUrl, method: .post , headers: .none).response { resp in
-//                print(resp)
-//            }
-//        }
-        
-        request.addValue(authString, forHTTPHeaderField: "Authorization")
-        
-        request.httpMethod =  "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        ///Definir os tipos de objeto dependendo do Path (ex: Post p/ Usuario, p/ Cachorro, /Favoritos...
         if let usuarioParameter = bodyParameter as? UsuariosRequest {
             guard let httpBody = try? JSONEncoder().encode(usuarioParameter) else { return }
-            request.httpBody = httpBody
-        }
-        
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                failure(error)
-            }
             
-            if let data = data {
-                completion(data)
+            request.httpMethod =  "POST"
+            request.addValue(authString, forHTTPHeaderField: "Authorization")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            request.httpBody = httpBody
+            let session = URLSession.shared
+            session.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    failure(error)
+                }
+                
+                if let data = data {
+                    completion(data)
+                }
+            }.resume()
+        }
+    }
+
+    func postImage(id: Int, base64Image: String, endpoint: String, completion: @escaping (String?) -> Void, failure: @escaping (Error) -> Void) {
+        
+        let endpoint = "\(endpoint)/\(id)/image/"
+        
+        guard let serviceUrl = URL(string: base_url + endpoint) else { return }
+        guard let token = token else { return }
+        
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+        
+        AF.request(
+            serviceUrl,
+            method: .post,
+            parameters: base64Image,
+            encoder: JSONParameterEncoder.default,
+            headers: headers
+        ).responseDecodable(of: EnvioImagemResponse.self) { response in
+            let resultadoDaRequisicao = response.result
+            
+            switch resultadoDaRequisicao {
+                case .success(let imagemResponse):
+                completion(imagemResponse.imagemURL)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    break
             }
-        }.resume()
+        }
     }
     
-    func login(email: String,  password: String, completion: @escaping (Usuario) -> Void, failure: @escaping(Error) -> Void) {
+//    func postDogImage(dogId: Int, base64Image: String, completion: @escaping (String?) -> Void, failure: @escaping (Error) -> Void) {
+//
+//        let endpoint = "cachorros/\(dogId)/image/"
+//
+//        guard let serviceUrl = URL(string: base_url + endpoint) else { return }
+//        guard let token = token else { return }
+//
+//        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+//
+//        AF.request(
+//            serviceUrl,
+//            method: .post,
+//            parameters: base64Image,
+//            encoder: JSONParameterEncoder.default,
+//            headers: headers
+//        ).responseDecodable(of: EnvioImagemResponse.self) { response in
+//            let resultadoDaRequisicao = response.result
+//
+//            switch resultadoDaRequisicao {
+//                case .success(let imagemResponse):
+//                completion(imagemResponse.imagemURL)
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                    break
+//            }
+//        }
+//    }
+    
+    func login(email: String,  password: String, completion: @escaping (Usuario) -> Void, failure: @escaping (Error) -> Void) {
         
         let userLogin: LoginRequest = LoginRequest(email: email, senha: password)
         loginAction(path: "usuarios/login/", userLogin: userLogin, completion: { data in
             
             if let loginResponse = try? JSONDecoder().decode(LoginResponse.self, from: data) {
                 
-                let usuarioResposta = Usuario(usuarioResponse: loginResponse.user)
+                let usuarioResposta = Usuario(usuarioResponse: loginResponse.user, token: loginResponse.token)
                 self.currentUser = usuarioResposta	
                 self.token = loginResponse.token
                 
@@ -176,7 +185,7 @@ class Service {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        
+         
         let task = session.dataTask(with: request) { data, _, error in
             guard let data = data else {
                 return
@@ -257,14 +266,6 @@ class Service {
         }
     }
 
-    func getDogsBy(name: String) -> [Amigo] {
-//        let dogs = db.amigos.filter({ amigo in
-//            amigo.nome == name
-//        })
-//        return dogs
-        return []
-    }
-
     func getUserBy(id: Int, completion: @escaping (Usuario) -> Void){
         guard let token = token else { return }
         
@@ -283,46 +284,76 @@ class Service {
             }
         }
     }
+    
+    func getAlreadyLoggedUserBy(Id id: Int, token: String, completion: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void){
+        self.token = token
+        
+        let endpoint = "usuarios/\(id)/"
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+        
+        AF.request(base_url+endpoint, headers: headers).responseDecodable(of: UsuarioResponse.self) { response in
+            let resultadoDaRequisicao = response.result
+            
+            switch resultadoDaRequisicao {
+                case .success(let usuarioResponse):
+                    let usuario = Usuario(usuarioResponse: usuarioResponse)
+                    self.currentUser = usuario
+                    completion(usuario.ativo)
+                case .failure(let error):
+                    failure(error)
+            }
+        }
+    }    
 
     func getLoggedUser() -> Usuario? {
         guard let currentUser = self.currentUser else { return nil }
         return currentUser
     }
 
-    func create(user: Usuario) -> Bool {
-        //TO-DO: - Pensar nas validações
-        let usuarioDTO = user.copiaParaUsuarioAPI()
+    func create(user: Usuario, completion: @escaping (Usuario) -> Void) {
+        let usuarioRequest = user.copiaParaUsuarioAPI()
+
+        guard let token = token else { return }
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
         
-        postAction(path: "usuarios/", bodyParameter: usuarioDTO) { data in
-            print(data)
-        } failure: { error in
-            print(error)
+        AF.request(base_url+"usuarios/", method: .post, parameters: usuarioRequest, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: UsuarioResponse.self) { response in
+        let resultadoDaRequisicao = response.result
+            
+            switch resultadoDaRequisicao {
+                case .success(let usuarioResponse):
+                    let novoUsuario: Usuario = Usuario(usuarioResponse: usuarioResponse)
+                    completion(novoUsuario)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    break
+            }
         }
-        
-        return true
     }
 
-    func addForAdoption(dog: Amigo) -> Bool {
-        //TO-DO: - Pensar nas validações
-        _ = AmigoParaAdocaoRequest(
-            nome: dog.nome,
-            idade: dog.idade,
-            tamanho: dog.porte.rawValue,
-            imagem: "",
-            descricao: dog.descricao,
-            caracteristicas: "",
-            nomeRaca: dog.raca,
-            latitude: 0,
-            longitude: 0,
-            tutorID: dog.tutor.id,
-            racaID: 0
-        )
-//        db.amigos.append(dog)
-        return true
+    func addForAdoption(dog: Amigo, completion: @escaping (Bool) -> Void)  {
+        guard let currentUser = currentUser else { return }
+
+        let amigoParaAdocao = AmigoParaAdocaoRequest(amigo: dog)
+        
+        guard let token = token else { return }
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+        
+        AF.request(base_url+"cachorros/", method: .post, parameters: amigoParaAdocao, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: AmigoParaAdocaoResponse.self) { response in
+        let resultadoDaRequisicao = response.result
+            
+            switch resultadoDaRequisicao {
+                case .success(let cachorro):
+                    let amigoDoacao: Amigo = Amigo(amigoResponse: cachorro)
+                    currentUser.amigosCadastrados.append(amigoDoacao)
+                    completion(true)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    break
+            }
+        }
     }
     
     func addToFavorite(dog: Amigo, completion: @escaping (Bool) -> Void) {
-        //TO-DO: - Pensar nas validações
         guard let currentUser = currentUser else { return }
 
         let amigoFavorito = FavoritoRequest(cachorroID: dog.id, usuarioID: currentUser.id)
@@ -330,18 +361,45 @@ class Service {
         guard let token = token else { return }
         let headers: HTTPHeaders = [.authorization(bearerToken: token)]
         
-        AF.request(base_url+"favoritos/", method: .post, parameters: amigoFavorito, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: AmigosParaAdocaoResponse.self) { response in
+        AF.request(base_url+"favoritos/", method: .post, parameters: amigoFavorito, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: AmigoParaAdocaoResponse.self) { response in
         let resultadoDaRequisicao = response.result
             
             switch resultadoDaRequisicao {
-                case .success(let cachorros):
-                    var amigos: [Amigo] = []
-                    for cachorro in cachorros {
-                        amigos.append(Amigo(amigoResponse: cachorro))
-                    }
+                case .success(let cachorro):
+                    let novoAmigoFavorito: Amigo = Amigo(amigoResponse: cachorro)
+                    currentUser.amigosFavoritos.append(novoAmigoFavorito)
                     completion(true)
                 case .failure(let error):
-                    print(error)
+                    print(error.localizedDescription)
+                    break
+            }
+        }
+    }
+    
+    func removeFromFavorites(dog: Amigo, completion: @escaping (Bool) -> Void) {
+        guard let currentUser = currentUser else { return }
+
+        let endpoint = "\(base_url)favoritos/\(dog.id)/usuario/\(currentUser.id)"
+        
+        guard let token = token else { return }
+        
+        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+        AF.request(endpoint, method: .delete, parameters: "", encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: AmigosParaAdocaoResponse.self) { response in
+            
+//        AF.request(endpoint, method: .delete, parameters: .none, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: AmigosParaAdocaoResponse.self) { response in
+
+            let resultadoDaRequisicao = response.result
+            
+            switch resultadoDaRequisicao {
+                case .success(let favoritos):
+                    var amigos: [Amigo] = []
+                    for favorito in favoritos {
+                        amigos.append(Amigo(amigoResponse: favorito))
+                    }
+                    currentUser.amigosFavoritos = amigos
+                    completion(true)
+                case .failure(let error):
+                    print(error.localizedDescription)
                     break
             }
         }
@@ -363,7 +421,8 @@ class Service {
                         amigos.append(Amigo(amigoResponse: favorito))
                     }
                     completion(amigos)
-                case .failure(_):
+                case .failure(let error):
+                print(error.localizedDescription)
                     break
             }
         }

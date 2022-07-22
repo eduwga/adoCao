@@ -113,7 +113,10 @@ extension EditarUsuarioViewController:  UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             fotoImageView.image = image
+            let imageStringBase64 = image.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
+            viewModel?.enviarFotoUsuarioParaAPI(base64Image: imageStringBase64)
         }
+        
         finalizaActivityIndicator()
         dismiss(animated: true)
     }

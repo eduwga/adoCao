@@ -6,10 +6,25 @@
 //
 
 import UIKit
+import FacebookCore
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let url = URLContexts.first?.url else {
+            return
+        }
+
+        ApplicationDelegate.shared.application(
+            UIApplication.shared,
+            open: url,
+            sourceApplication: nil,
+            annotation: [UIApplication.OpenURLOptionsKey.annotation]
+        )
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -45,6 +60,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        // Save changes in the application's managed object context when the application transitions to the background.
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
     func login(email: String?, senha: String?, _ windowScene: UIWindowScene) {
@@ -80,13 +97,67 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    func verificaSeTemUsuarioLogado(_ scene: UIWindowScene) {
+    func login(usuario: SystemUser, token: String?, _ windowScene: UIWindowScene) {
+        let window = UIWindow(windowScene: windowScene)
+        let service = Service.shared
+
+        let usuarioId = Int(usuario.id)
+        guard let token = usuario.token else { return }
+
+        //Busca controller da launchScreen para manter exibição  até que a validação de usuario responda
+        let launchScreenViewController = pegarLaunchScreenVC()
+        instanciaLauchScreen(launchScreenViewController, window)
+        
+        //Efetua login com os dados salvos no CoreData
+        service.getAlreadyLoggedUserBy(Id: usuarioId, token: token, completion: { usuarioAtivo in
+            let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            if usuarioAtivo {
+                DispatchQueue.main.async {
+                    //instancia ViewController de Home
+                    let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                    let initialViewController = storyBoard.instantiateViewController(withIdentifier: "amigoParaAdocao")
+                    
+                    window.rootViewController = initialViewController
+                    window.makeKeyAndVisible()
+                }
+            }
+            else {
+                DispatchQueue.main.async {
+                    //instancia ViewController de Login se usuario não esta mais ativo
+                    let loginViewController = storyBoard.instantiateInitialViewController()
+//                    let loginViewController = storyBoard.instantiateViewController(withIdentifier: "login")
+                    
+                    window.rootViewController = loginViewController
+                    window.makeKeyAndVisible()
+                }
+            }
+        }, failure: { error in
+            print(error.localizedDescription)
+        })
+            
+    }
+    
+    private func pegarLaunchScreenVC() -> UIViewController? {
+        let launchScreen = UIStoryboard(name: "LaunchScreen", bundle: Bundle.main)
+        return launchScreen.instantiateInitialViewController()
+    }
+
+    private func instanciaLauchScreen(_ launchScreenVC: UIViewController?, _ window: UIWindow) {
+        guard let launchScreenVC = launchScreenVC else { return }
+
+        window.rootViewController = launchScreenVC
+        self.window = window
+        window.makeKeyAndVisible()
+    }
+    
+    private func verificaSeTemUsuarioLogado(_ scene: UIWindowScene) {
         let coreDataService: CoreDataService = .init()
         let systemUser = coreDataService.pegaSystemUser()
         
         guard let systemUser = systemUser else { return }
 
-        login(email: systemUser.email, senha: systemUser.senha, scene)
+        login(usuario: systemUser, token: systemUser.token, scene)
     }
+    
 }
 

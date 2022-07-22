@@ -10,9 +10,21 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.381374601176-04j17vomdevbqog010dt1g0u1euginm0</string>
+                <string>fb3166281083585265</string>
 			</array>
 		</dict>
 	</array>
+    <key>FacebookAppID</key>
+    <string>3166281083585265</string>
+    <key>FacebookClientToken</key>
+    <string>3d0a6603fd750b76fc4c8e4bb540d58d</string>
+    <key>FacebookDisplayName</key>
+    <string>AdoCão</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>fbapi</string>
+      <string>fb-messenger-share-api</string>
+    </array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

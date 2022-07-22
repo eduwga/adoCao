@@ -10,4 +10,6 @@ target 'AdoCao' do
 	pod 'Kingfisher'
 	pod 'FirebaseAuth'
 	pod 'GoogleSignIn'
+	pod 'FacebookCore'
+	pod 'FacebookLogin'
 end
