@@ -10,6 +10,7 @@ import FirebaseAuth
 import GoogleSignIn
 import FacebookLogin
 import FacebookCore
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
@@ -26,12 +27,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loginGoogleButton.style = .wide
+        loginGoogleButton.colorScheme = .dark
+            
+        
         ///Botao de login Facebook
         let loginButton = FBLoginButton(
             frame: .zero,
             permissions: [.publicProfile]
         )
+     
         loginButton.center = loginFacebookButton.center
+        loginButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         loginButton.delegate = self
         view.addSubview(loginButton)
         
