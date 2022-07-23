@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
         
         ///Botao de login Facebook
         let loginButton = FBLoginButton(
-            frame: .zero,
+            frame: CGRect(x: 0, y: 0, width: 210, height: 28),
             permissions: [.publicProfile]
         )
      
@@ -67,7 +67,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func googleLoginButton(_ sender: Any) {
         viewModel.efetuarLoginGoogle()
-        //loginGoogle()
     }
     
     
@@ -76,40 +75,6 @@ class LoginViewController: UIViewController {
             viewModel.login(email: emailTextField.text, senha: senhaTextField.text)
         }
     }
-    
-//    private func loginGoogle(){
-//        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-//
-//        // Create Google Sign In configuration object.
-//        let config = GIDConfiguration(clientID: clientID)
-//
-//        // Start the sign in flow!
-//        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
-//
-//            if let error = error {
-//                // ...
-//                return
-//            }
-//
-//            guard
-//                let authentication = user?.authentication,
-//                let idToken = authentication.idToken
-//            else {
-//                return
-//            }
-//
-//            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-//                                                           accessToken: authentication.accessToken)
-//
-//
-//            Auth.auth().signIn(with: credential) { authResult, error in
-//                if let error = error {
-//
-//                }
-//                return
-//            }
-//        }
-//    }
     
     @IBAction func unwind( _ seg: UIStoryboardSegue) {
         exibeAlerta(mensagem: "saiu")

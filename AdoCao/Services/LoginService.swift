@@ -10,16 +10,41 @@ import FirebaseAuth
 import FirebaseCore
 import GoogleSignIn
 import FacebookLogin
+import Kingfisher
+
+protocol LoginServiceDelegate {
+    func usuarioLogadoNoFirebase(usuario: Usuario)
+    func usuarioComErroNoFirebase(error: Error)
+}
 
 class LoginService {
+    
+    var delegate: LoginServiceDelegate?
     
     func salvarNoFirebase(com credencial: AuthCredential) {
         
         Auth.auth().signIn(with: credencial) { authResult, error in
             if let error = error {
+                self.delegate?.usuarioComErroNoFirebase(error: error)
                 print(error)
             }
-            // ...
+            guard let authResult = authResult else { return }
+            guard let currentUser = Auth.auth().currentUser else { return }
+            
+            let usuario = Usuario(
+                id: 0,
+                nome: authResult.user.displayName ?? "",
+                email: authResult.user.email ?? "",
+                senha: UUID.init().uuidString,
+                cep: "",
+                cidade: "",
+                uf: "",
+                contato: authResult.user.phoneNumber ?? "",
+                foto: authResult.user.photoURL?.path ?? ""
+            )
+            
+            self.delegate?.usuarioLogadoNoFirebase(usuario: usuario)
+            
             return
         }
         
@@ -36,7 +61,7 @@ class LoginService {
                 return
             }
             
-            let credencial = pegarConfiguracaoFacebook(
+            let credencial = pegarCredencialFacebook(
                 token: token
             )
             
@@ -44,7 +69,7 @@ class LoginService {
         }
     }
     
-    func pegarConfiguracaoFacebook(token: String) -> AuthCredential {
+    func pegarCredencialFacebook(token: String) -> AuthCredential {
         return FacebookAuthProvider.credential(
             withAccessToken: token
         )

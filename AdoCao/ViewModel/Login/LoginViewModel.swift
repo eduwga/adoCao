@@ -27,6 +27,7 @@ class LoginViewModel {
     
     init() {
         service.delegate = self
+        loginService.delegate = self
     }
     
     func verificaSeTemUsuarioLogado() {
@@ -89,13 +90,10 @@ class LoginViewModel {
             print(error)
             return
         }
-        
+       
         // login do google deu certo
         salvarDadosNoFirebase(user: user)
         
-        // User is signed in
-       
-        // fazer alguma coisa - delegate
     }
     
     func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?) {
@@ -103,14 +101,6 @@ class LoginViewModel {
             result: result,
             error: error
         )
-    }
-    
-    private func pegarInformacoesDoUsuario() {
-//        let currentUser = Auth.auth().currentUser
-        
-//        let email = currentUser?.email
-//        let name = currentUser?.displayName
-//        let photo = currentUser?.photoURL
     }
     
     private func salvarDadosNoFirebase(user: GIDGoogleUser?) {
@@ -123,5 +113,19 @@ class LoginViewModel {
 extension LoginViewModel: ServiceDelegate {
     func returnAPIMessage(message: String) {
         self.delegate?.exibeMensagemAlert(mensagem: message)
+    }
+}
+
+extension LoginViewModel: LoginServiceDelegate {
+    func usuarioLogadoNoFirebase(usuario: Usuario) {
+        
+        self.service.create(user: usuario) { novoUsuario in
+            self.salvaUsuario(usuarioLogado: usuario)
+        }
+        self.delegate?.loginComSucesso(usuario)
+    }
+    
+    func usuarioComErroNoFirebase(error: Error) {
+        self.delegate?.exibeMensagemAlert(mensagem: "Falha no login: \(error.localizedDescription)")
     }
 }
