@@ -81,6 +81,22 @@ class Usuario {
         self.token = systemUser.token
     }
     
+    
+    internal init(id: Int, nome: String, email: String, senha: String, cep: String, cidade: String, uf: String, contato: String, foto: String, token: String?, refreshToken: String?, provider: String?) {
+        self.id = id
+        self.nome = nome
+        self.email = email
+        self.senha = senha
+        self.cep = cep
+        self.cidade = cidade
+        self.uf = uf
+        self.contato = contato
+        self.foto = foto
+        self.token = token
+        self.refreshToken = refreshToken
+        self.provider = provider
+     }
+    
     let id: Int
     let nome: String
     let senha: String
@@ -92,6 +108,8 @@ class Usuario {
     var foto: String?
     var token: String?
     var ativo: Bool = false
+    var refreshToken: String?
+    var provider: String?
     
     var amigosFavoritos: [Amigo] = []
     var amigosCadastrados: [Amigo] = []
@@ -136,7 +154,7 @@ class Usuario {
             cidade: cidade,
             uf: uf,
             contato: contato,
-            foto: "")
+            foto: foto ?? "")
         
         return usuarioRequest
     }

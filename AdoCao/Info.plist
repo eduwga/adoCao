@@ -19,11 +19,19 @@
     <key>FacebookClientToken</key>
     <string>3d0a6603fd750b76fc4c8e4bb540d58d</string>
     <key>FacebookDisplayName</key>
-    <string>AdoCão</string>
+    <string>AdoCao</string>
+    <key>FacebookAutoLogAppEventsEnabled</key>
+    <false/>
+    <key>FacebookAdvertiserIDCollectionEnabled</key>
+    <false/>
     <key>LSApplicationQueriesSchemes</key>
     <array>
-      <string>fbapi</string>
-      <string>fb-messenger-share-api</string>
+        <string>fbauth</string>
+        <string>fbauth2</string>
+        <string>fbapi</string>
+        <string>fb-messenger-share-api</string>
+        <string>fb-messenger-api</string>
+        <string>fbshareextension</string>
     </array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -44,5 +52,32 @@
 			</array>
 		</dict>
 	</dict>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>facebook.com</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+            <key>fbcdn.net</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+            <key>akamaihd.net</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+        </dict>
+    </dict>
 </dict>
 </plist>

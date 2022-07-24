@@ -313,10 +313,10 @@ class Service {
     func create(user: Usuario, completion: @escaping (Usuario) -> Void) {
         let usuarioRequest = user.copiaParaUsuarioAPI()
 
-        guard let token = token else { return }
-        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
+//        guard let token = token else { return }
+//        let headers: HTTPHeaders = [.authorization(bearerToken: token)]
         
-        AF.request(base_url+"usuarios/", method: .post, parameters: usuarioRequest, encoder: JSONParameterEncoder.default, headers: headers).responseDecodable(of: UsuarioResponse.self) { response in
+        AF.request(base_url+"usuarios/", method: .post, parameters: usuarioRequest, encoder: JSONParameterEncoder.default, headers: .none).responseDecodable(of: UsuarioResponse.self) { response in
         let resultadoDaRequisicao = response.result
             
             switch resultadoDaRequisicao {

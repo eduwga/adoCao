@@ -34,12 +34,12 @@ class LoginViewController: UIViewController {
         ///Botao de login Facebook
         let loginButton = FBLoginButton(
             frame: CGRect(x: 0, y: 0, width: 210, height: 28),
-            permissions: [.publicProfile]
+            permissions: [.publicProfile, .userLocation]
         )
-     
+        loginButton.delegate = self
         loginButton.center = loginFacebookButton.center
         loginButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        loginButton.delegate = self
+
         view.addSubview(loginButton)
         
         viewModel.delegate = self

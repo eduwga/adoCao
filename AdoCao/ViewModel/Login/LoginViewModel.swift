@@ -120,12 +120,21 @@ extension LoginViewModel: LoginServiceDelegate {
     func usuarioLogadoNoFirebase(usuario: Usuario) {
         
         self.service.create(user: usuario) { novoUsuario in
-            self.salvaUsuario(usuarioLogado: usuario)
+            self.service.login(email: usuario.email, password: usuario.senha) { novoUsuarioLogado in
+                DispatchQueue.main.async {
+                    self.salvaUsuario(usuarioLogado: novoUsuarioLogado)
+                    self.delegate?.loginComSucesso(usuario)
+                }
+            } failure: { error in
+                DispatchQueue.main.async {
+                    self.delegate?.exibeMensagemAlert(mensagem: "Erro ao criar novo usuario: \(error.localizedDescription)")
+                }
+            }
         }
-        self.delegate?.loginComSucesso(usuario)
     }
     
-    func usuarioComErroNoFirebase(error: Error) {
-        self.delegate?.exibeMensagemAlert(mensagem: "Falha no login: \(error.localizedDescription)")
+    func usuarioComErroNoFirebase(mensagem: String) {
+        self.delegate?.exibeMensagemAlert(mensagem: mensagem)
     }
+    
 }

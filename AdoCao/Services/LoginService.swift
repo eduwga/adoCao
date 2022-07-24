@@ -14,7 +14,7 @@ import Kingfisher
 
 protocol LoginServiceDelegate {
     func usuarioLogadoNoFirebase(usuario: Usuario)
-    func usuarioComErroNoFirebase(error: Error)
+    func usuarioComErroNoFirebase(mensagem: String)
 }
 
 class LoginService {
@@ -25,22 +25,28 @@ class LoginService {
         
         Auth.auth().signIn(with: credencial) { authResult, error in
             if let error = error {
-                self.delegate?.usuarioComErroNoFirebase(error: error)
+                self.delegate?.usuarioComErroNoFirebase(mensagem: "Falha no login: \(error.localizedDescription)")
                 print(error)
             }
-            guard let authResult = authResult else { return }
-            guard let currentUser = Auth.auth().currentUser else { return }
+            //guard let authResult = authResult else { return }
+            guard let currentUser = Auth.auth().currentUser else {
+                self.delegate?.usuarioComErroNoFirebase(mensagem: "Não foi possivel autenticar no FirebaseAuth")
+                return
+            }
             
             let usuario = Usuario(
                 id: 0,
-                nome: authResult.user.displayName ?? "",
-                email: authResult.user.email ?? "",
-                senha: UUID.init().uuidString,
+                nome: currentUser.displayName ?? "",
+                email: currentUser.email ?? "",
+                senha: self.randomString(length: 15),
                 cep: "",
                 cidade: "",
                 uf: "",
-                contato: authResult.user.phoneNumber ?? "",
-                foto: authResult.user.photoURL?.path ?? ""
+                contato: currentUser.phoneNumber ?? "",
+                foto: currentUser.photoURL?.absoluteString ?? "",
+                token: nil,
+                refreshToken: currentUser.refreshToken,
+                provider: currentUser.providerID
             )
             
             self.delegate?.usuarioLogadoNoFirebase(usuario: usuario)
@@ -99,6 +105,14 @@ class LoginService {
         // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
         
+     
+        
         return config
+    }
+    
+    
+    private func randomString(length: Int) -> String {
+      let letters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      return String((0..<length).map{ _ in letters.randomElement()! })
     }
 }
