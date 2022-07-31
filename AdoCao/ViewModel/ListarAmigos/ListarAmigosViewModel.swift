@@ -15,19 +15,15 @@ protocol ListarAmigosViewModelDelegate {
 class ListarAmigosViewModel {
     
 
-    let service = Service.shared
-    var amigos: [Amigo] = []
-    var favoritos = [Int: Bool]()
-    var minhaLista: [Amigo] = []
-
+    private let service = Service.shared
+    private var amigos: [Amigo] = []
+    private var minhaLista: [Amigo] = []
+    private var favoritos = [Int: Bool]()
 
     var delegate: ListarAmigosViewModelDelegate?
     
     init() {
-        service.getDogsForAdoption(completion: { amigos in
-            self.amigos = amigos
-            self.delegate?.listaDeAmigosFoiAlterada()
-        })
+        obterListasDeAmigos()
     }
     
     func obterViewModelParaDetalhes(posicao: Any?) -> DetalheAmigoViewModel {
@@ -54,7 +50,7 @@ class ListarAmigosViewModel {
             return minhaLista.count
         default:
             return 0
-    }
+        }
     }
     
     func obterAmigoPela(posicao: Int, segmento: Int) -> Amigo? {
@@ -65,9 +61,22 @@ class ListarAmigosViewModel {
             return minhaLista[posicao]
         default:
             return nil
+        }
     }
     
-}
+    private func obterListasDeAmigos() {
+        let usuario = obterUsuarioLogado()
+        service.getDogsForAdoption(completion: { amigos in
+            self.minhaLista = usuario.amigosCadastrados
+            self.amigos = amigos
+            self.delegate?.listaDeAmigosFoiAlterada()
+        })
+    }
+    
+    private func obterUsuarioLogado() -> Usuario {
+        guard let usuario = service.getLoggedUser() else { return Usuario(systemUser: SystemUser()) }
+        return usuario
+    }
 }
 
 

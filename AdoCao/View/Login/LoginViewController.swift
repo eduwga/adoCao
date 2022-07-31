@@ -17,6 +17,10 @@ class LoginViewController: UIViewController {
     var iconeClick = false
     let imagemIcone = UIImageView()
     let viewModel = LoginViewModel()
+    let loginButton = FBLoginButton(
+        frame: CGRect(x: 0, y: 0, width: 230, height: 48), // frame: CGRect(x: 0, y: 0, width: 210, height: 28),
+        permissions: [.publicProfile, .userLocation]
+    )
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
@@ -27,25 +31,22 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Botao de login Google
         loginGoogleButton.style = .wide
         loginGoogleButton.colorScheme = .dark
             
         
         ///Botao de login Facebook
-        let loginButton = FBLoginButton(
-            frame: CGRect(x: 0, y: 0, width: 210, height: 28),
-            permissions: [.publicProfile, .userLocation]
-        )
-        loginButton.delegate = self
         loginButton.center = loginFacebookButton.center
         loginButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-
         view.addSubview(loginButton)
         
         viewModel.delegate = self
+        loginButton.delegate = self
         
         configuraImagemRevelarSenha()
         emailTextField.becomeFirstResponder()
+        configuraBotoesProvedoresExternos()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -78,6 +79,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func unwind( _ seg: UIStoryboardSegue) {
         exibeAlerta(mensagem: "saiu")
+    }
+    
+    private func configuraBotoesProvedoresExternos() {
+        
+        loginButton.frame.size = .init(width: 270, height: 40)
+        loginButton.imageView?.roundCorners(cornerRadius: 30, cornerType: [.superiorDireito, .superiorEsquerdo, .inferiorEsquerdo, .inferiorDireito])
+        loginButton.center = loginFacebookButton.center
+        loginFacebookButton.isHidden = true
     }
     
     private func verificaSeHaUsuarioLogado() {
@@ -164,10 +173,17 @@ extension LoginViewController: LoginViewModelDelegate {
 
 extension LoginViewController: LoginButtonDelegate {
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
-        viewModel.tratarLoginFacebook(
-            result: result,
-            error: error
-        )
+        switch result {
+        case .none:
+            return
+        case .some(let xxx):
+            viewModel.tratarLoginFacebook(
+                result: result,
+                error: error
+            )
+        }
+       
+
     }
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {

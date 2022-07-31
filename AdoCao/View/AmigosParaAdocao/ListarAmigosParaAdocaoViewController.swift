@@ -26,14 +26,24 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        listarAmigosTableView.reloadData()
+    }
+    
     @IBAction func segmentedButtonAction(_ sender: Any) {
         listarAmigosTableView.reloadData()
     }
     
-    private func naoFavoritado() {
-        for i in 0...viewModel.favoritos.count {
-            viewModel.favoritos[i] = false
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+        let viewsRemovidas = tabBarController?.navigationController?.popToRootViewController(animated: true)
+        
+        if let navigationController = navigationController {
+            let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "telaLogin")
+            navigationController.pushViewController(vc, animated: true)
         }
+        
+        exibeAlertaSimples(mensagem: "saiu")
     }
 }
 

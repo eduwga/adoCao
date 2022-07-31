@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>381374601176-04j17vomdevbqog010dt1g0u1euginm0.apps.googleusercontent.com</string>
+	<string>1098355414269-8gopj3t9mc3drurp7hpn2g0b39kem3vl.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.381374601176-04j17vomdevbqog010dt1g0u1euginm0</string>
+	<string>com.googleusercontent.apps.1098355414269-8gopj3t9mc3drurp7hpn2g0b39kem3vl</string>
 	<key>API_KEY</key>
-	<string>AIzaSyALpD7o4H8mAgr2AM2ZQFbHgHgYrLf5xGY</string>
+	<string>AIzaSyAYuk8xlj_y8dT6rKSGQ8eUT17Eckkt7RM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>381374601176</string>
+	<string>1098355414269</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>desafiotableview.AdoCao</string>
+	<string>br.com.AdoCao</string>
 	<key>PROJECT_ID</key>
-	<string>adocao-edbec</string>
+	<string>adocao-ios</string>
 	<key>STORAGE_BUCKET</key>
-	<string>adocao-edbec.appspot.com</string>
+	<string>adocao-ios.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:381374601176:ios:6f056c25616f015ca744ad</string>
+	<string>1:1098355414269:ios:bc1137321a4496c4071a94</string>
 </dict>
 </plist>

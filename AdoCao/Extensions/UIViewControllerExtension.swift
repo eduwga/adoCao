@@ -43,4 +43,11 @@ extension UIViewController {
         imageView.layer.borderColor = UIColor.purple.cgColor
         imageView.contentMode = .scaleAspectFill
     }
+    
+    func exibeAlertaSimples(mensagem: String) {
+        let alertaErroLogin = UIAlertController(title: "Aviso", message: mensagem, preferredStyle: UIAlertController.Style.alert)
+        let botaoLogin = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+        alertaErroLogin.addAction(botaoLogin)
+        self.present(alertaErroLogin, animated: true, completion: nil)
+    }
 }

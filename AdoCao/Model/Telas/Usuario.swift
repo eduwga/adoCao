@@ -79,6 +79,8 @@ class Usuario {
         self.contato = systemUser.contato
         self.foto = systemUser.foto
         self.token = systemUser.token
+        self.refreshToken = systemUser.refreshToken
+        self.provider = systemUser.provider
     }
     
     

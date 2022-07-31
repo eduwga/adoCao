@@ -24,6 +24,8 @@ extension SystemUser {
     @NSManaged var foto: String?
     @NSManaged var senha: String?
     @NSManaged var token: String?
+    @NSManaged var refreshToken: String?
+    @NSManaged var provider: String?
 }
 
 extension SystemUser: Identifiable {}
