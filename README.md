@@ -32,9 +32,25 @@
 
 Somos um grupo de desenvolvedores que fazem parte do curso de programação em Swift pela digital House Brasil e este será nosso Projeto Integrador
 
-| [<img src="https://avatars.githubusercontent.com/u/xxxwidth=115><br>
+
+
+
+
+![Marcia Araujo](https://avatars.githubusercontent.com/u/3842418?s=180)
+### [Márcia Araújo](https://www.LinkedIn.com/in/dramarcia)
+
 
 
 
 ## Descrição do Projeto
 
+A missão do AdoCão é unir pessoas e doguinhos carentes que precisem de um lar, promovendo adoção responsável.
+
+Criamos um aplicativo simples e intuitivo que ajuda as pessoas que buscam um cachorrinho, facilitando a procura entre aqueles disponíveis na sua região
+Também ajudamos pessoas que desejam colocar cães para serem adotados por outras pessoas, proporcionando a elas a oportunidade de criar perfis para os animais, os quais ficarão visíveis para quem deseje levá-los para seu novo lar definitivo.
+
+
+
+
+
+![PNG equipe adocao](https://user-images.githubusercontent.com/3842418/182276909-d9a5fbc4-fd5f-4861-ade8-2482c4956271.png)
