@@ -1,13 +1,16 @@
 # AdoCão
 ![AdoCao banner](https://user-images.githubusercontent.com/3842418/182194067-9fb258d3-0c20-426c-a94a-5bf8b9f46eb5.png)
 
-
 <p align="right">
 <img src=https://img.shields.io/badge/status-em%20desenvolvimento-yellow
+<p align="right">
+<img src=https://img.shields.io/badge/licença-MIT-green
 <p align="right">
 <img src=https://img.shields.io/badge/school-Digital%20House-blue
 <p align="right">
 <img src=https://img.shields.io/badge/grupo-AdoC%C3%A3o-blueviolet
+<p align="right">
+<img src=https://img.shields.io/badge/feito%20em-SWIFT-lightgrey
 <p/>
 
  
