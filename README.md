@@ -2,7 +2,7 @@
 ![AdoCao banner](https://user-images.githubusercontent.com/3842418/182194067-9fb258d3-0c20-426c-a94a-5bf8b9f46eb5.png)
 
 
-<p align="center">
+<p align="left">
 <img src=https://img.shields.io/badge/status-em%20desenvolvimento-yellow
 </p>
 
@@ -10,9 +10,10 @@
 <img src=https://img.shields.io/badge/school-Digital%20House-blue
 </p>
 
-<p align="center">
+<p align="right">
 <img src=https://img.shields.io/badge/grupo-AdoC%C3%A3o-blueviolet
 </p>
+
 
 ## Índice
 * [Índice](#índice)
@@ -107,6 +108,11 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
   Traz da  nossa API criada, as características específicas de cada raça, foto, origem, peso, altura, estimativa de vida
   
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419518-e7904382-6878-4708-9880-f42da85044a9.png">
+
+## Tecnologias utilizadas
+![Ferramentas Projeto aoCão](https://user-images.githubusercontent.com/3842418/182620754-54211e78-dec5-48c5-8e75-fd9236d3e0b8.png)
+
+
 
 ## Acesso ao Projeto
   Este projeto é público como parte de nosso trabalho de conclusão do Curso de Programação de Aplicativos para iPhone em IOS-SWIFT, pela escola Digital House Brasil, sob supervisão dos Professores
