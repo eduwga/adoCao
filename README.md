@@ -107,7 +107,7 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
  <p align="center">  
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419518-e7904382-6878-4708-9880-f42da85044a9.png">
 
-# 💻Tecnologias utilizadas
+# 💻Ferramentas utilizadas
 ![Ferramentas de desenvolvimento Swift AdoCão](https://user-images.githubusercontent.com/3842418/182623204-1a214f93-8592-40ed-9297-6c0792463282.png)
 
   ### [XCode](https://developer.apple.com/xcode/)
