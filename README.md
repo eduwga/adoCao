@@ -14,7 +14,7 @@
 <p/>
 
  
-# Índice
+# 📂Índice
 * [Índice](#índice)
 * [Time de Desenvolvimento](#time-de-desenvolvimento)
 * [Descrição do Projeto](#descrição-do-projeto)
@@ -33,7 +33,7 @@
 * [Agradecimentos](#agradecimentos)
 
 
-# Time de Desenvolvimento
+# 🧐Time de Desenvolvimento
 
 Somos um grupo de desenvolvedores que fazem parte do curso de programação em Swift pela digital House Brasil e este será nosso Projeto Integrador
 ![Equipe Adocão medium](https://user-images.githubusercontent.com/3842418/182614380-cd0c72e4-2d5d-47c0-96fc-03d39621c042.png)
@@ -52,7 +52,7 @@ Somos um grupo de desenvolvedores que fazem parte do curso de programação em S
 
 
 
-# Descrição do Projeto
+# 🐶Descrição do Projeto
 
 A missão do AdoCão é unir pessoas e doguinhos carentes que precisam de um lar, promovendo adoção responsável.
 
@@ -61,7 +61,7 @@ Criamos um aplicativo simples e intuitivo que ajuda as pessoas que buscam um cac
 Também ajudamos pessoas que desejam colocar cães para serem adotados por outras pessoas, proporcionando a elas a oportunidade de criar perfis para os animais, os quais ficarão visíveis para quem deseje levá-los para seu novo lar definitivo.
 
 
-# Funcionalidades e Demonstração da Aplicação
+# 📲Funcionalidades e Demonstração da Aplicação
   A idéia é estimular a conexão entre pessoas e doguinhos, através de perfis que mostrem sua fofura e características
   
   ### Boas Vindas
@@ -107,16 +107,16 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
   
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419518-e7904382-6878-4708-9880-f42da85044a9.png">
 
-# Tecnologias utilizadas
+# 💻Tecnologias utilizadas
 ![Ferramentas de desenvolvimento Swift AdoCão](https://user-images.githubusercontent.com/3842418/182623204-1a214f93-8592-40ed-9297-6c0792463282.png)
 
 
 
 
-# Acesso ao Projeto
+# 🤜🤛🏽Acesso ao Projeto
   Este projeto é público como parte de nosso trabalho de conclusão do Curso de Programação de Aplicativos para iPhone em IOS-SWIFT, pela escola Digital House Brasil, sob supervisão dos Professores: Jessica Santana e Adriano 
   
- # Agradecimentos
+ # 🙌🏽Agradecimentos
  
   Nosso sincero OBRIGADO a todos que tornaram este projeto possível e nos ajudaram nesta jornada!
   Em especial agradecemos também às nossas Famílias que nos apoiaram e toleraram por todo este tempo!
@@ -124,7 +124,7 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
   <img width="1440" alt="AdoCão Big SplashScreen" src="https://user-images.githubusercontent.com/3842418/182612648-c46beb32-3e50-4d79-a992-2eb6a24b3f51.png">
 
 
-# Licença
+# 👍Licença
 🇧🇷 🇵🇹 🇲🇿 Copyright (c) <2022> <Grupo AdoCão TEAMMM>
 É concedida permissão, gratuitamente, a qualquer pessoa que obtenha uma cópia deste software e dos arquivos de documentação associados (o "Software"), para lidar com o Software sem restrições, incluindo, sem limitação, o direito de usar, copiar, modificar, mesclar , publicar, distribuir, sublicenciar e/ou vender cópias do Software e permitir que as pessoas a quem o Software é fornecido o façam, sujeito às seguintes condições:
 O aviso de direitos autorais acima e este aviso de permissão devem ser incluídos em todas as cópias ou partes substanciais do Software.
