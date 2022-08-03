@@ -39,11 +39,15 @@
 Somos um grupo de desenvolvedores que fazem parte do curso de programação em Swift pela digital House Brasil e este será nosso Projeto Integrador
 
 
+### [André Nepomuceno](https://www.linkedin.com/in/andrenepomuceno/)
 
+### [Eduardo Waked](https://www.linkedin.com/in/eduardo-waked-957552240)
 
 
 ![Marcia Araujo](https://avatars.githubusercontent.com/u/3842418?s=180)
 ### [Márcia Araújo](https://www.LinkedIn.com/in/dramarcia)
+
+### [Marcos Vinicus Sampaio](https://www.linkedin.com/in/marcos-vinicius-silva-sampaio-690ba6196)
   
 ### [Murilo Oliveira](https://www.LinkedIn.com/in/muriloiosdev)
   
@@ -55,7 +59,8 @@ Somos um grupo de desenvolvedores que fazem parte do curso de programação em S
 
 A missão do AdoCão é unir pessoas e doguinhos carentes que precisem de um lar, promovendo adoção responsável.
 
-Criamos um aplicativo simples e intuitivo que ajuda as pessoas que buscam um cachorrinho, facilitando a procura entre aqueles disponíveis na sua região
+Criamos um aplicativo simples e intuitivo que ajuda as pessoas que buscam um cachorrinho, facilitando a procura entre aqueles disponíveis na sua região.
+
 Também ajudamos pessoas que desejam colocar cães para serem adotados por outras pessoas, proporcionando a elas a oportunidade de criar perfis para os animais, os quais ficarão visíveis para quem deseje levá-los para seu novo lar definitivo.
 
 
@@ -79,7 +84,8 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419114-0fa83e9f-a9c4-4f08-a47c-44107189819c.png">
 
   ### Amigos para adoção
-  PRINCIPAL TELA DO APP
+  PRINCIPAL TELA DO APP.
+  
   Tela que congrega as possibilidades de visualizar os cachorros disponíveis para adotar e aqueles que o usuário quer colocar para doar
   
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419154-c3d664cc-541b-4d33-90aa-6144629e5c65.png">
@@ -95,7 +101,7 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
   <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419395-71877ccc-8f6d-4e4c-87b7-dfa24ed41480.png">
   
   ### Dicionário das raças
-  Demonstra informações sobre as raças , populada pelos dados provenientes da  API, com implementação do framework Alamofire
+  Demonstra informações sobre as raças , populada pelos dados provenientes da  API construída durante o projeto, com implementação do framework Alamofire
   
   <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419458-ce97e2d3-a2e9-4aa1-a65c-e73e4aa40d39.png">
 
@@ -105,7 +111,7 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419518-e7904382-6878-4708-9880-f42da85044a9.png">
 
 ## Acesso ao Projeto
-  Este projeto é público como parte de nosso trabalho de conclusão do çurso de Programação de Aplicativos para iPhone em IOS-SWIFT, pela escola Digital House Brasil, sob supervisão dos Professores
+  Este projeto é público como parte de nosso trabalho de conclusão do Curso de Programação de Aplicativos para iPhone em IOS-SWIFT, pela escola Digital House Brasil, sob supervisão dos Professores
   Jessica Santana e Adriano 
   
 
