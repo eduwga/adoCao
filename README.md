@@ -111,6 +111,8 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
 ![Ferramentas de desenvolvimento Swift AdoCão](https://user-images.githubusercontent.com/3842418/182623204-1a214f93-8592-40ed-9297-6c0792463282.png)
 
   ### [XCode](https://developer.apple.com/xcode/)
+  ### [Slack](https://slack.com/intl/pt-br/)
+  ### [Trello](https://trello.com)
   ### [GitHub](https://github.com)
   ### [Figma](https://www.figma.com)
   ### [Canva](https://www.canva.com/pt_br/)
