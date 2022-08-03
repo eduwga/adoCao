@@ -62,49 +62,49 @@ Também ajudamos pessoas que desejam colocar cães para serem adotados por outra
 
 
 # 📲Funcionalidades e Demonstração da Aplicação
-  A idéia é estimular a conexão entre pessoas e doguinhos, através de perfis que mostrem sua fofura e características
+  A idéia é estimular a conexão entre pessoas e doguinhos, através de perfis que mostrem sua fofura e características particulares de cada cachorrinho para que os candidatos a seus futuros turores se apaixonem e salvem suas vidas.
   
   ### Boas Vindas
   Um pouquinho de simpatia para quem chega 
-  
+  <p align="center">
   <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182417350-611c7973-2af4-4f82-8894-cb211b17371e.png">
   
   ### Login
   Aqui o usuário escolhe como quer fazer parte de nossa comunidade, que seja com email e senha ou por meio de uma das redes sociais mais usadas como Facebook ou Google
-  
+  <p align="center">
   <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419060-e33bbdda-442e-4f1b-8256-3567476ac0e5.png">
 
   ### Perfil do Usuário logado
   Carrega e demonstra as informações cadastradas do usuário.
 Nesta tela se pode editar sua informações  ou  partir para as ações principais do app
-  
+<p align="center">  
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419114-0fa83e9f-a9c4-4f08-a47c-44107189819c.png">
 
   ### Amigos para adoção
   PRINCIPAL TELA DO APP.
   
   Tela que congrega as possibilidades de visualizar os cachorros disponíveis para adotar e aqueles que o usuário quer colocar para doar
-  
+ <p align="center">  
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419154-c3d664cc-541b-4d33-90aa-6144629e5c65.png">
   
   ### Detalhes do Amigo
   Modal que sobe a partir dos Amigos para adoção, que demonstra informações mais detalhadas do cãozinho candidato a adoção, com sua localização geográfica 
-  
+   <p align="center">
   <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419318-3d83de7f-725f-4f14-90c1-286af51151d5.png">
   
   ### Favoritos
   Collection View que mostra os Doguinhos escolhidos pelo usuário  para adotar, favoritados no  ♥︎
-  
+   <p align="center">
   <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419395-71877ccc-8f6d-4e4c-87b7-dfa24ed41480.png">
   
   ### Dicionário das raças
   Demonstra informações sobre as raças , populada pelos dados provenientes da  API construída durante o projeto, com implementação do framework Alamofire
-  
+   <p align="center">
   <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419458-ce97e2d3-a2e9-4aa1-a65c-e73e4aa40d39.png">
 
   ### Detalhes das Raças
   Traz da  nossa API criada, as características específicas de cada raça, foto, origem, peso, altura, estimativa de vida
-  
+ <p align="center">  
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419518-e7904382-6878-4708-9880-f42da85044a9.png">
 
 # 💻Tecnologias utilizadas
