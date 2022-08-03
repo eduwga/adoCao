@@ -29,7 +29,7 @@
   * [Detalhes das Raças](#detalhes-das-raças) 
 * [Acesso ao Projeto](#acesso-ao-projeto)
  * [Licença](#licença)
-* [Tecnologias utilizadas](#tecnologias-utilizadas)
+* [Ferramentas utilizadas](#ferramentas-utilizadas)
 * [Agradecimentos](#agradecimentos)
 
 
