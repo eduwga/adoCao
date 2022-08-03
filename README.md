@@ -110,6 +110,18 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
 # 💻Tecnologias utilizadas
 ![Ferramentas de desenvolvimento Swift AdoCão](https://user-images.githubusercontent.com/3842418/182623204-1a214f93-8592-40ed-9297-6c0792463282.png)
 
+  ### [XCode](https://developer.apple.com/xcode/)
+  ### [GitHub](https://github.com)
+  ### [Figma](https://www.figma.com)
+  ### [Canva](https://www.canva.com/pt_br/)
+  ### [Visual studio](https://code.visualstudio.com)
+  ### [SourceTree](https://www.sourcetreeapp.com)
+  ### [HomeBrew](https://brew.sh)
+  ### [Alamofire no Cocoapods](https://cocoapods.org/pods/alamofire)
+  ### [Google Login](https://www.)
+  ### [Facebook Login](
+  ### [DepositPhotos](https://br.depositphotos.com)
+  ### [KingFisher](https://swiftpackageindex.com/onevcat/Kingfisher)
 
 
 
