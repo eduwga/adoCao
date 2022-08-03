@@ -37,8 +37,7 @@
 ## Time de Desenvolvimento
 
 Somos um grupo de desenvolvedores que fazem parte do curso de programação em Swift pela digital House Brasil e este será nosso Projeto Integrador
-
-![Equipe adoCão](https://user-images.githubusercontent.com/3842418/182612154-35137cb7-6bb2-4021-9429-cfd6f22f0620.png)
+![Equipe Adocão medium](https://user-images.githubusercontent.com/3842418/182614380-cd0c72e4-2d5d-47c0-96fc-03d39621c042.png)
 
 ### [André Nepomuceno](https://www.linkedin.com/in/andrenepomuceno/)
 
