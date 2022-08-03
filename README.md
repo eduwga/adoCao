@@ -38,13 +38,12 @@
 
 Somos um grupo de desenvolvedores que fazem parte do curso de programação em Swift pela digital House Brasil e este será nosso Projeto Integrador
 
+![Equipe adoCão](https://user-images.githubusercontent.com/3842418/182612154-35137cb7-6bb2-4021-9429-cfd6f22f0620.png)
 
 ### [André Nepomuceno](https://www.linkedin.com/in/andrenepomuceno/)
 
 ### [Eduardo Waked](https://www.linkedin.com/in/eduardo-waked-957552240)
 
-
-![Marcia Araujo](https://avatars.githubusercontent.com/u/3842418?s=180)
 ### [Márcia Araújo](https://www.LinkedIn.com/in/dramarcia)
 
 ### [Marcos Vinicus Sampaio](https://www.linkedin.com/in/marcos-vinicius-silva-sampaio-690ba6196)
@@ -57,7 +56,7 @@ Somos um grupo de desenvolvedores que fazem parte do curso de programação em S
 
 ## Descrição do Projeto
 
-A missão do AdoCão é unir pessoas e doguinhos carentes que precisem de um lar, promovendo adoção responsável.
+A missão do AdoCão é unir pessoas e doguinhos carentes que precisam de um lar, promovendo adoção responsável.
 
 Criamos um aplicativo simples e intuitivo que ajuda as pessoas que buscam um cachorrinho, facilitando a procura entre aqueles disponíveis na sua região.
 
@@ -114,6 +113,11 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
   Este projeto é público como parte de nosso trabalho de conclusão do Curso de Programação de Aplicativos para iPhone em IOS-SWIFT, pela escola Digital House Brasil, sob supervisão dos Professores
   Jessica Santana e Adriano 
   
+  Nosso sincero OBRIGADO a todos que tornaram este projeto possível e nos ajudaram nesta jornada!
+  Em especial agradecemos também às nossas Famílias que nos apoiaram e toleraram por todo este tempo!
+  
+  <img width="1440" alt="AdoCão Big SplashScreen" src="https://user-images.githubusercontent.com/3842418/182612648-c46beb32-3e50-4d79-a992-2eb6a24b3f51.png">
 
 
-![PNG equipe adocao](https://user-images.githubusercontent.com/3842418/182276909-d9a5fbc4-fd5f-4861-ade8-2482c4956271.png)
+
+
