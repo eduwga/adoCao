@@ -62,7 +62,7 @@ Também ajudamos pessoas que desejam colocar cães para serem adotados por outra
 
 
 # 📲Funcionalidades e Demonstração da Aplicação
-  A idéia é estimular a conexão entre pessoas e doguinhos, através de perfis que mostrem sua fofura e características particulares de cada cachorrinho para que os candidatos a seus futuros turores se apaixonem e salvem suas vidas.
+  A idéia é estimular a conexão entre pessoas e doguinhos, através de perfis que mostrem sua fofura e características particulares de cada cachorrinho para que os candidatos a seus futuros tutores se apaixonem e salvem suas vidas.
   
   ### Boas Vindas
   Um pouquinho de simpatia para quem chega 
