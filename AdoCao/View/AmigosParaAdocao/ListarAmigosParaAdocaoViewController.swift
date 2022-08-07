@@ -8,13 +8,15 @@
 import UIKit
 
 class ListarAmigosParaAdocaoViewController: UIViewController {
-
+    // MARK: - IBOutlets
     @IBOutlet weak var listarAmigosTableView: UITableView!
     @IBOutlet weak var listarAmigosSegmentedControl: UISegmentedControl!
     @IBOutlet weak var listarAmigosActivityIndicator: UIActivityIndicatorView!
     
-    let viewModel = ListarAmigosViewModel()
+    // MARK: - Private Properties
+    private let viewModel = ListarAmigosViewModel()
 
+    // MARK: - Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,12 +32,13 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
         listarAmigosTableView.reloadData()
     }
     
+    // MARK: - IBActions
     @IBAction func segmentedButtonAction(_ sender: Any) {
         listarAmigosTableView.reloadData()
     }
     
     @IBAction func unwind( _ seg: UIStoryboardSegue) {
-        let viewsRemovidas = tabBarController?.navigationController?.popToRootViewController(animated: true)
+        tabBarController?.navigationController?.popToRootViewController(animated: true)
         
         if let navigationController = navigationController {
             let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -43,10 +46,10 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
             navigationController.pushViewController(vc, animated: true)
         }
         
-        exibeAlertaSimples(mensagem: "saiu")
+        //exibeAlertaSimples(mensagem: "saiu")
     }
 }
-
+// MARK: - TableView Datasource
 extension ListarAmigosParaAdocaoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.obterQuantidadeDeAmigos(segmento: listarAmigosSegmentedControl.selectedSegmentIndex)
@@ -60,6 +63,7 @@ extension ListarAmigosParaAdocaoViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - TableView Delegate
 extension ListarAmigosParaAdocaoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
@@ -83,7 +87,7 @@ extension ListarAmigosParaAdocaoViewController: UITableViewDelegate {
         }
     }
 }
-
+// MARK: - ViewModel Delegate
 extension ListarAmigosParaAdocaoViewController: ListarAmigosViewModelDelegate {
     func listaDeAmigosFoiAlterada() {
         listarAmigosTableView.reloadData()

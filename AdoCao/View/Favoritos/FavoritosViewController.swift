@@ -13,7 +13,7 @@ class FavoritosViewController: UIViewController {
     @IBOutlet weak var backgroundTopView: UIImageView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var favoritosCollectionView: UICollectionView!
-    let viewModel: FavoritosViewModel = FavoritosViewModel()
+    let viewModel: FavoritosViewModel = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,6 @@ class FavoritosViewController: UIViewController {
         favoritosCollectionView.delegate = self
         
         topView.roundCorners(cornerRadius: 20.0, cornerType: [.inferiorDireito, .inferiorEsquerdo])
-
         backgroundTopView.roundCorners(cornerRadius: 20.0, cornerType: [.inferiorDireito, .inferiorEsquerdo])
     }
     
@@ -38,11 +37,16 @@ class FavoritosViewController: UIViewController {
         telaDetalhes.configura(viewModel: vmDetalhes)
     }
 }
+
+// MARK: - CollectionView Delegate
 extension FavoritosViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "detalheAmigoSegue", sender: indexPath.item)
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
+
+// MARK: - CollectionView Datasource
 extension FavoritosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.obterQuantidadeDeFavoritos()
@@ -59,6 +63,8 @@ extension FavoritosViewController: UICollectionViewDataSource {
         return UICollectionViewCell()
     }
 }
+
+// MARK: - ViewModel Delegate
 extension FavoritosViewController: FavoritosViewModelDelegate {
     func recarregarTela() {
         favoritosCollectionView.reloadData()

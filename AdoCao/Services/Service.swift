@@ -333,7 +333,7 @@ class Service {
     func addForAdoption(dog: Amigo, completion: @escaping (Bool) -> Void)  {
         guard let currentUser = currentUser else { return }
 
-        let amigoParaAdocao = AmigoParaAdocaoRequest(amigo: dog)
+        let amigoParaAdocao = AmigoParaAdocaoRequest(amigo: dog, usuarioId: getLoggedUser()?.id ?? 0)
         
         guard let token = token else { return }
         let headers: HTTPHeaders = [.authorization(bearerToken: token)]

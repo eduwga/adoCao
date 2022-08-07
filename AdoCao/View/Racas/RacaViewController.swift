@@ -53,7 +53,7 @@ extension RacaViewController: UITableViewDataSource {
         guard let urlImagem = viewModel.obterURLImagem(raca: raca) else { return UITableViewCell() }
         cell.textLabel?.text = raca.nome
         
-        let imagem = viewModel.buscarImagem(posicao: indexPath.row)
+        let imagem = viewModel.buscarImagem(posicao: raca.id)
         if let imagem = imagem {
             cell.imageView?.image = imagem
         }
@@ -72,7 +72,7 @@ extension RacaViewController: UITableViewDataSource {
                 completionHandler: { result in
                     switch result {
                     case .success(let imagemResult):
-                        self.viewModel.carregarImagensRacas(posicao: indexPath.row, image: imagemResult.image)
+                        self.viewModel.carregarImagensRacas(posicao: raca.id, image: imagemResult.image)
                     case .failure(_):
                         break
                     }

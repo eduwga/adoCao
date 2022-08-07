@@ -27,6 +27,7 @@ class FavoritoCollectionViewCell: UICollectionViewCell {
         configuraFoto(nomeFoto: vm.amigoFavorito.foto, imageView: fotoImageView)
         backView.roundCorners(cornerRadius: 20.0, cornerType: [.superiorEsquerdo, .inferiorDireito, .inferiorEsquerdo, .superiorDireito])
     }
+    
 }
 extension FavoritoCollectionViewCell: FavoritoCellViewModelDelegate {
     func configuraCellFavorito(amigoFavorito: Amigo) {

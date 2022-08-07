@@ -44,6 +44,16 @@ extension UIViewController {
         imageView.contentMode = .scaleAspectFill
     }
     
+    func configuraFotoPlaceholder(imageView: UIImageView) {
+        imageView.image = UIImage(named: "iconDog")
+        
+        let valorRadius = imageView.frame.size.height / 2.0
+        imageView.layer.cornerRadius = valorRadius
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor.purple.cgColor
+        imageView.contentMode = .scaleAspectFill
+    }
+    
     func exibeAlertaSimples(mensagem: String) {
         let alertaErroLogin = UIAlertController(title: "Aviso", message: mensagem, preferredStyle: UIAlertController.Style.alert)
         let botaoLogin = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)

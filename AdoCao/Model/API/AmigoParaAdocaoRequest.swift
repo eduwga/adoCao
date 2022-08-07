@@ -20,24 +20,27 @@ struct AmigoParaAdocaoRequest: Codable {
     let longitude: Double
     let tutorID: Int
     let racaID: Int
+    let usuarioID: Int
 
     enum CodingKeys: String, CodingKey {
         case nome, idade, tamanho, imagem, descricao, caracteristicas, nomeRaca, latitude, longitude
         case tutorID = "tutorId"
         case racaID = "racaId"
+        case usuarioID = "usuarioId"
     }
     
-    init(amigo: Amigo) {
+    init(amigo: Amigo, usuarioId: Int) {
         nome = amigo.nome
         idade =  amigo.idade
         tamanho = amigo.porte.rawValue
-        imagem = ""
+        imagem = amigo.foto
         descricao = amigo.descricao
         caracteristicas = ""
         nomeRaca = amigo.raca
-        latitude =  0
-        longitude = 0
+        latitude = amigo.latitude
+        longitude = amigo.longitude
         tutorID = amigo.tutor.id
         racaID = 0
+        usuarioID = usuarioId
     }
 }

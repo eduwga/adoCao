@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Você permite usar a localização do usuário nessa sessão</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Você permite usar a localização do usuário para sempre ou nessa sessão</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -10,7 +14,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.1098355414269-8gopj3t9mc3drurp7hpn2g0b39kem3vl</string>
-                <string>fb3166281083585265</string>
+				<string>fb3166281083585265</string>
 			</array>
 		</dict>
 	</array>
