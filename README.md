@@ -120,8 +120,8 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
   ### [SourceTree](https://www.sourcetreeapp.com)
   ### [HomeBrew](https://brew.sh)
   ### [Alamofire no Cocoapods](https://cocoapods.org/pods/alamofire)
-  ### [Google Login](https://www.)
-  ### [Facebook Login](
+  ### [Google Login](https://cloud.google.com/identity-platform/docs/web/google?hl=pt-brAnais&skip_cache=false)
+  ### [Facebook Login](https://developers.facebook.com/docs/facebook-login/ios)
   ### [DepositPhotos](https://br.depositphotos.com)
   ### [KingFisher](https://swiftpackageindex.com/onevcat/Kingfisher)
 
