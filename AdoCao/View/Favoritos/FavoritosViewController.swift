@@ -34,7 +34,7 @@ class FavoritosViewController: UIViewController {
         guard let telaDetalhes = segue.destination as? DetalheAmigoViewController else { return }
         guard let posicao = sender as? Int else { return }
         let vmDetalhes = viewModel.obterViewModelParaTelaDetalhe(posicao: posicao)
-        telaDetalhes.configura(viewModel: vmDetalhes)
+        telaDetalhes.configura(viewModel: vmDetalhes, tipoOperacao: TipoListagem.Adocao)
     }
 }
 

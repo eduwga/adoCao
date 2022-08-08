@@ -19,6 +19,7 @@ class DetalheAmigoViewController: UIViewController {
     @IBOutlet weak var localMapView: MKMapView!
     
     var viewModel: DetalheAmigoViewModel?
+    var tipoOperacao: TipoListagem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +28,9 @@ class DetalheAmigoViewController: UIViewController {
 
     @IBAction func caracteristicaRacaButtonAction(_ sender: Any) { }
     
-    func configura(viewModel: DetalheAmigoViewModel) {
+    func configura(viewModel: DetalheAmigoViewModel, tipoOperacao: TipoListagem) {
         self.viewModel = viewModel
+        self.tipoOperacao = tipoOperacao
     }
     
     private func configuraTela() {

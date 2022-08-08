@@ -26,9 +26,9 @@ class ListarAmigosViewModel {
         obterListasDeAmigos()
     }
     
-    func obterViewModelParaDetalhes(posicao: Any?) -> DetalheAmigoViewModel {
+    func obterViewModelParaDetalhes(posicao: Any?, tipoOperacao: TipoListagem) -> DetalheAmigoViewModel {
         let posicao = posicao as! Int 
-        let amigo = amigos[posicao]
+        let amigo = tipoOperacao == TipoListagem.Adocao ? amigos[posicao] : minhaLista[posicao]
         let vm = DetalheAmigoViewModel(amigo: amigo)
         return vm
     }

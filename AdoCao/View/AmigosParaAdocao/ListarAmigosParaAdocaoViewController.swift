@@ -25,13 +25,13 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
         listarAmigosTableView.dataSource = self
         listarAmigosTableView.delegate = self
         viewModel.delegate = self
-
+        finalizaActivityIndicator(activityIndicatorView: listarAmigosActivityIndicator)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         listarAmigosTableView.reloadData()
     }
-    
+     
     // MARK: - IBActions
     @IBAction func segmentedButtonAction(_ sender: Any) {
         listarAmigosTableView.reloadData()
@@ -81,8 +81,9 @@ extension ListarAmigosParaAdocaoViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detalheAmigoSegue" {
             if let destination = segue.destination as? DetalheAmigoViewController {
-                let vm = viewModel.obterViewModelParaDetalhes(posicao: sender)
-                destination.configura(viewModel: vm)
+                guard let tipoOperacao = TipoListagem(rawValue: listarAmigosSegmentedControl.selectedSegmentIndex) else { return }
+                let vm = viewModel.obterViewModelParaDetalhes(posicao: sender, tipoOperacao: tipoOperacao)
+                destination.configura(viewModel: vm, tipoOperacao: tipoOperacao)
             }
         }
     }

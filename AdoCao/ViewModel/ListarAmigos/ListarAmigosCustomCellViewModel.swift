@@ -22,6 +22,7 @@ class ListarAmigosCustomCellViewModel {
     let cao: Amigo?
     var usuarioAtual: Usuario?
     var delegate: ListarAmigosCustomCellViewModelDelegate?
+    
 
     init(cao: Amigo?) {
         self.usuarioAtual = service.getLoggedUser()

@@ -16,6 +16,11 @@ enum Porte: Int {
     case gigante = 5///+ de 40Kgs
 }
 
+enum TipoListagem: Int {
+    case Adocao = 0
+    case Doacao = 1
+}
+
 class Amigo {
     internal init(id: Int, nome: String, idade: Int, raca: String, tutor: Usuario, porte: Porte, foto: String, localizacao: String, descricao: String, latitude: Double, longitude: Double) {
         self.id = id

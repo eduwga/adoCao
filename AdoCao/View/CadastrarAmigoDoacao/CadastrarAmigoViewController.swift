@@ -150,11 +150,9 @@ extension CadastrarAmigoViewController: UIPickerViewDataSource, UIPickerViewDele
 //MARK: - ViewModel Delegate
 extension CadastrarAmigoViewController: CadastrarAmigoViewModelDelegate {
     func cadastroEfetuado(resultado: Bool) {
-        let mensagem = resultado ? "Cadastro efetuado com sucesso" : "Erro ao efetuar cadastro, tente novamente mais tarde"
-        self.exibeAlertaSimples(mensagem: mensagem)
         if resultado {
             self.limpaTela()
-            self.dismiss(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
         else {
             self.exibeAlertaSimples(mensagem: "Erro ao efetuar cadastro, tente novamente mais tarde")
