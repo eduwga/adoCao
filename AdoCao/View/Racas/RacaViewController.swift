@@ -17,9 +17,13 @@ class RacaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 1.00)
+        racasTableView.backgroundColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 1.00)
+        racasTableView.separatorColor = .systemPurple
         racasTableView.dataSource = self
         racasTableView.delegate = self
         pesquisarRacaSearchBar.delegate = self
+        pesquisarRacaSearchBar.barTintColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 0.5)
         viewModel.delegate = self
         racasTableView.keyboardDismissMode = .onDrag // or .interactive
         pesquisarRacaSearchBar.becomeFirstResponder()
@@ -48,6 +52,12 @@ extension RacaViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.backgroundColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 1.00)
+        cell.textLabel?.textColor = .systemPurple
+        cell.textLabel?.textAlignment = .center
+        cell.textLabel?.font = .boldSystemFont(ofSize: 15)
+        cell.imageView?.layer.masksToBounds = true
+        cell.imageView?.layer.cornerRadius = 10
         let raca = viewModel.obterRaca(posicao: indexPath.row)
         
         guard let urlImagem = viewModel.obterURLImagem(raca: raca) else { return UITableViewCell() }
