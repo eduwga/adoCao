@@ -66,18 +66,6 @@ extension DetalhesUsuarioViewController: DetalhesUsuarioViewModelDelegate {
     func retornaParaLogin() {
         performSegue(withIdentifier: "unwindToLogin", sender: self)
         
-//        tabBarController?.navigationController?.popToRootViewController(animated: true)
-
-//        if let navigationController = navigationController {
-//
-//            var viewControllers = navigationController.viewControllers
-//
-//            let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//            let initialViewController = storyBoard.instantiateViewController(withIdentifier: "telaLogin")
-//
-//            viewControllers.append(initialViewController)
-//
-//            navigationController.setViewControllers(viewControllers, animated: true)
-//        }
+        tabBarController?.navigationController?.popToRootViewController(animated: true)
     }
 }

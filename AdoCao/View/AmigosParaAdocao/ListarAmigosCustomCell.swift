@@ -36,7 +36,7 @@ class ListarAmigosCustomCell: UITableViewCell {
         configuraFoto(nomeFoto: vm.getFoto(), imageView: imagemCaoImageView)
         
         if vm.caoIsFavorite() {
-            favoritarImagemButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            self.favoritarImagemButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
             self.favoritarImagemButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
