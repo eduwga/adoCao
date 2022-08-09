@@ -66,6 +66,16 @@ class Usuario {
         self.foto = usuarioResponse.foto
         self.token = token
         self.ativo = usuarioResponse.ativo
+        
+        for favoritoResponse in usuarioResponse.amigosFavoritos {
+            let favorito = Amigo(amigoResponse: favoritoResponse)
+            self.amigosFavoritos.append(favorito)
+        }
+        
+        for amigoParaDoacaoResponse in usuarioResponse.amigosParaDoacao {
+            let amigoParaDoacao = Amigo(amigoResponse: amigoParaDoacaoResponse)
+            self.amigosCadastrados.append(amigoParaDoacao)
+        }
      }
     
     internal init(systemUser: SystemUser) {

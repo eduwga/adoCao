@@ -23,6 +23,7 @@ struct AmigoParaAdocaoResponse: Codable {
     let tutorID: Int
     let tutorNome: String
     let tutorEndereco: String
+    let isFavorite: Bool
     
     enum CodingKeys: String, CodingKey {
         case id, nome, idade, tamanho, imagemURL, descricao, caracteristicas
@@ -30,6 +31,7 @@ struct AmigoParaAdocaoResponse: Codable {
         case racaNome, latitude, longitude
         case tutorID = "tutorId"
         case tutorNome, tutorEndereco
+        case isFavorite
     }
 }
 

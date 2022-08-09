@@ -22,7 +22,7 @@ enum TipoListagem: Int {
 }
 
 class Amigo {
-    internal init(id: Int, nome: String, idade: Int, raca: String, tutor: Usuario, porte: Porte, foto: String, localizacao: String, descricao: String, latitude: Double, longitude: Double) {
+    internal init(id: Int, nome: String, idade: Int, raca: String, tutor: Usuario, porte: Porte, foto: String, localizacao: String, descricao: String, latitude: Double, longitude: Double, isFavorite: Bool) {
         self.id = id
         self.nome = nome
         self.idade = idade
@@ -34,6 +34,7 @@ class Amigo {
         self.descricao = descricao
         self.latitude = latitude
         self.longitude = longitude
+        self.isFavorite = isFavorite
     }
     
   
@@ -58,6 +59,7 @@ class Amigo {
         self.latitude = amigoResponse.latitude
         self.longitude = amigoResponse.longitude
         self.descricao = amigoResponse.descricao
+        self.isFavorite = amigoResponse.isFavorite
     }
     
     let id: Int
@@ -71,4 +73,5 @@ class Amigo {
     var descricao: String
     let latitude: Double
     let longitude: Double
+    let isFavorite: Bool
 }

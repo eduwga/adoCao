@@ -63,38 +63,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
-    func login(email: String?, senha: String?, _ windowScene: UIWindowScene) {
-        
-        let service = Service.shared
-
-        guard let email = email,
-              let senha = senha
-        else { return }
-        
-
-        //Busca controller da launchScreen para manter exibição  até que a validação de usuario responda
-        let launchScreen = UIStoryboard(name: "LaunchScreen", bundle: Bundle.main)
-        let launchScreenViewController = launchScreen.instantiateInitialViewController()
-        
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = launchScreenViewController
-        self.window = window
-        window.makeKeyAndVisible()
-        
-        //Efetua login com os dados salvos no CoreData
-        service.login(email: email, password: senha, completion: { usuarioLogado in
-            DispatchQueue.main.async {
-                //instancia ViewController de Home
-                let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                let initialViewController = storyBoard.instantiateViewController(withIdentifier: "amigoParaAdocao")
-                
-                window.rootViewController = initialViewController
-                window.makeKeyAndVisible()
-            }
-        }) { error in
-            print("Falha no login: \(error.localizedDescription)")
-        }
-    }
+//    func login(email: String?, senha: String?, _ windowScene: UIWindowScene) {
+//
+//        let service = Service.shared
+//
+//        guard let email = email,
+//              let senha = senha
+//        else { return }
+//
+//
+//        //Busca controller da launchScreen para manter exibição  até que a validação de usuario responda
+//        let launchScreen = UIStoryboard(name: "LaunchScreen", bundle: Bundle.main)
+//        let launchScreenViewController = launchScreen.instantiateInitialViewController()
+//
+//        let window = UIWindow(windowScene: windowScene)
+//        window.rootViewController = launchScreenViewController
+//        self.window = window
+//        window.makeKeyAndVisible()
+//
+//        //Efetua login com os dados salvos no CoreData
+//        service.login(email: email, password: senha, completion: { usuarioLogado in
+//            DispatchQueue.main.async {
+//                //instancia ViewController de Home
+//                let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//                let initialViewController = storyBoard.instantiateViewController(withIdentifier: "amigoParaAdocao")
+//
+//                window.rootViewController = initialViewController
+//                window.makeKeyAndVisible()
+//            }
+//        }) { error in
+//            print("Falha no login: \(error.localizedDescription)")
+//        }
+//    }
     
     func login(usuario: SystemUser, token: String?, _ windowScene: UIWindowScene) {
         let window = UIWindow(windowScene: windowScene)

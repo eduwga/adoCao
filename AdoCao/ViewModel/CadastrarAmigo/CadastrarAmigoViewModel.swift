@@ -88,7 +88,8 @@ class CadastrarAmigoViewModel {
                 localizacao: "\(usuario.cidade) - \(usuario.uf)",
                 descricao: descricao,
                 latitude: latitude,
-                longitude: longitude
+                longitude: longitude,
+                isFavorite: false
             )
             
             //salva o cadastro através do service

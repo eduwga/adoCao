@@ -46,6 +46,14 @@ class ListarAmigosCustomCellViewModel {
         guard let amigo = cao?.tutor else { return self.cao?.localizacao ?? "" }
         return "\(amigo.cidade) - \(amigo.uf)"
     }
+    
+    func caoIsFavorite() -> Bool {
+        if let cao = cao {
+            return cao.isFavorite
+        }
+        
+        return false
+    }
         
     func buscaAmigosFavoritos() {
         service.getUserFavorites { amigos in
@@ -54,18 +62,20 @@ class ListarAmigosCustomCellViewModel {
             }
         }
     }
+    
     func verificaSeAmigoEFavorito() {
         service.getUserFavorites { amigos in
             if let usuarioAtual = self.usuarioAtual {
                 usuarioAtual.amigosFavoritos = amigos
             }
+            
             let existe =  amigos.contains(where: { amigo in
                 amigo.nome == self.cao?.nome
             })
+            
             if existe {
                 self.removeFavoritos()
-            }
-            else {
+            } else {
                 self.adicionaFavoritos()
             }
         }

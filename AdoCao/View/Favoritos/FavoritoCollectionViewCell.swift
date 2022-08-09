@@ -25,7 +25,7 @@ class FavoritoCollectionViewCell: UICollectionViewCell {
         idadeLabel.text = "\(vm.amigoFavorito.idade) anos"
         localizacaoLabel.text = vm.amigoFavorito.localizacao
         configuraFoto(nomeFoto: vm.amigoFavorito.foto, imageView: fotoImageView)
-        backView.roundCorners(cornerRadius: 20.0, cornerType: [.superiorEsquerdo, .inferiorDireito, .inferiorEsquerdo, .superiorDireito])
+//        backView.roundCorners(cornerRadius: 20.0, cornerType: [.superiorEsquerdo, .inferiorDireito, .inferiorEsquerdo, .superiorDireito])
     }
     
 }
@@ -36,7 +36,7 @@ extension FavoritoCollectionViewCell: FavoritoCellViewModelDelegate {
         localizacaoLabel.text = amigoFavorito.localizacao
         idadeLabel.text = amigoFavorito.idade == 1 ? "\(amigoFavorito.idade) ano" : "\(amigoFavorito.idade) anos"
         configuraFoto(nomeFoto: amigoFavorito.foto, imageView: fotoImageView)
-        backView.roundCorners(cornerRadius: 5.0, cornerType: [.superiorEsquerdo, .inferiorDireito])
+//        backView.roundCorners(cornerRadius: 5.0, cornerType: [.superiorEsquerdo, .inferiorDireito])
 //        self.backgroundView?.roundCorners(cornerRadius: 20.0, cornerType: [.superiorEsquerdo, .inferiorDireito])
     }
 }

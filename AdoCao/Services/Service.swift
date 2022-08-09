@@ -154,7 +154,7 @@ class Service {
                 self.currentUser = usuarioResposta	
                 self.token = loginResponse.token
                 
-                self.currentUser = usuarioResposta
+//                self.currentUser = usuarioResposta
                 completion(usuarioResposta)
             }
             else {
