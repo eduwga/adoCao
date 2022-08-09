@@ -81,8 +81,7 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419114-0fa83e9f-a9c4-4f08-a47c-44107189819c.png">
 
   ### Amigos para adoção
-  PRINCIPAL TELA DO APP.
-  
+  PRINCIPAL TELA DO APP:
   Tela que congrega as possibilidades de visualizar os cachorros disponíveis para adotar e aqueles que o usuário quer colocar para doar
  <p align="center">  
 <img width="220" alt="image" src="https://user-images.githubusercontent.com/3842418/182419154-c3d664cc-541b-4d33-90aa-6144629e5c65.png">
