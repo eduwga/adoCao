@@ -41,9 +41,13 @@ class FavoritosViewController: UIViewController {
 // MARK: - CollectionView Delegate
 extension FavoritosViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("clicquei")
         performSegue(withIdentifier: "detalheAmigoSegue", sender: indexPath.item)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
+
+
+
 }
 
 // MARK: - CollectionView Datasource
@@ -53,7 +57,7 @@ extension FavoritosViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        recarregarTela()
+        //recarregarTela()
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoritoCell", for: indexPath) as? FavoritoCollectionViewCell {
             if let vmCell = viewModel.obterViewModelParaCell(posicao: indexPath.item) {
                 cell.configura(vm: vmCell)

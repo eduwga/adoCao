@@ -11,6 +11,7 @@ import GoogleSignIn
 import FacebookLogin
 import FacebookCore
 import FBSDKLoginKit
+import MessageUI
 
 class LoginViewController: UIViewController {
     
@@ -26,6 +27,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var loginGoogleButton: GIDSignInButton!
     @IBOutlet weak var loginFacebookButton: UIView!
+    
+
     
     
     override func viewDidLoad() {
@@ -137,6 +140,13 @@ class LoginViewController: UIViewController {
         alertaErroLogin.addAction(botaoLogin)
         self.present(alertaErroLogin, animated: true, completion: nil)
     }
+    
+    
+    
+
+    
+    
+    
 }
 extension LoginViewController: LoginViewModelDelegate {
     func temUsuarioLogado() {
@@ -189,4 +199,40 @@ extension LoginViewController: LoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("O usuário efetuou logout")
     }
+}
+
+
+extension LoginViewController: MFMailComposeViewControllerDelegate {
+    
+    @IBAction func supportButton(_ sender: Any) {
+        
+        guard MFMailComposeViewController.canSendMail() else {return}
+           
+        let composer = MFMailComposeViewController()
+            composer.mailComposeDelegate = self
+            composer.setToRecipients(["suporte@adocao.com.br"])
+            composer.setSubject("Suporte")
+            composer.setMessageBody("Olá, preciso de ajuda com:", isHTML: false)
+            present(composer, animated: true)
+        
+    }
+    
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+           switch result {
+           case .sent:
+               print("Email sent")
+           case .saved:
+               print("Draft saved")
+           case .cancelled:
+               print("Email cancelled")
+           case  .failed:
+               print("Email failed")
+           @unknown default:
+              print("failed")
+           }
+           controller.dismiss(animated: true, completion: nil)
+       }
+    
+    
 }

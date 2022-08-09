@@ -378,108 +378,6 @@
             </objects>
             <point key="canvasLocation" x="-371" y="2839"/>
         </scene>
-        <!--Suporte View Controller-->
-        <scene sceneID="ySZ-53-BDR">
-            <objects>
-                <viewController id="fzh-lF-fgU" customClass="SuporteViewController" customModule="AdoCao" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="E2r-mR-joH">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Envie sua dúvida ou solicite suporte" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynv-0T-9bj">
-                                <rect key="frame" x="8" y="156" width="374" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Versão do App: 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCr-O0-Kde">
-                                <rect key="frame" x="10" y="248.00000000000003" width="394" height="20.333333333333343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsu-qV-vdT">
-                                <rect key="frame" x="40" y="747" width="310" height="31"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Enviar" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.8078432083" green="0.76862752440000004" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="cadastrarButton:" destination="hRX-ix-VgA" eventType="touchUpInside" id="Civ-B2-q6i"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lrU-jX-5yd">
-                                <rect key="frame" x="0.0" y="44" width="390" height="96"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.41960784309999999" green="0.1529411765" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textAttributes>
-                                <textAttributes key="largeTitleTextAttributes">
-                                    <color key="textColor" red="0.41960784309999999" green="0.1529411765" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Suporte" id="uq3-dk-aGC">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="bnl-Tt-TyF">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5w7-Gh-C8o">
-                                                <rect key="frame" x="16" y="4.6666666666666679" width="92" height="35"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward" catalog="system" title="">
-                                                    <color key="baseForegroundColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="retornaButtonNavigation:" destination="fzh-lF-fgU" eventType="touchUpInside" id="AhY-xb-R1p"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Digite Aqui..." translatesAutoresizingMaskIntoConstraints="NO" id="JlR-k8-LV5">
-                                <rect key="frame" x="8" y="192.33333333333331" width="374" height="522.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="LRm-Qb-zhu"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="lrU-jX-5yd" firstAttribute="top" secondItem="LRm-Qb-zhu" secondAttribute="top" id="0EX-Jx-4Wc"/>
-                            <constraint firstItem="LRm-Qb-zhu" firstAttribute="trailing" secondItem="ynv-0T-9bj" secondAttribute="trailing" constant="8" id="700-vC-22a"/>
-                            <constraint firstItem="JlR-k8-LV5" firstAttribute="top" secondItem="ynv-0T-9bj" secondAttribute="bottom" constant="16" id="KDx-UZ-Qhe"/>
-                            <constraint firstItem="lrU-jX-5yd" firstAttribute="leading" secondItem="E2r-mR-joH" secondAttribute="leading" id="LTH-gQ-acM"/>
-                            <constraint firstItem="LRm-Qb-zhu" firstAttribute="trailing" secondItem="tsu-qV-vdT" secondAttribute="trailing" constant="40" id="Pgz-du-rhe"/>
-                            <constraint firstItem="LRm-Qb-zhu" firstAttribute="trailing" secondItem="JlR-k8-LV5" secondAttribute="trailing" constant="8" id="Sbm-Ph-5Yx"/>
-                            <constraint firstItem="tsu-qV-vdT" firstAttribute="top" secondItem="JlR-k8-LV5" secondAttribute="bottom" constant="32" id="cxT-jh-l8M"/>
-                            <constraint firstItem="tsu-qV-vdT" firstAttribute="leading" secondItem="LRm-Qb-zhu" secondAttribute="leading" constant="40" id="eIY-ch-NUQ"/>
-                            <constraint firstItem="LRm-Qb-zhu" firstAttribute="bottom" secondItem="tsu-qV-vdT" secondAttribute="bottom" constant="32" id="izZ-CO-j7o"/>
-                            <constraint firstItem="ynv-0T-9bj" firstAttribute="leading" secondItem="LRm-Qb-zhu" secondAttribute="leading" constant="8" id="lIs-Mh-0vb"/>
-                            <constraint firstAttribute="trailing" secondItem="lrU-jX-5yd" secondAttribute="trailing" id="nFK-wq-G2a"/>
-                            <constraint firstItem="ynv-0T-9bj" firstAttribute="top" secondItem="lrU-jX-5yd" secondAttribute="bottom" constant="16" id="w1r-MU-d2p"/>
-                            <constraint firstItem="JlR-k8-LV5" firstAttribute="leading" secondItem="LRm-Qb-zhu" secondAttribute="leading" constant="8" id="yCJ-qG-4wx"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="5F1-pT-dTJ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y2q-c5-hwU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2344.8000000000002" y="-118.22660098522168"/>
-        </scene>
         <!--Editar Usuário-->
         <scene sceneID="dbM-Qg-acH">
             <objects>
@@ -790,7 +688,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="favoritoCell" id="FQL-hc-5yo" customClass="FavoritoCollectionViewCell" customModule="AdoCao" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" contentMode="scaleAspectFill" reuseIdentifier="favoritoCell" id="FQL-hc-5yo" customClass="FavoritoCollectionViewCell" customModule="AdoCao" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="26.666666666666668" width="256" height="400"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Dv-aM-vHv">
@@ -821,6 +719,9 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc XXX" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBq-Qo-9EA">
                                                             <rect key="frame" x="8" y="239.66666666666666" width="224" height="19.333333333333343"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="224" id="KUE-h1-Kxd"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -891,12 +792,6 @@
                                             </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="256" height="400"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="backView" destination="a54-9I-lRB" id="X6t-EQ-E01"/>
                                             <outlet property="descricaoLabel" destination="tBq-Qo-9EA" id="lMH-3a-hAf"/>
@@ -942,7 +837,7 @@
                     <tabBarItem key="tabBarItem" title="Perfil" image="person" catalog="system" selectedImage="person.fill" id="Hsp-td-g5b"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="juf-hF-Zbx">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="103.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.4214588386770669" green="0.15173096665705099" blue="0.60650449810606055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1284,7 +1179,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Suporte"/>
                                 <connections>
-                                    <segue destination="fzh-lF-fgU" kind="show" id="op0-po-6iP"/>
+                                    <action selector="supportButton:" destination="AlY-ip-6QM" eventType="touchUpInside" id="s2P-nQ-cbZ"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMT-Wk-SCe" customClass="FBSDKLoginButton">
@@ -1292,6 +1187,7 @@
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="G09-xo-dPk"/>
+                                    <constraint firstAttribute="width" constant="280" id="wQ6-Vg-Wlz"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduys">
@@ -1326,8 +1222,6 @@
                             <constraint firstItem="EU2-Mr-iXb" firstAttribute="leading" secondItem="4h5-Rt-rQj" secondAttribute="leading" id="5lo-V2-1Ye"/>
                             <constraint firstItem="Kom-LQ-LYI" firstAttribute="trailing" secondItem="S8A-Rd-xWP" secondAttribute="trailing" id="8b8-kP-edc"/>
                             <constraint firstItem="Kom-LQ-LYI" firstAttribute="trailing" secondItem="YZP-WQ-CP2" secondAttribute="trailing" constant="75" id="8hw-ug-1Yt"/>
-                            <constraint firstItem="bMT-Wk-SCe" firstAttribute="leading" secondItem="Kom-LQ-LYI" secondAttribute="leading" constant="55" id="8ze-Gd-Gda"/>
-                            <constraint firstItem="Kom-LQ-LYI" firstAttribute="trailing" secondItem="bMT-Wk-SCe" secondAttribute="trailing" constant="55" id="9CQ-cf-1d7"/>
                             <constraint firstItem="qAK-lb-xkR" firstAttribute="top" secondItem="Aug-AI-RUT" secondAttribute="bottom" constant="2.6666666666666856" id="BJQ-Fm-Elj"/>
                             <constraint firstItem="Aug-AI-RUT" firstAttribute="top" secondItem="4h5-Rt-rQj" secondAttribute="bottom" constant="8" symbolic="YES" id="BRa-TT-EDG"/>
                             <constraint firstItem="YZP-WQ-CP2" firstAttribute="leading" secondItem="Kom-LQ-LYI" secondAttribute="leading" constant="75" id="Fmj-Da-f59"/>
@@ -1919,7 +1813,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Gph-qe-LXx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SlU-6h-02i">
-                        <rect key="frame" x="0.0" y="44" width="390" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.51786279260000001" green="0.1864377133" blue="0.74523555870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1936,13 +1830,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="c55-GA-miH"/>
+        <segue reference="rhc-9a-V6f"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Bilu" width="225" height="224"/>
         <image name="DogBoasVindas" width="340" height="360"/>
         <image name="FundoFav" width="1024" height="683"/>
-        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
