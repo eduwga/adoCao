@@ -127,16 +127,16 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
 
 
 # 🤜🤛🏽Acesso ao Projeto
-  Este projeto é público como parte de nosso trabalho de conclusão do Curso de Programação de Aplicativos para iPhone em IOS-SWIFT, pela escola Digital House Brasil, sob supervisão dos Professores: Jessica Santana e Adriano Souza Costa
-
+  Este projeto é público como parte de nosso trabalho de conclusão do Curso de Programação de Aplicativos para iPhone em IOS-SWIFT, pela escola Digital House Brasil
 
  # 🙌🏽Agradecimentos
  
-  Nosso sincero OBRIGADO a todos que tornaram este projeto possível e nos ajudaram nesta jornada!
-  Em especial agradecemos às nossas Famílias que nos apoiaram e toleraram por todo este tempo!
-  Agradecemos a colaboração dos colegas de curso da DH e especialmente aos Professores Jessica e Adriano, que nos ajudaram a iniciar esta jornada de desenvolvedores iOS.
+  Nosso sincero OBRIGADO a todos que tornaram este projeto possível e nos apoiaram todo esse tempo!
+  Em especial agradecemos às nossas Famílias que toleraram as tretars do Git e as noites em claro!
+  Agradecemos a colaboração dos colegas de curso da DH e especialmente aos Professores Jessica e Adriano, que nos ajudaram e conduziram nesta jornada de desenvolvedores iOS.
   
-  ![Adrianoe Jessica](https://user-images.githubusercontent.com/3842418/183796665-e5e2cf90-0e1f-4698-9865-3c482c4cd5a1.png)
+![Professores DH](https://user-images.githubusercontent.com/3842418/183990082-20c79c3e-d0d2-4922-a57b-247c99a18c5a.png)
+
 
 # 👍Licença
 🇧🇷 🇵🇹 🇲🇿 Copyright (c) <2022> <Grupo AdoCão TEAMMM>
