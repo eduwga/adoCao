@@ -12,6 +12,8 @@ import FacebookLogin
 import FacebookCore
 import FBSDKLoginKit
 import MessageUI
+import SwiftUI
+import simd
 
 class LoginViewController: UIViewController {
     
@@ -71,6 +73,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func googleLoginButton(_ sender: Any) {
         viewModel.efetuarLoginGoogle()
+        exibeAlertaContato(mensagem: "Adicione seu contato")
     }
     
     
@@ -141,6 +144,15 @@ class LoginViewController: UIViewController {
         self.present(alertaErroLogin, animated: true, completion: nil)
     }
     
+    private func exibeAlertaContato(mensagem: String) {
+        let alertaContatoInesistente = UIAlertController(title: "Informe o seu contato:", message: mensagem, preferredStyle: UIAlertController.Style.alert)
+        alertaContatoInesistente.addTextField { (textField: UITextField!) -> Void in
+            textField.placeholder = "E-mail ou telefone"
+        }
+        let botaoSalvarContato = UIAlertAction(title: "Salvar", style: UIAlertAction.Style.default, handler: nil)
+        alertaContatoInesistente.addAction(botaoSalvarContato)
+        self.present(alertaContatoInesistente, animated: true, completion: nil)
+    }
     
     
 
@@ -167,6 +179,7 @@ extension LoginViewController: LoginViewModelDelegate {
     func exibeMensagemAlert(mensagem: String) {
         exibeAlerta(mensagem: mensagem)
     }
+    
     
     func loginGoogle(configuration: GIDConfiguration) {
         GIDSignIn.sharedInstance.signIn(
