@@ -124,9 +124,9 @@ class LoginViewController: UIViewController {
             
             var viewControllers = navigationController.viewControllers
             
-            for (index, viewController) in viewControllers.enumerated() where viewController is LoginViewController {
-                viewControllers.remove(at: index)
-            }
+//            for (index, viewController) in viewControllers.enumerated() where viewController is LoginViewController {
+//                viewControllers.remove(at: index)
+//            }
             
             let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let initialViewController = storyBoard.instantiateViewController(withIdentifier: "amigoParaAdocao")
