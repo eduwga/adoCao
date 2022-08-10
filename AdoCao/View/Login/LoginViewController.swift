@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginGoogleButton: GIDSignInButton!
     @IBOutlet weak var loginFacebookButton: UIView!
     
-
+    
     
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
         //Botao de login Google
         loginGoogleButton.style = .wide
         loginGoogleButton.colorScheme = .dark
-            
+        
         
         ///Botao de login Facebook
         loginButton.center = loginFacebookButton.center
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func googleLoginButton(_ sender: Any) {
         viewModel.efetuarLoginGoogle()
-        exibeAlertaContato(mensagem: "Informe o seu número de contato")
+        exibeAlertaContatoGoogle(mensagem: "Informe o seu número de contato")
     }
     
     
@@ -124,10 +124,6 @@ class LoginViewController: UIViewController {
             
             var viewControllers = navigationController.viewControllers
             
-//            for (index, viewController) in viewControllers.enumerated() where viewController is LoginViewController {
-//                viewControllers.remove(at: index)
-//            }
-            
             let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let initialViewController = storyBoard.instantiateViewController(withIdentifier: "amigoParaAdocao")
             
@@ -144,7 +140,7 @@ class LoginViewController: UIViewController {
         self.present(alertaErroLogin, animated: true, completion: nil)
     }
     
-    private func exibeAlertaContato(mensagem: String) {
+    private func exibeAlertaContatoGoogle(mensagem: String) {
         let alertaContatoInesistente = UIAlertController(title: "Informe o seu contato:", message: mensagem, preferredStyle: UIAlertController.Style.alert)
         alertaContatoInesistente.addTextField { (textField: UITextField!) -> Void in
             textField.placeholder = "E-mail ou telefone"
@@ -154,12 +150,28 @@ class LoginViewController: UIViewController {
         self.present(alertaContatoInesistente, animated: true, completion: nil)
     }
     
-    
-
-    
-    
+    private func exibeAlertaContatoFB(mensagemContato: String) {
+        let alertaContatoInesistente = UIAlertController(title: "Informe os seus dados:", message: mensagemContato, preferredStyle: UIAlertController.Style.alert)
+        alertaContatoInesistente.addTextField { (textField: UITextField!) -> Void in
+            textField.placeholder = "Telefone"
+        }
+        alertaContatoInesistente.addTextField { (textField: UITextField!) -> Void in
+            textField.placeholder = "E-mail"
+        }
+        alertaContatoInesistente.addTextField { (textField: UITextField!) -> Void in
+            textField.placeholder = "UF"
+        }
+        alertaContatoInesistente.addTextField { (textField: UITextField!) -> Void in
+            textField.placeholder = "Cidade"
+        }
+        
+        let botaoSalvarContato = UIAlertAction(title: "Salvar", style: UIAlertAction.Style.default, handler: nil)
+        alertaContatoInesistente.addAction(botaoSalvarContato)
+        self.present(alertaContatoInesistente, animated: true, completion: nil)
+    }
     
 }
+
 extension LoginViewController: LoginViewModelDelegate {
     func temUsuarioLogado() {
         self.adicionaViewControllerInicial()
@@ -200,14 +212,15 @@ extension LoginViewController: LoginButtonDelegate {
         case .none:
             return
         case .some(let xxx):
-            exibeAlertaContato(mensagem: "Informe o seu número de contato")
+            
+            exibeAlertaContatoFB(mensagemContato: "Informe os seus dados:")
             viewModel.tratarLoginFacebook(
                 result: result,
                 error: error
             )
         }
-       
-
+        
+        
     }
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
@@ -221,32 +234,32 @@ extension LoginViewController: MFMailComposeViewControllerDelegate {
     @IBAction func supportButton(_ sender: Any) {
         
         guard MFMailComposeViewController.canSendMail() else {return}
-           
+        
         let composer = MFMailComposeViewController()
-            composer.mailComposeDelegate = self
-            composer.setToRecipients(["suporte@adocao.com.br"])
-            composer.setSubject("Suporte")
-            composer.setMessageBody("Olá, preciso de ajuda com:", isHTML: false)
-            present(composer, animated: true)
+        composer.mailComposeDelegate = self
+        composer.setToRecipients(["suporte@adocao.com.br"])
+        composer.setSubject("Suporte")
+        composer.setMessageBody("Olá, preciso de ajuda com:", isHTML: false)
+        present(composer, animated: true)
         
     }
     
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-           switch result {
-           case .sent:
-               print("Email sent")
-           case .saved:
-               print("Draft saved")
-           case .cancelled:
-               print("Email cancelled")
-           case  .failed:
-               print("Email failed")
-           @unknown default:
-              print("failed")
-           }
-           controller.dismiss(animated: true, completion: nil)
-       }
+        switch result {
+        case .sent:
+            print("Email sent")
+        case .saved:
+            print("Draft saved")
+        case .cancelled:
+            print("Email cancelled")
+        case  .failed:
+            print("Email failed")
+        @unknown default:
+            print("failed")
+        }
+        controller.dismiss(animated: true, completion: nil)
+    }
     
     
 }
