@@ -127,15 +127,16 @@ Nesta tela se pode editar sua informações  ou  partir para as ações principa
 
 
 # 🤜🤛🏽Acesso ao Projeto
-  Este projeto é público como parte de nosso trabalho de conclusão do Curso de Programação de Aplicativos para iPhone em IOS-SWIFT, pela escola Digital House Brasil, sob supervisão dos Professores: Jessica Santana e Adriano 
-  
+  Este projeto é público como parte de nosso trabalho de conclusão do Curso de Programação de Aplicativos para iPhone em IOS-SWIFT, pela escola Digital House Brasil, sob supervisão dos Professores: Jessica Santana e Adriano Souza Costa
+
+
  # 🙌🏽Agradecimentos
  
   Nosso sincero OBRIGADO a todos que tornaram este projeto possível e nos ajudaram nesta jornada!
-  Em especial agradecemos também às nossas Famílias que nos apoiaram e toleraram por todo este tempo!
+  Em especial agradecemos às nossas Famílias que nos apoiaram e toleraram por todo este tempo!
+  Agradecemos a colaboração dos colegas de curso da DH e especialmente aos Professores Jessica e Adriano, que nos ajudaram a iniciar esta jornada de desenvolvedores iOS.
   
-  <img width="1440" alt="AdoCão Big SplashScreen" src="https://user-images.githubusercontent.com/3842418/182612648-c46beb32-3e50-4d79-a992-2eb6a24b3f51.png">
-
+  ![Adrianoe Jessica](https://user-images.githubusercontent.com/3842418/183796665-e5e2cf90-0e1f-4698-9865-3c482c4cd5a1.png)
 
 # 👍Licença
 🇧🇷 🇵🇹 🇲🇿 Copyright (c) <2022> <Grupo AdoCão TEAMMM>
@@ -148,4 +149,5 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+<img width="1440" alt="AdoCão Big SplashScreen" src="https://user-images.githubusercontent.com/3842418/182612648-c46beb32-3e50-4d79-a992-2eb6a24b3f51.png">
 
