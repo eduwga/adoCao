@@ -17,13 +17,12 @@ class RacaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 1.00)
-        racasTableView.backgroundColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 1.00)
+        view.backgroundColor = .white
         racasTableView.separatorColor = .systemPurple
         racasTableView.dataSource = self
         racasTableView.delegate = self
         pesquisarRacaSearchBar.delegate = self
-        pesquisarRacaSearchBar.barTintColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 0.5)
+        pesquisarRacaSearchBar.barTintColor = .white
         viewModel.delegate = self
         racasTableView.keyboardDismissMode = .onDrag // or .interactive
         pesquisarRacaSearchBar.becomeFirstResponder()
@@ -52,7 +51,7 @@ extension RacaViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.backgroundColor = UIColor(red: 0.83, green: 0.77, blue: 0.98, alpha: 1.00)
+        cell.backgroundColor = .white
         cell.textLabel?.textColor = .systemPurple
         cell.textLabel?.textAlignment = .center
         cell.textLabel?.font = .boldSystemFont(ofSize: 15)
