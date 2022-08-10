@@ -77,6 +77,8 @@ class ListarAmigosViewModel {
         guard let usuario = service.getLoggedUser() else { return Usuario(systemUser: SystemUser()) }
         return usuario
     }
+    
+    
 }
 
 

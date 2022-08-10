@@ -17,6 +17,7 @@ class DetalheAmigoViewController: UIViewController {
     @IBOutlet weak var saibaMaisRacaLabel: UILabel!
     @IBOutlet weak var racaLabel: UILabel!
     @IBOutlet weak var localMapView: MKMapView!
+    @IBOutlet weak var contatoLabel: UILabel!
     
     var viewModel: DetalheAmigoViewModel?
     var tipoOperacao: TipoListagem?
@@ -26,7 +27,9 @@ class DetalheAmigoViewController: UIViewController {
         configuraTela()
     }
 
-    @IBAction func caracteristicaRacaButtonAction(_ sender: Any) { }
+    @IBAction func caracteristicaRacaButtonAction(_ sender: Any) {
+        tabBarController?.selectedIndex = 2
+    }
     
     func configura(viewModel: DetalheAmigoViewModel, tipoOperacao: TipoListagem) {
         self.viewModel = viewModel
@@ -52,6 +55,7 @@ class DetalheAmigoViewController: UIViewController {
             nomeCaoLabel.text = viewModel.getNome()
             localizaCaoLabel.text = viewModel.getLocalizacao()
             descriCaoLabel.text = viewModel.getDescricao()
+            contatoLabel.text = viewModel.getContato()
         }
     }
     

@@ -41,4 +41,9 @@ class DetalheAmigoViewModel {
     func getEndereco() -> String {
         return "\(amigo.tutor.getCidade()) - \(amigo.tutor.getUF())"
     }
+    
+    func getContato() -> String {
+        return amigo.tutor.contato
+    }
+    
 }
