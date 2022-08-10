@@ -64,7 +64,7 @@ class ListarAmigosViewModel {
         }
     }
     
-    private func obterListasDeAmigos() {
+     func obterListasDeAmigos() {
         let usuario = obterUsuarioLogado()
         service.getDogsForAdoption(completion: { amigos in
             self.minhaLista = usuario.amigosCadastrados

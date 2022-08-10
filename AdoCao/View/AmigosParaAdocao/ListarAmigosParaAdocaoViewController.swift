@@ -26,9 +26,11 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
         listarAmigosTableView.delegate = self
         viewModel.delegate = self
         finalizaActivityIndicator(activityIndicatorView: listarAmigosActivityIndicator)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.obterListasDeAmigos()
         listarAmigosTableView.reloadData()
     }
      
@@ -57,7 +59,9 @@ extension ListarAmigosParaAdocaoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "caoCell") as? ListarAmigosCustomCell else { return UITableViewCell() }
+        
         guard let vmCell = viewModel.obterViewModelParaCell(posicao: indexPath.row, segmento: listarAmigosSegmentedControl.selectedSegmentIndex) else { return UITableViewCell() }
+        
         cell.configura(vm: vmCell)
         return cell
     }
