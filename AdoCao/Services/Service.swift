@@ -149,12 +149,10 @@ class Service {
         loginAction(path: "usuarios/login/", userLogin: userLogin, completion: { data in
             
             if let loginResponse = try? JSONDecoder().decode(LoginResponse.self, from: data) {
-                
                 let usuarioResposta = Usuario(usuarioResponse: loginResponse.user, token: loginResponse.token)
                 self.currentUser = usuarioResposta	
                 self.token = loginResponse.token
-                
-//                self.currentUser = usuarioResposta
+
                 completion(usuarioResposta)
             }
             else {

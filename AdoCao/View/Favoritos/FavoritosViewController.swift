@@ -41,13 +41,9 @@ class FavoritosViewController: UIViewController {
 // MARK: - CollectionView Delegate
 extension FavoritosViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("clicquei")
         performSegue(withIdentifier: "detalheAmigoSegue", sender: indexPath.item)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
-
-
-
 }
 
 // MARK: - CollectionView Datasource
