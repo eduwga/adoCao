@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func googleLoginButton(_ sender: Any) {
         viewModel.efetuarLoginGoogle()
-        exibeAlertaContato(mensagem: "Adicione seu contato")
+        exibeAlertaContato(mensagem: "Informe o seu número de contato")
     }
     
     
@@ -200,6 +200,7 @@ extension LoginViewController: LoginButtonDelegate {
         case .none:
             return
         case .some(let xxx):
+            exibeAlertaContato(mensagem: "Informe o seu número de contato")
             viewModel.tratarLoginFacebook(
                 result: result,
                 error: error

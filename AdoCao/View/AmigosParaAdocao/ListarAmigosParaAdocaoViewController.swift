@@ -38,7 +38,7 @@ class ListarAmigosParaAdocaoViewController: UIViewController {
     }
     
     @IBAction func unwind( _ seg: UIStoryboardSegue) {
-        tabBarController?.navigationController?.popToRootViewController(animated: true)
+//        tabBarController?.navigationController?.popToRootViewController(animated: true)
         
         if let navigationController = navigationController {
             let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
