@@ -27,7 +27,7 @@ class FavoritosViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        favoritosCollectionView.reloadData()
+      favoritosCollectionView.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

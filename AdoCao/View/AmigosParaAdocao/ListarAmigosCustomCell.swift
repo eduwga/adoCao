@@ -45,6 +45,8 @@ class ListarAmigosCustomCell: UITableViewCell {
 
 extension ListarAmigosCustomCell: ListarAmigosCustomCellViewModelDelegate {
     func amigoFoiAdicionado() {
+        
+        
         self.favoritarImagemButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
     }
     
